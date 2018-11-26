@@ -13,7 +13,6 @@
   </view>
 
     <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn">Login & Skate</button>
-    <!-- <button bindtap='goSpots' class="btn">Create a Monster</button> -->
   </view>
 
 
