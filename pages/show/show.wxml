@@ -1,2 +1,41 @@
 <!--pages/show/show.wxml-->
-<text>pages/show/show.wxml</text>
+
+<view class="container">
+  <!------IMAGE OF SKATESPOT-----------> 
+  <view class="image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');">
+      </view>
+  <!---add in url to make dynamic: {{photo}} -->
+
+    <!------ Add your own photo -----------> 
+  <view class="add"><text>+</text></view>
+
+
+      <!------ icons -----------> 
+  <view class="icons">
+      <image class='icon' src="/assets/rating.png"></image>
+      <image class='icon' src="/assets/location.png"></image>
+      <image class='icon' src="/assets/share.png"></image>
+  </view>
+
+  <!------NAME AND DESCRIPTION -----------> 
+  <view class="name-description">
+    <view class="name">
+      <text>{{name}}Smooth bowl near Pudong</text>
+    </view>
+    <view class="type">
+      <text>{{type}}Skatebowl</text>
+    </view>
+    <view class="description">
+      <text>{{description}}This is a 10ft skate bowl located near the airport with a really smooth ground and pull tiles for coping.</text>
+    </view>
+  </view>
+
+
+      <!------map -----------> 
+  <view class="map">
+    <text>map</text>
+  </view>
+
+
+</view>
+
