@@ -32,12 +32,12 @@ margin-bottom:8px;
 color:white;
 font-size: 15px;
 font-weight: bold;
-background-color: #F4845F;
+background-color: #ff8f56;
 border-radius: 0px;
 padding: 5px;
 margin: 16px;
 opacity: 1;
-border: 1px solid rgb(255,255,255);
+border: 0px solid rgb(255,255,255);
 }
 
 .btn-submit {
@@ -45,11 +45,11 @@ margin-bottom:8px;
 color:white;
 font-size: 16px;
 font-weight: bold;
-background-color: #93A8AC;
+background-color: #2bb673;
 padding: 5px;
 margin: 15px;
 opacity: 1;
-border: 1px solid rgb(255,255,255);
+border: 0px solid rgb(255,255,255);
 }
 
 .btn-submit:hover {
