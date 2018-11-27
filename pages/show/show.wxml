@@ -1,3 +1,4 @@
+
 <!--pages/show/show.wxml-->
 
 <view class="container">
@@ -5,6 +6,10 @@
   <view class="image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');">
       </view>
   <!---add in url to make dynamic: {{photo}} -->
+
+    <!------ Add your own photo -----------> 
+  <view class="add"><text>+</text></view>
+
 
       <!------ icons -----------> 
   <view class="icons">
@@ -27,7 +32,7 @@
   </view>
 
 
-      <!----map -----------> 
+      <!------map -----------> 
   
   <view class="page-body">
   <view class="page-section page-section-gap">
@@ -52,4 +57,5 @@
 
 <!-----container end---->
 </view>
+
 
