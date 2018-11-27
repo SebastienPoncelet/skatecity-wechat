@@ -45,7 +45,7 @@
 .type {
 font-size: 5vw;
   margin-top:1.5vh;
- color: #08605F;
+ color: #5cc1b3;
 }
 .description {
   font-size: 4.5vw;
