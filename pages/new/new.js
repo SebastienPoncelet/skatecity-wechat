@@ -22,7 +22,7 @@ Page({
   takePhoto: function () {
     let that = this
     wx.chooseImage({
-      count: 1,
+      count: 5,
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success: function (res) {
