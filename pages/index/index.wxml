@@ -50,7 +50,8 @@
           <block wx:for="{{skatespots}}" wx:for-item="skatespot" >
             <view class="card" bindtap='showMachine' data-id="{{skatespot.id}}" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300/?random');">
               <view class="card-description">
-                  <text class="distance">Distance</text>
+                  <text class="rating">{{skatespot.rating}}</text>
+                  <text class="name">{{skatespot.name}}</text>
               </view>
             </view>
             <!-- <view class="card-footer">
@@ -61,19 +62,6 @@
             </view> -->
           </block>
       </view>
-
-<!--to be deleted after made dynamic, just for purpose of layout--->
-      <view class="card" bindtap='showMachine' data-id="{{skatespot.id}}" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300/?random');">
-          <view class="card-description">
-              <text class="distance">Distance</text>
-          </view>
-        </view>
-
-       <view class="card" bindtap='showMachine' data-id="{{skatespot.id}}" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300/?random');">
-          <view class="card-description">
-              <text class="distance">Distance</text>
-          </view>
-        </view>
     </view>
   </view>
 </view>

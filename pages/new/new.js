@@ -1,7 +1,7 @@
 // pages/new/new.js
 
 const app = getApp()
-const db = wx.cloud.database()
+//const db = wx.cloud.database()
 // Calling the av-weapp-min.js file which is Leancloud's SDK
 
 
