@@ -1,1 +1,98 @@
 /* pages/new/new.wxss */
+/* pages/new/new.wxss */
+.container {
+width: 80%;
+}
+
+.banner {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction:column;
+  background-position: center 0px;
+  background-repeat: no-repeat;
+}
+
+.h1 {
+  font-weight: bold;
+  text-align: center;
+  margin: 17px;
+  color: rgb(255,255,255);
+  padding: 2px;
+  border-bottom: 4px solid rgb(255,255,255);
+  padding:10px;
+}
+
+.btn-upload {
+margin-bottom:8px;
+color:white;
+font-size: 15px;
+font-weight: bold;
+background-color: #F4845F;
+border-radius: 0px;
+padding: 5px;
+margin: 16px;
+opacity: 1;
+border: 1px solid rgb(255,255,255);
+}
+
+.btn-submit {
+margin-bottom:8px;
+color:white;
+font-size: 16px;
+font-weight: bold;
+background-color: #93A8AC;
+padding: 5px;
+margin: 15px;
+opacity: 1;
+border: 1px solid rgb(255,255,255);
+}
+
+.btn-submit:hover {
+  opacity: 1;
+}
+
+.btn-upload:hover {
+  opacity: 1;
+}
+ .form-fields {
+  margin:15px 8px;
+  animation: animateleft 0.9s;
+}
+
+.input-value {
+  font-weight:700;
+  font-size:14px;
+}
+.input-placeholder{
+  animation: animateleft 0.9s;
+  color:#ffffff;
+}
+
+
+.desc {
+  /* border: 2px solid rgb(240,240,240); */
+  margin-bottom:15px;
+  padding: 5px;
+  font-size: 15px;
+  color: rgb(255,255,255);
+  border-bottom: 1px solid #F0F0F0;
+  width: 80%;
+  margin: 20px;
+  
+}
+
+.availability {
+  margin-bottom:15px;
+  padding: 5px;
+  font-size: 15px;
+  color: #ffffff;
+  border-bottom: 2px solid #F0F0F0;
+  width: 80%;
+  margin: 20px;
+}
