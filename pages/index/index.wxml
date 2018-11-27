@@ -45,28 +45,58 @@
         </view> -->
 
     <!-----------Cards--------->
-        <view class="cards">
+      <view class="cards">
         <!-- <text class="cards-text">All</text> -->
-          <block wx:for="{{skatespots}}" wx:for-item="skatespot" >
-            <view class="card" bindtap='showMachine' data-id="{{skatespot.id}}" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300/?random');">
-              <view class="card-description">
-                  <text class="rating">{{skatespot.rating}}</text>
-                  <text class="name">{{skatespot.name}}</text>
-              </view>
+        <block wx:for="{{skatespots}}" wx:for-item="skatespot">
+          <view class="card">
+            <view class="card-body" bindtap='showSkatespot' data-id="{{skatespot.id}}" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300/?random');">
+                <view class="card-description">
+                    <text class="name">{{skatespot.name}}</text>
+                </view>
             </view>
-            <!-- <view class="card-footer">
-              <text class='name'>INFORMATION</text>
-              <view class="pending">
-              <text class="status-pending">Pending</text>
-              </view>
-            </view> -->
-          </block>
+                <view class="card-footer">
+                  <text class='rating'>{{skatespot.rating}}</text>
+                </view>
+          </view>
+      
+        </block>
       </view>
     </view>
   </view>
 </view>
 
             <!----------------Map---------->
-      <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+  <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+  
+      <view class="page-body">
+      <view class="page-section page-section-gap">
+        <map
+          id="myMap"
+          style="width: 100%; height: 300px;"
+          latitude="{{latitude}}"
+          longitude="{{longitude}}"
+          markers="{{markers}}"
+          covers="{{covers}}"
+          show-location
+        ></map>
+      </view>
+      <view class="btn-area">
+        <button bindtap="getCenterLocation" class="page-body-button" type="primary">获取位置</button>
+        <button bindtap="moveToLocation" class="page-body-button" type="primary">移动位置</button>
+        <button bindtap="translateMarker" class="page-body-button" type="primary">移动标注</button>
+        <button bindtap="includePoints" class="page-body-button" type="primary">缩放视野展示所有经纬度</button>
+      </view>
+    </view>
+
+
+
+
+
+
+
+
+
+
+
       </view>
       
