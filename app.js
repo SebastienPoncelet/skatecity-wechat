@@ -34,6 +34,25 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    skatespots:[
+      {
+        name: "Stairs",
+        description: "100ft high",
+        type: "Street",
+        rating: "3"
+      },
+      {
+        name: "Skatebowl near the airport",
+        description: "This is the best skatebowl, so smooth",
+        type: "Skatebowl",
+        rating: "14"
+      },
+      {
+        name: "Ledge",
+        description: "20ft long ledge, but its near a crowd of people so best for weekends",
+        type: "Ledge",
+        rating: "6"
+      },
+    ]
   }
 })

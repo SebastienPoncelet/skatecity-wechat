@@ -73,7 +73,7 @@
 } */
 
 
-.card-description .distance {
+.card-description .rating {
 font-size: 14px;
   padding: 8px;
   color: white;
@@ -84,6 +84,16 @@ font-size: 14px;
   top: 16vh;
   left: 36vh;
   opacity: 0.9;
+}
+
+.card-description .name {
+  color:white;
+position:absolute;
+top:0vh;
+margin:2vh;
+font-weight:bold;
+font-size:1em;
+
 }
 
 .filters {
