@@ -6,10 +6,6 @@
       </view>
   <!---add in url to make dynamic: {{photo}} -->
 
-    <!------ Add your own photo -----------> 
-  <view class="add"><text>+</text></view>
-
-
       <!------ icons -----------> 
   <view class="icons">
       <image class='icon' src="/assets/rating.png"></image>
@@ -20,18 +16,18 @@
   <!------NAME AND DESCRIPTION -----------> 
   <view class="name-description">
     <view class="name">
-      <text>{{items[name]}}</text>
+      <text>{{skatespot.name}}Skateboarding in the city</text>
     </view>
     <view class="type">
-      <text>{{items.type}}</text>
+      <text>{{skatespot.type}}Street</text>
     </view>
     <view class="description">
-      <text>{{items.description}}</text>
+      <text>{{items.description}}The ground here is really smooth and not that big crowds. Also loads of other skatespots near by to check out so definitely recommend.</text>
     </view>
   </view>
 
 
-      <!------map -----------> 
+      <!----map -----------> 
   
   <view class="page-body">
   <view class="page-section page-section-gap">

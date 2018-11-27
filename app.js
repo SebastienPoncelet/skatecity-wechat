@@ -36,22 +36,24 @@ App({
   globalData: {
     skatespots:[
       {
-        name: "Stairs",
+        name: "Stairs by family mart on Wujiang Road",
         description: "100ft high",
         type: "Street",
-        rating: "3"
+        rating: "Jing An Temple",
+        id: 1
       },
       {
         name: "Skatebowl near the airport",
         description: "This is the best skatebowl, so smooth",
         type: "Skatebowl",
-        rating: "14"
+        rating: "Xuhui District",
+        id: 2
       },
       {
-        name: "Ledge",
+        name: "Ledge in Zhongshan park",
         description: "20ft long ledge, but its near a crowd of people so best for weekends",
         type: "Ledge",
-        rating: "6"
+        rating: "Zhongshan Park"
       },
     ]
   }
