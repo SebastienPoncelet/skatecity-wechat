@@ -1,5 +1,4 @@
 /* pages/new/new.wxss */
-/* pages/new/new.wxss */
 .container {
 width: 80%;
 }
@@ -65,10 +64,11 @@ border: 1px solid rgb(255,255,255);
   animation: animateleft 0.9s;
 }
 
-.input-value {
+.input .value {
   font-weight:700;
-  font-size:14px;
+  font-size:24px;
 }
+
 .input-placeholder{
   animation: animateleft 0.9s;
   color:#ffffff;

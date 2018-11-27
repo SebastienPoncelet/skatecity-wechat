@@ -5,10 +5,10 @@
 <view class='container'>
 <view class="form-fields">
 <form bindsubmit="bindSubmit" bindreset="formReset">
-  <input value="{{ name }}" class="desc" name="name" placeholder="Enter a Name" />
+  <input value="{{ name }}" class="desc" name="name" placeholder="Name The Spot" />
   <input value='{{ description }}' class="desc" name="description" placeholder="Enter a Description" />
-  <input value='{{ address }}' class="desc" name="socks" placeholder="Enter the Address" />
-  <input value='{{ ratings }}' class="desc" name="address" placeholder="Add Your Rating" />
+  <input value='{{ address }}' class="desc" name="socks" placeholder="Enter The Address" />
+  <input value='{{ ratings }}' class="desc" name="address" placeholder="Now Rate It!" />
   <input value='{{ type }}' class="desc" name="price" placeholder="Type of Skating" />
 
   <picker mode="date" value="{{availability}}" name="availability" start="2018-11-01" end="2019-0-01" bindchange="bindDateChange">
@@ -16,7 +16,7 @@
       Availability: {{date}}
     </view>
   </picker>
-  <button class="btn-upload" bindtap="takePhoto">Upload An Image</button>
+  <button class="btn-upload" bindtap="takePhoto">Upload Some Photos</button>
   <button class="btn-submit" formType="submit">Save The Spot</button>
 </form>
 </view>
