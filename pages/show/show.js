@@ -1,10 +1,13 @@
 // pages/show/show.js
-Page({
+const app = getApp()
 
+Page({
+  
   /**
    * Page initial data
    */
   data: {
+    // skatespots: {},
     latitude: 23.099994,
     longitude: 113.324520,
     markers: [{
@@ -30,6 +33,7 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    // console.log(options)
 
   },
 
