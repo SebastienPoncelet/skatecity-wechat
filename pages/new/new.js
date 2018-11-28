@@ -7,22 +7,40 @@ const db = wx.cloud.database()
 
 Page({
   data: {
+    filtered_styles:[],
     styles: [
-      { name: 'Skateparks', value: 'Skateparks' },
-      { name: 'Pyramids', value: 'Pyramids' },
-      { name: 'Rails', value: 'Rails' },
-      { name: 'Bowls', value: 'Bowls' },
-      { name: 'Pools', value: 'Pools' },
-      { name: 'Ramps', value: 'Ramps' },
-      { name: 'Slopes', value: 'Slopes' },
-      { name: 'Ledges', value: 'Ledges' },
-      { name: 'Stairs', value: 'Stairs' },
+      { name: 'Skateparks', value: 'Skateparks', checked: false},
+      { name: 'Pyramids', value: 'Pyramids', checked: false },
+      { name: 'Rails', value: 'Rails', checked: false },
+      { name: 'Bowls', value: 'Bowls', checked: false },
+      { name: 'Pools', value: 'Pools', checked: false },
+      { name: 'Ramps', value: 'Ramps', checked: false},
+      { name: 'Slopes', value: 'Slopes', checked: false },
+      { name: 'Ledges', value: 'Ledges', checked: false},
+      { name: 'Stairs', value: 'Stairs', checked: false },
     ]
   },
 
   //Checkboxes for Skate Type
   checkboxChange: function (e) {
-    console.log('checkbox发生change事件，携带value值为：', e.detail.value)
+    this.setData({
+      filtered_styles: e.detail.value
+    })
+    // console.log('checkbox发生change事件，携带value值为：', e.detail.value)
+    // let styles = this.data.styles.map((item) => {
+    //   // indexOf checks for a name, and makes sure we're still in the array.
+    //   // If index is -1 then it's not in the list, because index starts at 0.
+    //   if (e.detail.value.indexOf(item.name) > -1) {
+    //     item.checked = true
+    //   }
+    //   return item;
+    // })
+    // this.setData({
+    //   styles: styles
+    // })
+    // console.log(this.data.styles)
+    // let filtered_styles = this.data.styles.filter((item) => item.checked);
+    // console.log(filtered_styles)
   },
 
   //Choose Image Function
@@ -71,11 +89,6 @@ Page({
       icon: 'success'
     })
   },
-//       title: 'Creating...',
-//       icon: 'loading',
-//       duration: 1500
-//     });
-
 
     // wx.showToast({
     //   title: 'Creating...',
@@ -85,27 +98,27 @@ Page({
 
   storeFormData: function(e) {
     var name = e.detail.value.name;
+    console.log(e)
     var photo = this.data.fileID;
     var description = e.detail.value.description;
     var address = e.detail.value.address;
-    var style = e.detail.value.type;
+    // var styles = e.detail.value.styles.filter((item)=>item.checked).map((item) => item.name);
     let userInfo = app.globalData.userInfo
     let userId = app.globalData.userId
-
 
     let skatespot = {
       name: name,
       user_id: userId,
       description: description,
       location: address,
-      style: style
+      styles: this.data.filtered_styles
     }
     this.postFormData(skatespot)
   },
 
   postFormData: function(skatespot) {
     wx.request({
-      url: `http://local:3000/api/v1/spots`,
+      url: `http://localhost:3000/api/v1/spots`,
       method: 'POST',
       data: { skatespot },
       success(res) {
