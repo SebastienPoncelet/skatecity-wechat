@@ -54,7 +54,7 @@
     
     <!----------List of ALL cards in List tab unfiltered------------------->
   <view class="cards">
-    <block wx:for="{{skatespots}}" wx:key="index" wx:for-item="skatespot">
+    <block wx:for="{{skatespots}}" wx:key=index" wx:for-item="skatespot">
       <view class="card">
         <view class="card-body" bindtap='showSkatespot' data-object="{{skatespot}}" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/168335/pexels-photo-168335.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');">
             <view class="card-description">
@@ -89,14 +89,12 @@
         longitude="{{longitude}}"
         markers="{{markers}}"
         covers="{{covers}}"
-        show-location
+        show-location=true
+        controls=''
       ></map>
     </view>
     <view class="btn-area">
-      <button bindtap="getCenterLocation" class="page-body-button" type="primary">Get center  location</button>
       <button bindtap="moveToLocation" class="page-body-button" type="primary">Move to location</button>
-      <button bindtap="translateMarker" class="page-body-button" type="primary">Translate Marker</button>
-      <button bindtap="includePoints" class="page-body-button" type="primary">Include points</button>
     </view>
     <!-----end of map tab---->
   </view>
