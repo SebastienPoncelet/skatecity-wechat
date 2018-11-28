@@ -7,10 +7,8 @@ var sliderWidth = 100;
 
 Page({
   data: {
-    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
     skatespots: {},
     // tab of list and map 
     tabs: ["List", "Map"],
@@ -23,8 +21,9 @@ Page({
     // sliderOffsettype: 0,
     // sliderLeft: 0
     // map 
-    latitude: 31.229557,
-    longitude: 121.445293,
+    latitude: null,
+    longitude: null,
+    accuracy: null,
     markers: [{
       id: 1,
       latitude: 31.223790,
@@ -51,26 +50,42 @@ Page({
       duration: 3000
     });
 
-    // Update local data
-    this.setData(app.globalData)
-
-  // tab bar function 
-    var that = this;
-    wx.getSystemInfo({
+    let page = this
+    wx.getLocation({
+      type: 'wgs84', // **1
       success: function (res) {
-        that.setData({
-          sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
-          sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
-        });
+        var latitude = res.latitude
+        var longitude = res.longitude
+        var accuracy = res.accuracy
+        console.log("location on load",res)
+        page.setData({ 
+          latitude:latitude, 
+          longitude:longitude, 
+          accuracy:accuracy
+        })
       }
-    });
+    })
+
+    
   },
+
   tabClick: function (e) {
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
   }, 
+
+  getCenterLocation: function (e) {
+    let data = this
+    wx.openLocation({
+      latitude: data.data.latitude,
+      longitude: data.data.longitude,
+      scale: 28
+    })
+  },
+
+
 
   // links to the show page 
   showSkatespot: function (e) {
@@ -84,46 +99,9 @@ Page({
     });
   },
 
-// map
   onReady: function (e) {
-    this.mapCtx = wx.createMapContext('myMap')
+    
   },
-  getCenterLocation: function () {
-    this.mapCtx.getCenterLocation({
-      success: function (res) {
-        console.log(res.longitude)
-        console.log(res.latitude)
-      }
-    })
-  },
-  moveToLocation: function () {
-    this.mapCtx.moveToLocation()
-  },
-  translateMarker: function () {
-    this.mapCtx.translateMarker({
-      markerId: 1,
-      autoRotate: true,
-      duration: 1000,
-      destination: {
-        latitude: 31.229557,
-        longitude: 121.445293,
-      },
-      animationEnd() {
-        console.log('animation end')
-      }
-    })
-  },
-  includePoints: function () {
-    this.mapCtx.includePoints({
-      padding: [10],
-      points: [{
-        latitude: 31.229557,
-        longitude: 121.445293,
-      }, {
-          latitude: 31.223790,
-          longitude: 121.445293,
-      }]
-    })
-  }
+
  
 })
