@@ -1,26 +1,35 @@
 // pages/new/new.js
 
 const app = getApp()
-//const db = wx.cloud.database()
-// Calling the av-weapp-min.js file which is Leancloud's SDK
+wx.cloud.init({ env: 'skate-city-0169ad' })
+const db = wx.cloud.database()
 
 
 Page({
   data: {
+    styles: [
+      { name: 'Skateparks', value: 'Skateparks' },
+      { name: 'Pyramids', value: 'Pyramids' },
+      { name: 'Rails', value: 'Rails' },
+      { name: 'Bowls', value: 'Bowls' },
+      { name: 'Pools', value: 'Pools' },
+      { name: 'Ramps', value: 'Ramps' },
+      { name: 'Slopes', value: 'Slopes' },
+      { name: 'Ledges', value: 'Ledges' },
+      { name: 'Stairs', value: 'Stairs' },
+    ]
   },
 
-  // Date Picker
-  bindDateChange: function (e) {
-    console.log('picker: date choosen', e.detail.value)
-    this.setData({
-      date: e.detail.value
-    })
+  //Checkboxes for Skate Type
+  checkboxChange: function (e) {
+    console.log('checkbox发生change事件，携带value值为：', e.detail.value)
   },
 
   //Choose Image Function
 
   takePhoto: function () {
     let that = this
+    wx.showLoading()
     wx.chooseImage({
       count: 5,
       sizeType: ['compressed'],
@@ -37,6 +46,7 @@ Page({
             that.setData({
               fileID: res.fileID
             });
+            that.showSuccessModal()
             console.log("cloud id to store", that.data.fileID)
           },
           fail: console.error
@@ -46,74 +56,72 @@ Page({
   },
 
 
-  // New Machine Submission
+  // New Skate Spot Submission
   bindSubmit: function (e) {
+    this.storeFormData(e)
     this.setData({
       loading: !this.data.loading
-    });
+    })
+  }, 
 
+  showSuccessModal: function() {
+    wx.hideLoading()
     wx.showToast({
-      title: 'Sending...',
-      icon: 'loading',
-      duration: 1500
-    });
+      title: 'Upload Success!',
+      icon: 'success'
+    })
+  },
+//       title: 'Creating...',
+//       icon: 'loading',
+//       duration: 1500
+//     });
 
 
+    // wx.showToast({
+    //   title: 'Creating...',
+    //   icon: 'loading',
+    //   duration: 1500
+    // });
 
+  storeFormData: function(e) {
     var name = e.detail.value.name;
-    // var image = e.detail.value.image;
     var photo = this.data.fileID;
-    console.log("store in photo variable", photo);
     var description = e.detail.value.description;
     var address = e.detail.value.address;
-    var socks = e.detail.value.socks;
-    var price = e.detail.value.price;
-    var availability = e.detail.value.availability
-
+    var style = e.detail.value.type;
     let userInfo = app.globalData.userInfo
     let userId = app.globalData.userId
-    console.log("userInfo", userInfo)
-    console.log(availability)
 
-    let machine = {
-      "name": name,
+
+    let skatespot = {
+      name: name,
       user_id: userId,
-      // "image": image,
-      "photo": photo,
-      "description": description,
-      "location": address,
-      "sock_count": socks,
-      "price": price,
-      "availability": availability
+      description: description,
+      location: address,
+      style: style
     }
+    this.postFormData(skatespot)
+  },
 
-    console.log("machine", machine)
-    // Get api data
+  postFormData: function(skatespot) {
     wx.request({
       url: `http://local:3000/api/v1/spots`,
       method: 'POST',
-      data: { machine },
+      data: { skatespot },
       success(res) {
-        console.log(res)
+        console.log('post successful!', res)
         // set data on main & show
         wx.reLaunch({
-          url: '/pages/main/main'
+          url: '/pages/show/show'
         });
       }
     });
-
   },
-
-  /**
-   * Page initial data
-   */
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-
-
   },
 
   /**

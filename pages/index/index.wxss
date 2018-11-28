@@ -10,7 +10,7 @@
   width: 50%;
   background-color: #5cc1b3;
   /* for where the slider starts and ends */ 
-  margin-left: -6vh;
+  margin-left: 0vh;
 }
 
 

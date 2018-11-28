@@ -5,20 +5,23 @@ var sliderWidth = 96;
 
 Page({
   data: {
-    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    skatespots: {},
+    skatespots: null,
     // tab of list and map 
     tabs: ["List", "Map"],
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
     // tab of types
+    tabs_types: ["Type", "Type", "Type"],
+    // activeIndextype: 1,
+    // sliderOffsettype: 0,
+    // sliderLeft: 0
     // map 
-    latitude: 31.229557,
-    longitude: 121.445293,
+    latitude: null,
+    longitude: null,
+    accuracy: null,
     markers: [{
       id: 1,
       latitude: 31.223790,
@@ -30,13 +33,26 @@ Page({
       longitude: 121.445293,
       iconPath: '/assets/location copy.png'
     }, {
-        latitude: 31.223790,
-        longitude: 121.445293,
+      latitude: 31.223790,
+      longitude: 121.445293,
       iconPath: '/assets/location copy.png'
     }]
   },
 
   onLoad: function (options) {
+    wx.request({
+      url: 'http://localhost:3000/api/v1/spots',
+      method: 'GET',
+      success(res) {
+        console.log("Data received", res)
+        const skatespots = res;
+        // Update local data
+        page.setData({
+          skatespots: skatespots
+        });
+        wx.hideToast();
+      }
+    });
 
     // Display toast when loading
     wx.showToast({
@@ -45,66 +61,46 @@ Page({
       duration: 3000
     });
 
-    // Update local data
-    this.setData(app.globalData)
-
-  // tab bar function 
-    var that = this;
-    wx.getSystemInfo({
+    let page = this
+    wx.getLocation({
+      type: 'wgs84', // **1
       success: function (res) {
-        that.setData({
-          sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
-          sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
-        });
-      }
-    });
-
-    // Save reference to page
-    const page = this;
-
-
-    // Get api data
-    wx.request({
-      url: 'http://localhost:3000/api/v1/spots',
-      method: 'GET',
-      success(res) {
-        console.log("je reçois les data de l'API res", res)
-        const skatespots = res.data.skatespots;
-        // Update local data
+        var latitude = res.latitude
+        var longitude = res.longitude
+        var accuracy = res.accuracy
+        console.log("location on load", res)
         page.setData({
-          skatespots: skatespots
-        });
-
-        wx.hideToast();
+          latitude: latitude,
+          longitude: longitude,
+          accuracy: accuracy
+        })
       }
-    });
-  },
+    })
 
+
+  },
 
   tabClick: function (e) {
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
-  }, 
+  },
+
+  //getCenterLocation: function (e) {
+  //let data = this
+  //wx.openLocation({
+  //latitude: data.data.latitude,
+  //longitude: data.data.longitude,
+  //scale: 28
+  //})
+  //},
 
 
-  // filter tags 
-//     function filterType(event) {
-//   const all = document.querySelectorAll('all');
-//   const skateparks = document.querySelectorAll('skateparks')
-//   const pyramids = document.querySelectorAll('pyramids')
-//   const ledges = document.querySelectorAll('ledges')
-//   const pyramids = document.querySelectorAll('pyramids')
-//  }
-//   function show_skateparks() {
-//     for (var i = 0; i < skateparks.length; ++i) {
-//       skateparks[i];
-//     }
-//   }
-//   document.addEventListener('click', filterType)
+     // Save reference to page
 
-
+    // Get api data
+    
 
   // links to the show page 
   showSkatespot: function (e) {
@@ -118,46 +114,13 @@ Page({
     });
   },
 
-// map
+
   onReady: function (e) {
+    // Use wx.createMapContext to acquire map context
     this.mapCtx = wx.createMapContext('myMap')
-  },
-  getCenterLocation: function () {
-    this.mapCtx.getCenterLocation({
-      success: function (res) {
-        console.log(res.longitude)
-        console.log(res.latitude)
-      }
-    })
   },
   moveToLocation: function () {
     this.mapCtx.moveToLocation()
   },
-  translateMarker: function () {
-    this.mapCtx.translateMarker({
-      markerId: 1,
-      autoRotate: true,
-      duration: 1000,
-      destination: {
-        latitude: 31.229557,
-        longitude: 121.445293,
-      },
-      animationEnd() {
-        console.log('animation end')
-      }
-    })
-  },
-  includePoints: function () {
-    this.mapCtx.includePoints({
-      padding: [10],
-      points: [{
-        latitude: 31.229557,
-        longitude: 121.445293,
-      }, {
-          latitude: 31.223790,
-          longitude: 121.445293,
-      }]
-    })
-  }
- 
+
 })
