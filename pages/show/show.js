@@ -3,6 +3,23 @@ const app = getApp()
 
 Page({
   
+  /* Share Function */
+  onShareAppMessage: function () {
+    return {
+      title: 'Skate City | Go Skate',
+      path: 'pages/show/show'
+    }
+  },
+
+  onShareAppMessage: function () {
+    console.log('share')
+    wx.showShareMenu({
+      withShareTicket: true
+    })
+  },
+
+
+
   /**
    * Page initial data
    */

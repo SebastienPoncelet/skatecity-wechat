@@ -38,7 +38,9 @@
 .logo {
   width: 90%;
   height: 20%;
-
+  animation-duration: 3s;
+  backface-visibility: visible !important;
+  animation-name: flipInX;
 }
 
 button {
@@ -49,6 +51,7 @@ button {
   border: 2px solid #ffffff;
 	color: #ffffff;
   background: none;
+  
 }
 
 .h1 {
@@ -66,3 +69,30 @@ button {
   opacity: 1;
   margin-bottom: 30px;
 }
+
+@keyframes flipInX {
+  from {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1;
+  }
+
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+  }
+
+  to {
+    transform: perspective(400px);
+  }
+}
+

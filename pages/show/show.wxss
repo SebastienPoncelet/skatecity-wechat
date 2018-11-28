@@ -70,19 +70,10 @@ padding-top:2vh;
 
 }
 
-.add {
-background-color:#5cc1b3;
-text-align:center;
-border-radius:50%;
-height:7vh;
-width:14vw;
-font-size:7vw;
+.camera {
 position:absolute;
-bottom:65vh;
+bottom:60vh;
 right:2vh;
-color:#ffffff;
-font-weight:bold;
-
 }
 
 .icons {
