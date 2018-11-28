@@ -8,13 +8,17 @@
   <input value="{{ name }}" class="desc" name="name" placeholder="Name The Spot" />
   <input value='{{ description }}' class="desc" name="description" placeholder="Enter a Description" />
   <input value='{{ address }}' class="desc" name="address" placeholder="Enter The Address" />
-  <input value='{{ type }}' class="desc" name="type" placeholder="Type of Skating" />
-
-  <picker mode="date" value="{{availability}}" name="availability" start="2018-11-01" end="2019-0-01" bindchange="bindDateChange">
+  
+<view class="desc">Type of Skating</view>
+<view class="checkboxes">
+  <checkbox-group bindchange="checkboxChange">
     <view class="desc">
-      Availability: {{date}}
+      <label class="checkbox" wx:for="{{styles}}" wx:for-item="style">
+        <checkbox value="{{style.name}}" checked="{{style.checked}}"/>{{style.value}}
+      </label>
     </view>
-  </picker>
+  </checkbox-group>
+  </view>
   <button class="btn-upload" bindtap="takePhoto">Upload Some Photos</button>
   <button class="btn-submit" formType="submit">Save The Spot</button>
 </form>
