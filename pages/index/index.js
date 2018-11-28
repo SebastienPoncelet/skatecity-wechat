@@ -76,14 +76,14 @@ Page({
     });
   }, 
 
-  getCenterLocation: function (e) {
-    let data = this
-    wx.openLocation({
-      latitude: data.data.latitude,
-      longitude: data.data.longitude,
-      scale: 28
-    })
-  },
+  //getCenterLocation: function (e) {
+    //let data = this
+    //wx.openLocation({
+      //latitude: data.data.latitude,
+      //longitude: data.data.longitude,
+      //scale: 28
+    //})
+  //},
 
 
 
@@ -99,9 +99,13 @@ Page({
     });
   },
 
-  onReady: function (e) {
-    
-  },
-
- 
+  
+    onReady: function (e) {
+      // Use wx.createMapContext to acquire map context
+      this.mapCtx = wx.createMapContext('myMap')
+    },
+    moveToLocation: function () {
+      this.mapCtx.moveToLocation()
+    },
+  
 })
