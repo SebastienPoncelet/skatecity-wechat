@@ -66,8 +66,8 @@ Page({
     console.log("store in photo variable", photo);
     var description = e.detail.value.description;
     var address = e.detail.value.address;
-    var socks = e.detail.value.socks;
-    var price = e.detail.value.price;
+    var rating = e.detail.value.rating;
+    var typee = e.detail.value.type;
     var availability = e.detail.value.availability
 
     let userInfo = app.globalData.userInfo
@@ -75,38 +75,34 @@ Page({
     console.log("userInfo", userInfo)
     console.log(availability)
 
-    let machine = {
+    let skatespot = {
       "name": name,
       user_id: userId,
       // "image": image,
       "photo": photo,
       "description": description,
       "location": address,
-      "sock_count": socks,
-      "price": price,
+      "rating": rating,
+      "type": type,
       "availability": availability
     }
 
-    console.log("machine", machine)
+    console.log("skatespot", skatespot)
     // Get api data
     wx.request({
       url: `http://local:3000/api/v1/spots`,
       method: 'POST',
-      data: { machine },
+      data: { skatespot },
       success(res) {
         console.log(res)
         // set data on main & show
         wx.reLaunch({
-          url: '/pages/main/main'
+          url: '/pages/show/show'
         });
       }
     });
 
   },
-
-  /**
-   * Page initial data
-   */
 
   /**
    * Lifecycle function--Called when page load

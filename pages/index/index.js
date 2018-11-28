@@ -3,6 +3,8 @@
 const app = getApp()
 var sliderWidth = 96;
 
+var sliderWidth = 100;
+
 Page({
   data: {
     motto: 'Hello World',

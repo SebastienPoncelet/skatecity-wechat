@@ -25,6 +25,8 @@ width: 80%;
   padding: 2px;
   border-bottom: 4px solid rgb(255,255,255);
   padding:10px;
+  animation-duration: 3s;
+  animation-name: zoomInDown;
 }
 
 .btn-upload {
@@ -38,6 +40,8 @@ padding: 5px;
 margin: 16px;
 opacity: 1;
 border: 0px solid rgb(255,255,255);
+animation-duration: 4s;
+animation-name: slideInLeft;
 }
 
 .btn-submit {
@@ -50,6 +54,8 @@ padding: 5px;
 margin: 15px;
 opacity: 1;
 border: 0px solid rgb(255,255,255);
+animation-duration: 4s;
+  animation-name: slideInRight;
 }
 
 .btn-submit:hover {
@@ -70,7 +76,6 @@ border: 0px solid rgb(255,255,255);
 }
 
 .input-placeholder{
-  animation: animateleft 0.9s;
   color:#ffffff;
 }
 
@@ -84,6 +89,8 @@ border: 0px solid rgb(255,255,255);
   border-bottom: 1px solid #F0F0F0;
   width: 80%;
   margin: 20px;
+  animation-duration: 4s;
+  animation-name: fadeIn;
   
 }
 
@@ -96,3 +103,53 @@ border: 0px solid rgb(255,255,255);
   width: 80%;
   margin: 20px;
 }
+
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes zoomInDown {
+  from {
+    opacity: 0;
+    transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0);
+    animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0);
+    animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  }
+}
+

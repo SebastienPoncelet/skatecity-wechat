@@ -7,9 +7,8 @@
 <form bindsubmit="bindSubmit" bindreset="formReset">
   <input value="{{ name }}" class="desc" name="name" placeholder="Name The Spot" />
   <input value='{{ description }}' class="desc" name="description" placeholder="Enter a Description" />
-  <input value='{{ address }}' class="desc" name="socks" placeholder="Enter The Address" />
-  <input value='{{ ratings }}' class="desc" name="address" placeholder="Now Rate It!" />
-  <input value='{{ type }}' class="desc" name="price" placeholder="Type of Skating" />
+  <input value='{{ address }}' class="desc" name="address" placeholder="Enter The Address" />
+  <input value='{{ type }}' class="desc" name="type" placeholder="Type of Skating" />
 
   <picker mode="date" value="{{availability}}" name="availability" start="2018-11-01" end="2019-0-01" bindchange="bindDateChange">
     <view class="desc">
