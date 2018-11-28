@@ -9,7 +9,7 @@
   <input value='{{ description }}' class="desc" name="description" placeholder="Enter a Description" />
   <input value='{{ address }}' class="desc" name="address" placeholder="Enter The Address" />
   
-<view class="desc">Type of Skating</view>
+<view class="desc">Check Skate Style Below</view>
 <view class="checkboxes">
   <checkbox-group bindchange="checkboxChange">
     <view class="desc">
