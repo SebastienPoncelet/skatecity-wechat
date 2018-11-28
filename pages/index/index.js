@@ -3,13 +3,11 @@
 const app = getApp()
 var sliderWidth = 96;
 
-var sliderWidth = 100;
-
 Page({
   data: {
     userInfo: {},
     hasUserInfo: false,
-    skatespots: {},
+    skatespots: null,
     // tab of list and map 
     tabs: ["List", "Map"],
     activeIndex: 0,
@@ -35,13 +33,26 @@ Page({
       longitude: 121.445293,
       iconPath: '/assets/location copy.png'
     }, {
-        latitude: 31.223790,
-        longitude: 121.445293,
+      latitude: 31.223790,
+      longitude: 121.445293,
       iconPath: '/assets/location copy.png'
     }]
   },
 
   onLoad: function (options) {
+    wx.request({
+      url: 'http://localhost:3000/api/v1/spots',
+      method: 'GET',
+      success(res) {
+        console.log("Data received", res)
+        const skatespots = res;
+        // Update local data
+        page.setData({
+          skatespots: skatespots
+        });
+        wx.hideToast();
+      }
+    });
 
     // Display toast when loading
     wx.showToast({
@@ -57,16 +68,16 @@ Page({
         var latitude = res.latitude
         var longitude = res.longitude
         var accuracy = res.accuracy
-        console.log("location on load",res)
-        page.setData({ 
-          latitude:latitude, 
-          longitude:longitude, 
-          accuracy:accuracy
+        console.log("location on load", res)
+        page.setData({
+          latitude: latitude,
+          longitude: longitude,
+          accuracy: accuracy
         })
       }
     })
 
-    
+
   },
 
   tabClick: function (e) {
@@ -74,18 +85,22 @@ Page({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
-  }, 
+  },
 
   //getCenterLocation: function (e) {
-    //let data = this
-    //wx.openLocation({
-      //latitude: data.data.latitude,
-      //longitude: data.data.longitude,
-      //scale: 28
-    //})
+  //let data = this
+  //wx.openLocation({
+  //latitude: data.data.latitude,
+  //longitude: data.data.longitude,
+  //scale: 28
+  //})
   //},
 
 
+     // Save reference to page
+
+    // Get api data
+    
 
   // links to the show page 
   showSkatespot: function (e) {
@@ -99,13 +114,13 @@ Page({
     });
   },
 
-  
-    onReady: function (e) {
-      // Use wx.createMapContext to acquire map context
-      this.mapCtx = wx.createMapContext('myMap')
-    },
-    moveToLocation: function () {
-      this.mapCtx.moveToLocation()
-    },
-  
+
+  onReady: function (e) {
+    // Use wx.createMapContext to acquire map context
+    this.mapCtx = wx.createMapContext('myMap')
+  },
+  moveToLocation: function () {
+    this.mapCtx.moveToLocation()
+  },
+
 })

@@ -4,6 +4,7 @@
       </view>
   <!---add in url to make dynamic: {{photo}} -->
 
+
  <!------ Upload your own photo -----------> 
   <view class="add">+</view>
 
@@ -19,8 +20,9 @@
         <view class="name">
           <text>{{skatespot.name}}Skatebowl near Pudong</text>
         </view>
-        <view class="type">
-          <text>{{skatespot.type}}Streetskating</text>
+        <view class="types">
+          <text class="type">{{skatespot.type}}Bowl</text>
+       <text class="type">{{skatespot.type}}Skatepark</text>
         </view>
         <view class="description">
           <text>{{skatespot.description}}The ground here is really smooth and not that big crowds. Also loads of other skatespots near by to check out so definitely recommend.</text>

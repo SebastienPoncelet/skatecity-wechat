@@ -42,18 +42,31 @@
   font-weight:bold;
 }
 
+
+.types {
+  margin:2vh 0 2vh -1vh;
+}
+
 .type {
-font-size:5vw;
+font-size:4vw;
 margin-top:1.5vh;
-color:#5cc1b3;
+color:white;
 border-bottom:1px solid #E8E8E8;
 padding-bottom:12px;
+background-color:#5cc1b3;
+padding:1vh;
+border-radius:9px;
+margin:1vh;
+font-weight:bold;
 }
 
 .description {
   font-size: 4.5vw;
   margin-top:1.5vh;
  color: 	#787878;
+ border-top:1px solid #E8E8E8;
+padding-top:2vh;
+
 
 }
 

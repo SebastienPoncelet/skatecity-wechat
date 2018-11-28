@@ -34,31 +34,6 @@ App({
     })
   },
   globalData: {
-    skatespots:[
-      {
-        name: "40ft Stairs",
-        description: "100ft high",
-        type: "Street",
-        location: "Jing An Temple",
-        rating: "1",
-        id: 1
-      },
-      {
-        name: "Skatebowl",
-        description: "This is the best skatebowl, so smooth",
-        type: "Skatebowl",
-        location: "Xuhui District",
-        rating: "5",
-        id: 2
-      },
-      {
-        name: "Marble smooth ledges",
-        description: "20ft long ledge, but its near a crowd of people so best for weekends",
-        type: "Ledge",
-        location: "Zhongshan Park",
-        rating: "11",
-        id: 3
-      },
-    ]
+   host : "http://localhost:3000/api/v1/"
   }
 })
