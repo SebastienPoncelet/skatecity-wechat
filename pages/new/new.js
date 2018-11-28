@@ -46,14 +46,14 @@ Page({
   },
 
 
-  // New Machine Submission
+  // New Skate Spot Submission
   bindSubmit: function (e) {
     this.setData({
       loading: !this.data.loading
     });
 
     wx.showToast({
-      title: 'Sending...',
+      title: 'Creating...',
       icon: 'loading',
       duration: 1500
     });
@@ -66,14 +66,12 @@ Page({
     console.log("store in photo variable", photo);
     var description = e.detail.value.description;
     var address = e.detail.value.address;
-    var rating = e.detail.value.rating;
-    var typee = e.detail.value.type;
-    var availability = e.detail.value.availability
+    var type = e.detail.value.type;
 
     let userInfo = app.globalData.userInfo
     let userId = app.globalData.userId
     console.log("userInfo", userInfo)
-    console.log(availability)
+
 
     let skatespot = {
       "name": name,
@@ -82,9 +80,7 @@ Page({
       "photo": photo,
       "description": description,
       "location": address,
-      "rating": rating,
       "type": type,
-      "availability": availability
     }
 
     console.log("skatespot", skatespot)
