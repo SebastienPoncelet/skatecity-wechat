@@ -34,6 +34,6 @@ App({
     })
   },
   globalData: {
-   host : "http://localhost:3000/api/v1/"
+    host: "http://skate_city.wogengapp.cn/api/v1/spots"
   }
 })

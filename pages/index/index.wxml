@@ -32,11 +32,11 @@
 
     <!----------List of ALL cards in List tab unfiltered------------------->
   <view class="cards">
-    <block wx:for="{{skatespots}}" wx:key=index" wx:for-item="skatespot">
+    <block wx:for="{{skatespots}}" wx:key="index" wx:for-item="skatespot">
       <view class="card">
         <view class="card-body" bindtap='showSkatespot' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/168335/pexels-photo-168335.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');">
             <view class="card-description">
-                <text class="name">{{skatespots.name}}</text>
+                <text class="name">{{skatespot.name}}</text>
             </view>
           </view>
             <view class="card-footer">
@@ -49,7 +49,6 @@
     </block>
   </view>
 
-  <view><text>{{spot.name}}</text></view>
   
  <!--------End of list/filter tab ----------------->
         </view>

@@ -9,15 +9,11 @@ Page({
     hasUserInfo: false,
     skatespots: null,
     // tab of list and map 
-    tabs: ["List", "Map"],
+    tabs: ["Skate Spots", "Map"],
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
-    // tab of types
-    tabs_types: ["Type", "Type", "Type"],
-    // activeIndextype: 1,
-    // sliderOffsettype: 0,
-    // sliderLeft: 0
+    
     // map 
     latitude: null,
     longitude: null,
@@ -41,17 +37,19 @@ Page({
 
   onLoad: function (options) {
     wx.request({
-      url: 'http://localhost:3000/api/v1/spots',
+      url: 'http://skate_city.wogengapp.cn/api/v1/spots',
       method: 'GET',
       success(res) {
         console.log("Data received", res)
-        const skatespots = res;
+        const skatespots = res.data.spots;
         // Update local data
         page.setData({
           skatespots: skatespots
         });
         wx.hideToast();
+  
       }
+
     });
 
     // Display toast when loading
@@ -110,7 +108,7 @@ Page({
     console.log('data transfer to the show page', data)
 
     wx.navigateTo({
-      url: `../show/show?id=${data}&name=${object.name}&type=${object.type}&description=${object.description}`
+      url: `../show/show?id=${data}`
     });
   },
 
