@@ -2,6 +2,8 @@
 //获取应用实例
 const app = getApp()
 
+var sliderWidth = 100;
+
 Page({
   data: {
     motto: 'Hello World',
