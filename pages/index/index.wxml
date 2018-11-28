@@ -1,17 +1,5 @@
-<!-- <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
-</view>
- -->        
-  <!-----------------LIST AND MAP TABBAR---------->
+  
+<!-----------------LIST AND MAP TABBAR---------->
 <view class="weui-tab">
     <view class="weui-navbar">
         <block wx:for="{{tabs}}" wx:key="*this">
@@ -19,83 +7,98 @@
                 <view class="weui-navbar__title">{{item}}</view>
             </view>
         </block>
-        <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+    <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
     </view>
-    <!-------------List---------->
-    <view class="weui-tab__panel">
-    <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
 
-    <!-----------Scrolling left and right Filters--------->
-      <view class="filters">
-        <view class="selected-type">Type</view>
-        <view class="type">Type</view>
-        <view class="type">Type</view>
-      </view>
+<!-------------LIST TAB---------->
+  <view class="weui-tab__panel">
+  <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
 
-    <!--------Popular--------->
-     <!-- <text class="cards-text">Popular</text>
-     <view class="popular-cards">
-    <view class="popular-card" bindtap='showMachine' data-id="{{skatespot.id}}" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300/?random');">
-        </view>
-        <view class="popular-card" bindtap='showMachine' data-id="{{skatespot.id}}" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300/?random');">
-        </view>
-      <view class="popular-card" bindtap='showMachine' data-id="{{skatespot.id}}" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/200/300/?random');">
-        </view>
-        </view> -->
-
-    <!-----------Cards--------->
-      <view class="cards">
-        <!-- <text class="cards-text">All</text> -->
-        <block wx:for="{{skatespots}}" wx:for-item="skatespot">
-          <view class="card">
-            <view class="card-body" bindtap='showSkatespot' data-id="{{skatespot.id}}" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/168335/pexels-photo-168335.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');">
-                <view class="card-description">
-                    <text class="name">{{skatespot.name}}</text>
-                </view>
+<!-----------Filter types tabbar--------->
+  <view class="weui-tab-type">
+    <view class="weui-navbar-type">
+        <block wx:for="{{tabs_types}}" wx:key="*this">
+            <view id="{{index}}" class="weui-navbar__item-type {{activeIndex-type == index-type ? 'weui-bar__item_on-type' : ''}}" bindtap="tabClick">
+                <view class="weui-navbar__title-type">{{item}}</view>
             </view>
-                <view class="card-footer">
-                  <text class='rating'>{{skatespot.rating}}</text>
-                </view>
-          </view>
-      
         </block>
+        <view class="weui-navbar__slider-type" style="left: {{sliderLeft-type}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+    </view>
+    <view class="weui-tab__panel-type">
+
+  <!----Type 1 stuff goes in here----------------->
+  <view class="weui-tab__content-type" hidden="{{activeIndex != 0}}">
+
+<!-----------Cards filtered by type--------->
+  <!-- <view class="cards">
+    <block wx:for="{{skatespots}}" wx:for-item="skatespot">
+      <view class="card">
+        <view class="card-body" bindtap='showSkatespot' data-object="{{skatespot}}" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/168335/pexels-photo-168335.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');">
+            <view class="card-description">
+                <text class="name">{{skatespot.name}}</text>
+            </view>
+          </view>
+            <view class="card-footer">
+              <text class='rating'>{{skatespot.rating}}</text>
+            </view>
+        </view>
+    </block>
+  </view> -->
+<!--------------end of Type 1 stuff---------------->
+</view>
+
+  <!----Type 2 stuff goes in here----------------->
+    <view class="weui-tab__content-type" hidden="{{activeIndex != 1}}">2 stuff goes here</view>
+    <!----Type 3 stuff goes in here----------------->
+    <view class="weui-tab__content-type" hidden="{{activeIndex != 2}}">3 stuff goes here</view>
+    
+    <!----------List of ALL cards in List tab unfiltered------------------->
+  <view class="cards">
+    <block wx:for="{{skatespots}}" wx:for-item="skatespot">
+      <view class="card">
+        <view class="card-body" bindtap='showSkatespot' data-object="{{skatespot}}" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/168335/pexels-photo-168335.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');">
+            <view class="card-description">
+                <text class="name">{{skatespot.name}}</text>
+            </view>
+          </view>
+            <view class="card-footer">
+              <text class='rating'>{{skatespot.rating}}</text>
+              <image class='icon' src="/assets/heart.png"></image>
+              <text class='location'>{{skatespot.location}}</text>
+              
+            </view>
+        </view>
+    </block>
+  </view>
+  
+ <!--------End of list/filter tab ----------------->
+        </view>
       </view>
     </view>
   </view>
 </view>
 
-            <!----------------Map---------->
+<!----------------Map tab---------->
   <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
-
-      <view class="page-body">
-      <view class="page-section page-section-gap">
-        <map
-          id="myMap"
-          style="width: 100%; height: 300px;"
-          latitude="{{latitude}}"
-          longitude="{{longitude}}"
-          markers="{{markers}}"
-          covers="{{covers}}"
-          show-location
-        ></map>
-      </view>
-      <view class="btn-area">
-        <button bindtap="getCenterLocation" class="page-body-button" type="primary">获取位置</button>
-        <button bindtap="moveToLocation" class="page-body-button" type="primary">移动位置</button>
-        <button bindtap="translateMarker" class="page-body-button" type="primary">移动标注</button>
-        <button bindtap="includePoints" class="page-body-button" type="primary">缩放视野展示所有经纬度</button>
-      </view>
+    <view class="page-body">
+    <view class="page-section page-section-gap">
+      <map
+        id="myMap"
+        style="width: 100%; height: 300px;"
+        latitude="{{latitude}}"
+        longitude="{{longitude}}"
+        markers="{{markers}}"
+        covers="{{covers}}"
+        show-location
+      ></map>
     </view>
-
-
-
-
-
-
-
-
-
-
-
-      </view>
+    <view class="btn-area">
+      <button bindtap="getCenterLocation" class="page-body-button" type="primary">获取位置</button>
+      <button bindtap="moveToLocation" class="page-body-button" type="primary">移动位置</button>
+      <button bindtap="translateMarker" class="page-body-button" type="primary">移动标注</button>
+      <button bindtap="includePoints" class="page-body-button" type="primary">缩放视野展示所有经纬度</button>
+    </view>
+    <!-----end of map tab---->
+  </view>
+ </view>
       

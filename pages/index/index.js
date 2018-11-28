@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
+var sliderWidth = 96;
 
 Page({
   data: {
@@ -9,10 +10,17 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     skatespots: {},
+    // tab of list and map 
     tabs: ["List", "Map"],
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
+    // tab of types
+    tabs_types: ["Type", "Type", "Type"],
+    // activeIndextype: 1,
+    // sliderOffsettype: 0,
+    // sliderLeft: 0
+    // map 
     latitude: 31.229557,
     longitude: 121.445293,
     markers: [{
@@ -44,6 +52,7 @@ Page({
     // Update local data
     this.setData(app.globalData)
 
+  // tab bar function 
     var that = this;
     wx.getSystemInfo({
       success: function (res) {
@@ -53,18 +62,27 @@ Page({
         });
       }
     });
-
   },
-
   tabClick: function (e) {
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
-
   }, 
 
-/**MAP  */
+  // links to the show page 
+  showSkatespot: function (e) {
+    console.log(1, e)
+    const data = e.currentTarget.dataset.id;
+    const object = e.currentTarget.dataset.object
+    console.log('data transfer to the show page', data)
+
+    wx.navigateTo({
+      url: `../show/show?id=${data}&name=${object.name}&type=${object.type}&description=${object.description}`
+    });
+  },
+
+// map
   onReady: function (e) {
     this.mapCtx = wx.createMapContext('myMap')
   },
