@@ -55,6 +55,7 @@ Page({
     });
   },
 
+
   // New Skate Spot Submission
   bindSubmit: function (e) {
     this.storeFormData(e)
@@ -70,6 +71,11 @@ Page({
       icon: 'success'
     })
   },
+//       title: 'Creating...',
+//       icon: 'loading',
+//       duration: 1500
+//     });
+
 
     // wx.showToast({
     //   title: 'Creating...',
@@ -85,6 +91,7 @@ Page({
     var style = e.detail.value.type;
     let userInfo = app.globalData.userInfo
     let userId = app.globalData.userId
+
 
     let skatespot = {
       name: name,

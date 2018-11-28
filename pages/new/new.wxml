@@ -19,6 +19,7 @@
     </view>
   </checkbox-group>
   </view>
+
   <button class="btn-upload" bindtap="takePhoto">Upload Some Photos</button>
   <button class="btn-submit" formType="submit">Save The Spot</button>
 </form>

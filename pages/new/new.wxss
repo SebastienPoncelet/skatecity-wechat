@@ -29,6 +29,35 @@ width: 80%;
   animation-name: zoomInDown;
 }
 
+ .form-fields {
+  margin:15px 8px;
+  animation: animateleft 0.9s;
+}
+
+.input .value {
+  font-weight:700;
+  font-size:24px;
+}
+
+.input-placeholder{
+  color:#ffffff;
+}
+
+
+.desc {
+  /* border: 2px solid rgb(240,240,240); */
+  
+  padding: 5px;
+  font-size: 15px;
+  color: rgb(255,255,255);
+  border-bottom: 1px solid #F0F0F0;
+  width: 80%;
+  margin: 40px 20px;
+  animation-duration: 4s;
+  animation-name: fadeIn;
+  
+}
+
 .btn-upload {
 margin-bottom:8px;
 color:white;
@@ -64,9 +93,9 @@ animation-duration: 5s;
 .btn-upload:hover {
   opacity: 1;
 }
- .form-fields {
+
+.form-fields {
   margin:15px 8px;
-  animation: animateleft 0.9s;
 }
 
 .input .value {
@@ -91,16 +120,6 @@ animation-duration: 5s;
   animation-duration: 4s;
   animation-name: fadeIn;
 
-}
-
-.availability {
-  margin-bottom:15px;
-  padding: 5px;
-  font-size: 15px;
-  color: #ffffff;
-  border-bottom: 2px solid #F0F0F0;
-  width: 80%;
-  margin: 20px;
 }
 
 
