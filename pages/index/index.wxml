@@ -14,49 +14,27 @@
   <view class="weui-tab__panel">
   <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
 
-<!-----------Filter types tabbar--------->
-  <view class="weui-tab-type">
-    <view class="weui-navbar-type">
-        <block wx:for="{{tabs_types}}" wx:key="*this">
-            <view id="{{index}}" class="weui-navbar__item-type {{activeIndex-type == index-type ? 'weui-bar__item_on-type' : ''}}" bindtap="tabClick">
-                <view class="weui-navbar__title-type">{{item}}</view>
-            </view>
-        </block>
-        <view class="weui-navbar__slider-type" style="left: {{sliderLeft-type}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
-    </view>
-    <view class="weui-tab__panel-type">
 
-  <!----Type 1 stuff goes in here----------------->
-  <view class="weui-tab__content-type" hidden="{{activeIndex != 0}}">
+<!-------------FILTER Tags---------->
+  <view class="filters">
+    <view class="type" bindtap="filterType">All</view>
+      <view class="type" bindtap="filterType">Skateparks</view>
+       <view class="type" bindtap="filterType">Pyramids</view>
+    <view class="type" bindtap="filterType">Ledges</view>
+      <view class="type" bindtap="filterType">Pools</view>
+      <view class="type" bindtap="filterType">Ramps</view>
+      <view class="type" bindtap="filterType">Slopes</view>
+       <view class="type" bindtap="filterType">Rails</view>
+       <view class="type" bindtap="filterType">Stairs</view>
+     <view class="type" bindtap="filterType">Bowls</view>
+  </view>
+ 
 
-<!-----------Cards filtered by type--------->
-  <!-- <view class="cards">
-    <block wx:for="{{skatespots}}" wx:for-item="skatespot">
-      <view class="card">
-        <view class="card-body" bindtap='showSkatespot' data-object="{{skatespot}}" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/168335/pexels-photo-168335.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');">
-            <view class="card-description">
-                <text class="name">{{skatespot.name}}</text>
-            </view>
-          </view>
-            <view class="card-footer">
-              <text class='rating'>{{skatespot.rating}}</text>
-            </view>
-        </view>
-    </block>
-  </view> -->
-<!--------------end of Type 1 stuff---------------->
-</view>
-
-  <!----Type 2 stuff goes in here----------------->
-    <view class="weui-tab__content-type" hidden="{{activeIndex != 1}}">2 stuff goes here</view>
-    <!----Type 3 stuff goes in here----------------->
-    <view class="weui-tab__content-type" hidden="{{activeIndex != 2}}">3 stuff goes here</view>
-    
     <!----------List of ALL cards in List tab unfiltered------------------->
   <view class="cards">
     <block wx:for="{{skatespots}}" wx:for-item="skatespot">
       <view class="card">
-        <view class="card-body" bindtap='showSkatespot' data-object="{{skatespot}}" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/168335/pexels-photo-168335.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');">
+        <view class="card-body" bindtap='showSkatespot' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/168335/pexels-photo-168335.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');">
             <view class="card-description">
                 <text class="name">{{skatespot.name}}</text>
             </view>
@@ -75,8 +53,6 @@
         </view>
       </view>
     </view>
-  </view>
-</view>
 
 <!----------------Map tab---------->
   <view class="weui-tab__content" hidden="{{activeIndex != 1}}">

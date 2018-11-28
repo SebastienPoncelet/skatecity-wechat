@@ -16,10 +16,6 @@ Page({
     sliderOffset: 0,
     sliderLeft: 0,
     // tab of types
-    tabs_types: ["Type", "Type", "Type"],
-    // activeIndextype: 1,
-    // sliderOffsettype: 0,
-    // sliderLeft: 0
     // map 
     latitude: 31.229557,
     longitude: 121.445293,
@@ -62,13 +58,53 @@ Page({
         });
       }
     });
+
+    // Save reference to page
+    const page = this;
+
+
+    // Get api data
+    wx.request({
+      url: 'http://localhost:3000/api/v1/spots',
+      method: 'GET',
+      success(res) {
+        console.log("je reçois les data de l'API res", res)
+        const skatespots = res.data.skatespots;
+        // Update local data
+        page.setData({
+          skatespots: skatespots
+        });
+
+        wx.hideToast();
+      }
+    });
   },
+
+
   tabClick: function (e) {
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
     });
   }, 
+
+
+  // filter tags 
+//     function filterType(event) {
+//   const all = document.querySelectorAll('all');
+//   const skateparks = document.querySelectorAll('skateparks')
+//   const pyramids = document.querySelectorAll('pyramids')
+//   const ledges = document.querySelectorAll('ledges')
+//   const pyramids = document.querySelectorAll('pyramids')
+//  }
+//   function show_skateparks() {
+//     for (var i = 0; i < skateparks.length; ++i) {
+//       skateparks[i];
+//     }
+//   }
+//   document.addEventListener('click', filterType)
+
+
 
   // links to the show page 
   showSkatespot: function (e) {
