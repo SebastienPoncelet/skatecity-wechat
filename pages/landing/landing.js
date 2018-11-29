@@ -9,8 +9,7 @@ Page({
     this.setData({
       userInfo: userInfo
     })
-
-    wx.navigateTo({
+  wx.switchTab({
       url: '/pages/index/index',
     })
   },
