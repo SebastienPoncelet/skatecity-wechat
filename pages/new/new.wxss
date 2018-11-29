@@ -55,8 +55,8 @@ width: 80%;
   margin: 40px 20px;
   animation-duration: 4s;
   animation-name: fadeIn;
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
   
 }
 
@@ -124,6 +124,25 @@ animation-duration: 5s;
 
 }
 
+.skatestyle-title {
+  animation-duration: 4s;
+  animation-name: fadeIn;
+  font-size:15px;
+}
+
+.skatestyle-checkbox {
+  display:flex;
+flex-wrap:wrap;
+font-size:15px;
+margin-top:2vh;
+width:67vw;
+
+}
+
+.checkbox {
+  padding:0.5vh;
+  margin:0.5vh;
+}
 
 @keyframes slideInRight {
   from {

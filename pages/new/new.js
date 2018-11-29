@@ -10,7 +10,6 @@ Page({
     filtered_styles:[],
     styles: [
       { name: 'Skateparks', value: 'Skateparks', checked: false},
-      { name: 'Pyramids', value: 'Pyramids', checked: false },
       { name: 'Rails', value: 'Rails', checked: false },
       { name: 'Bowls', value: 'Bowls', checked: false },
       { name: 'Pools', value: 'Pools', checked: false },

@@ -62,10 +62,14 @@ padding-top:2vh;
 
 }
 
+
 .camera {
 position:absolute;
 bottom:62vh;
-right:2vh;
+right:0vh;
+width:7vh;
+height:6vh;
+
 }
 
 .icons {

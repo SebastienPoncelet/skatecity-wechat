@@ -12,7 +12,9 @@
 
  <!------ Upload your own photo -----------> 
 
-  <view><image class="camera" src="/assets/camera-white.png"></image></view>
+  <view class="camera-size">
+  <image class="camera" src="/assets/camera-white.png"></image>
+  </view>
 
 <!------ icons -----------> 
     <view class="icons">

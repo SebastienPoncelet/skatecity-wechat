@@ -16,18 +16,36 @@
 
 
 <!-------------FILTER Tags---------->
-  <view class="filters">
-    <view class="type" bindtap="filterType">All</view>
-      <view class="type" bindtap="filterType">Skateparks</view>
-       <view class="type" bindtap="filterType">Pyramids</view>
-    <view class="type" bindtap="filterType">Ledges</view>
-      <view class="type" bindtap="filterType">Pools</view>
-      <view class="type" bindtap="filterType">Ramps</view>
+
+
+<view class='scroll-bar'>
+  <view class='scroll-left' bindtap='scrollLeft'>
+    <text class='iconfont icon-back'></text>
+  </view>
+  <scroll-view scroll-x class='scroll-list-box' scroll-into-view="in-{{scrollInto}}" scroll-with-animation>
+    <view class='scroll-list'>
+      <view class='scroll-item' id="in-{{index}}"> 
+      <view class="filters">
+     <view class="type">All</view>
+      <view class="type">Skateparks</view>
+       <view class="type" >Pyramids</view>
+    <view class="type" >Ledges</view>
+      <view class="type" >Pools</view>
+      <view class="type" >Ramps</view>
       <view class="type" bindtap="filterType">Slopes</view>
        <view class="type" bindtap="filterType">Rails</view>
        <view class="type" bindtap="filterType">Stairs</view>
      <view class="type" bindtap="filterType">Bowls</view>
   </view>
+ 
+  
+      </view>
+    </view>
+  </scroll-view>
+  <view class='scroll-right' bindtap='scrollRight'>
+    <text class='iconfont icon-right'></text>
+  </view>
+</view>
  
 
     <!----------List of ALL cards in List tab unfiltered------------------->
@@ -77,8 +95,7 @@
     </view>
 
 <!-------------image scroll of most popular  ----------------->
-   
-   
+  
 <view class="scrollingswiper">
   <view class='toprated'>Top rated</view>
 </view>
