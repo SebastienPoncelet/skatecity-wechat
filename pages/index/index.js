@@ -10,7 +10,7 @@ Page({
     autoplay: false,
     userInfo: {},
     hasUserInfo: false,
-    skatespots: null,
+    skatespots: {},
     // tab of list and map 
     tabs: ["Skate Spots", "Map"],
     activeIndex: 0,
@@ -48,6 +48,7 @@ Page({
       { id: '1' },
       { id: '2' }]
   },
+  
 
 
   scrollLeft: function (e) {
@@ -78,8 +79,12 @@ Page({
 
   
   onLoad: function (options) {
+
+    let page = this
+
     wx.request({
-      url: 'http://skate_city.wogengapp.cn/api/v1/spots/',
+      // url: 'http://skatecity.wogengapp.cn/api/v1/spots/',
+      url: 'http://localhost:3000/api/v1/spots/',
       method: 'GET',
       success(res) {
         console.log("Data received", res)
@@ -89,10 +94,13 @@ Page({
           skatespots: skatespots
         });
         wx.hideToast();
+        console.log("SKATESPOTS", page.skatespots)
   
       }
 
     });
+
+    
 
     // Display toast when loading
     wx.showToast({
@@ -101,7 +109,8 @@ Page({
       duration: 3000
     });
 
-    let page = this
+    
+
     wx.getLocation({
       type: 'wgs84', // **1
       success: function (res) {
@@ -146,6 +155,7 @@ Page({
   showSkatespot: function (e) {
     console.log(1, e)
     const data = e.currentTarget.dataset.id;
+    console.log('check data', data)
     const object = e.currentTarget.dataset.object
     console.log('data transfer to the show page', data)
 
