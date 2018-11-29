@@ -22,24 +22,7 @@ Page({
    * Page initial data
    */
   data: {
-    // skatespots: {},
-    latitude: 23.099994,
-    longitude: 113.324520,
-    markers: [{
-      id: 1,
-      latitude: 23.099994,
-      longitude: 113.324520,
-      name: 'T.I.T 创意园'
-    }],
-    covers: [{
-      latitude: 23.099994,
-      longitude: 113.344520,
-      iconPath: '/image/location.png'
-    }, {
-      latitude: 23.099994,
-      longitude: 113.304520,
-      iconPath: '/image/location.png'
-    }]
+    spot: { }
   },
 
 
@@ -47,7 +30,24 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    // console.log(options)
+    console.log("OPTIONS",options)
+    let page = this
+    wx.request({
+      // url: 'http://skatecity.wogengapp.cn/api/v1/show/',
+      url: 'http://localhost:3000/api/v1/spots/'+ options.id,
+      method: 'GET',
+      success(res) {
+        console.log("Data received", res)
+        const spot = res.data.spot;
+        // Update local data
+        page.setData({
+          spot: spot
+        });
+        wx.hideToast();
+
+      }
+
+    });
 
   },
 

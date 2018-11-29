@@ -106,26 +106,27 @@ Page({
     let userInfo = app.globalData.userInfo
     let userId = app.globalData.userId
 
-    let skatespot = {
+    let spot = {
       name: name,
       user_id: userId,
       description: description,
       location: address,
-      styles: this.data.filtered_styles
+      styles: this.data.filtered_styles.join(',')
     }
-    this.postFormData(skatespot)
+    this.postFormData(spot)
   },
 
-  postFormData: function(skatespot) {
+  postFormData: function(spot) {
     wx.request({
-      url: `http://skate_city.wogengapp.cn/api/v1/spots/`,
+      // url: `http://skatecity.wogengapp.cn/api/v1/spots/`,
+      url: 'http://localhost:3000/api/v1/spots/',
       method: 'POST',
-      data: { skatespot },
+      data: { spot },
       success(res) {
         console.log('post successful!', res)
         // set data on main & show
         wx.reLaunch({
-          url: '/pages/show/show'
+          url: `/pages/show/show?id=${res.data.spot.id}`
         });
       }
     });

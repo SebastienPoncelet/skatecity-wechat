@@ -72,7 +72,7 @@ padding-top:2vh;
 
 .camera {
 position:absolute;
-bottom:60vh;
+bottom:62vh;
 right:2vh;
 }
 

@@ -34,15 +34,15 @@
   <view class="cards">
     <block wx:for="{{skatespots}}" wx:key="index" wx:for-item="skatespot">
       <view class="card">
-        <view class="card-body" bindtap='showSkatespot' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/168335/pexels-photo-168335.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');">
+        <view class="card-body" data-id="{{skatespot.id}}" bindtap='showSkatespot' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/168335/pexels-photo-168335.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');">
             <view class="card-description">
                 <text class="name">{{skatespot.name}}</text>
             </view>
           </view>
             <view class="card-footer">
-              <text class='rating'>{{skatespots.rating}}</text>
+              <text class='rating'>{{skatespot.rating}}</text>
               <image class='icon' src="/assets/heart.png"></image>
-              <text class='location'>{{skatespots.location}}</text>
+              <text class='location'>{{skatespot.location}}</text>
               
             </view>
         </view>
