@@ -6,13 +6,15 @@
 
 
  <!------ Upload your own photo -----------> 
-  <view class="add">+</view>
+  <view class="camera"><image src="/assets/camera-white.png"></image></view>
 
 <!------ icons -----------> 
     <view class="icons">
-        <image class='icon' src="/assets/heart.png"></image>
+        <image class='icon' src="/assets/likes.png"></image>
         <image class='icon' src="/assets/location.png"></image>
-        <image class='icon' src="/assets/share.png"></image>
+        <view bindtap="onShareAppMessage">
+ <button class="share-btn" open-type="share" type="primary"><image class='icon' src="/assets/share.png"></image></button>
+</view>
     </view>
 
   <!------NAME AND DESCRIPTION -----------> 

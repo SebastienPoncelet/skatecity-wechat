@@ -118,7 +118,7 @@ Page({
 
   postFormData: function(skatespot) {
     wx.request({
-      url: `http://skate_city.wogengapp.cn/api/v1/spots`,
+      url: `http://skate_city.wogengapp.cn/api/v1/spots/`,
       method: 'POST',
       data: { skatespot },
       success(res) {

@@ -37,7 +37,7 @@ Page({
 
   onLoad: function (options) {
     wx.request({
-      url: 'http://skate_city.wogengapp.cn/api/v1/spots',
+      url: 'http://skate_city.wogengapp.cn/api/v1/spots/',
       method: 'GET',
       success(res) {
         console.log("Data received", res)
