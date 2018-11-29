@@ -17,16 +17,15 @@
 
 <!-------------FILTER Tags---------->
   <view class="filters">
-    <view class="type" bindtap="filterType">All</view>
+      <view class="type" bindtap="filterType">All</view>
       <view class="type" bindtap="filterType">Skateparks</view>
-       <view class="type" bindtap="filterType">Pyramids</view>
-    <view class="type" bindtap="filterType">Ledges</view>
+      <view class="type" bindtap="filterType">Ledges</view>
       <view class="type" bindtap="filterType">Pools</view>
       <view class="type" bindtap="filterType">Ramps</view>
       <view class="type" bindtap="filterType">Slopes</view>
-       <view class="type" bindtap="filterType">Rails</view>
-       <view class="type" bindtap="filterType">Stairs</view>
-     <view class="type" bindtap="filterType">Bowls</view>
+      <view class="type" bindtap="filterType">Rails</view>
+      <view class="type" bindtap="filterType">Stairs</view>
+      <view class="type" bindtap="filterType">Bowls</view>
   </view>
  
 
@@ -42,9 +41,8 @@
           </view>
             <view class="card-footer">
               <text class='rating'>{{skatespot.cached_votes_total}}</text>
-
-              <image class='icon' src="/assets/heart.png"></image>
-              <text class='location'>{{skatespot.location}}</text>
+              <image class='icon' src="/assets/likes.png"></image>
+              <text class='styles'>{{skatespot.tag_list}}</text>
               
             </view>
         </view>
@@ -80,7 +78,7 @@
    
    
 <view class="scrollingswiper">
-  <view class='toprated'>Top rated</view>
+  <view class='toprated'>Top Rated Spots</view>
 </view>
 <view class='scroll-bar'>
   <view class='scroll-left' bindtap='scrollLeft'>

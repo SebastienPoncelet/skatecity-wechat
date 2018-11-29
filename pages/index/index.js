@@ -12,7 +12,7 @@ Page({
     hasUserInfo: false,
     skatespots: {},
     // tab of list and map 
-    tabs: ["Skate Spots", "Map"],
+    tabs: ["Skate Spots", "Skate Map"],
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
@@ -88,7 +88,11 @@ Page({
       method: 'GET',
       success(res) {
         console.log("Data received", res)
-        const skatespots = res.data.spots;
+        let skatespots = res.data.spots;
+        skatespots = skatespots.map((item) => {
+          item.tag_list = item.tag_list.join(', ')
+          return item
+        });
         // Update local data
         page.setData({
           skatespots: skatespots
