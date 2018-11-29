@@ -98,15 +98,22 @@ box-shadow:1px 2px 5px rgba(0,0,0,0.15);
 .card {
   display: flex;
   flex-direction: column;
-  margin: 19px;
-  height: 33vh;
+  margin: 4.5vh 2vh;
+  height: 39vh;
   box-shadow: 1px 2px 7px rgba(0,0,0,0.10);
   border-radius: 6px;
   position: relative;
+  background-color:white;
+}
+
+.rating-tag {
+  display:flex;
+  flex-direction:column;
+  margin-right:1.5vh;
 }
 
 .card-body {
-  height: 39vh;
+  height: 58vh;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
@@ -132,24 +139,24 @@ box-shadow:1px 2px 5px rgba(0,0,0,0.15);
   color:#787878;
 }
 
-.card-description .name {
-  color:white;
-  position:absolute;
-  top:0vh;
+.rating-tag .name {
+  color:#484848;
   margin:2vh;
   font-size:14px;
   font-weight:bold;
+  margin: 0 1vh;
+  padding-top:2vh;
 }
 
 .card-footer .styles {
-margin:1vh;
+margin:0.5vh;
 color:#303030;
 width:34vw;
 text-align:center;
 font-size:14px;
-border-radius:9px;
 opacity:0.7;
-font-weight:bold;
+/* font-weight:bold; */
+padding-bottom:0.5vh;
 }
 
 .page-body {
@@ -159,13 +166,13 @@ margin-top:-9vh;
 
 .page-section-gap{
   box-sizing: border-box;
-  margin-top:15vh;
+  margin-top:14vh;
   border-top:2px solid white;
 }
 
 .page-body-button {
   margin-bottom: 30rpx;
-  width:74vw;
+  width:85vw;
   border-radius:22px;
   font-size:30rpx;
   background-color: #5cc1b3 !important; 
