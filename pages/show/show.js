@@ -2,6 +2,33 @@
 const app = getApp()
 
 Page({
+  /**
+   * Page initial data
+   */
+  data: {
+
+    bannerImages: ['https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'],
+    autoplay: false,
+    latitude: 23.099994,
+    longitude: 113.324520,
+    markers: [{
+      id: 1,
+      latitude: 23.099994,
+      longitude: 113.324520,
+      name: 'T.I.T 创意园'
+    }],
+    covers: [{
+      latitude: 23.099994,
+      longitude: 113.344520,
+      iconPath: '/image/location.png'
+    }, {
+      latitude: 23.099994,
+      longitude: 113.304520,
+      iconPath: '/image/location.png'
+    }]
+   
+  },
+
   
   /* Share Function */
   onShareAppMessage: function () {
@@ -16,13 +43,9 @@ Page({
     wx.showShareMenu({
       withShareTicket: true
     })
-  },
 
-  /**
-   * Page initial data
-   */
-  data: {
     spot: { }
+
   },
 
 
