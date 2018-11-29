@@ -1,4 +1,6 @@
 //app.js
+wx.cloud.init()
+const db = wx.cloud.database()
 
 App({
 
@@ -10,7 +12,8 @@ App({
       env: '736f-sock-m-72589c'
     })
 
-    const host = 'http://skate_city.wogengapp.cn/api/v1/spots/'
+    // const host = 'http://skatecity.wogengapp.cn/api/v1/spots/'
+    const host = 'http://localhost:3000/'
     console.log('processing to login')
     wx.login({
       success: (res) => {
@@ -35,8 +38,10 @@ App({
     })
   },
   globalData: {
-    host: "http://skate_city.wogengapp.cn/api/v1/spots"
-    // host: ""
+    // host: "http://skatecity.wogengapp.cn/api/v1/spots"
+    host: 'http://localhost:3000/',
+    userId: null,
+    userInfo: {}
   }
 
 })

@@ -6,7 +6,7 @@
 
 
  <!------ Upload your own photo -----------> 
-  <view class="camera"><image src="/assets/camera-white.png"></image></view>
+  <view><image class="camera" src="/assets/camera-white.png"></image></view>
 
 <!------ icons -----------> 
     <view class="icons">
@@ -20,14 +20,13 @@
   <!------NAME AND DESCRIPTION -----------> 
       <view class="name-description">
         <view class="name">
-          <text>{{skatespot.name}}Skatebowl near Pudong</text>
+          <text>{{spot.name}}</text>
         </view>
         <view class="types">
-          <text class="type">{{skatespot.type}}Bowl</text>
-       <text class="type">{{skatespot.type}}Skatepark</text>
+       <text class="type">{{spot.style}}</text>
         </view>
         <view class="description">
-          <text>{{skatespot.description}}The ground here is really smooth and not that big crowds. Also loads of other skatespots near by to check out so definitely recommend.</text>
+          <text>{{spot.description}}</text>
         </view>
       </view>
 
@@ -45,10 +44,8 @@
         ></map>
       </view>
       <view class="btn-area">
-        <button bindtap="getCenterLocation" class="page-body-button" type="primary">获取位置</button>
-        <button bindtap="moveToLocation" class="page-body-button" type="primary">移动位置</button>
-        <button bindtap="translateMarker" class="page-body-button" type="primary">移动标注</button>
-        <button bindtap="includePoints" class="page-body-button" type="primary">缩放视野展示所有经纬度</button>
+        <button bindtap="getCenterLocation" class="page-body-button" type="primary">Get center on the spots</button>
+        <button bindtap="moveToLocation" class="page-body-button" type="primary">Your Location</button>
       </view>
     </view>
 
