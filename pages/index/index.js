@@ -34,6 +34,7 @@ Page({
       iconPath: '/assets/location copy.png'
     }]
   },
+  
 
   onLoad: function (options) {
 
