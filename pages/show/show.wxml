@@ -25,6 +25,7 @@
         </view>
         <view class="types">
        <text class="type">{{spot.tag_list}}</text>
+
         </view>
         <view class="description">
           <text>{{spot.description}}</text>
