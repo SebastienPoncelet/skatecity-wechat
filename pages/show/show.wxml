@@ -17,7 +17,7 @@
 
 <!------ icons -----------> 
     <view class="icons">
-        <image class='icon' src="/assets/likes.png"></image>
+        <image bindtap="sendRating"  data-id="user_id" class='icon' src="/assets/likes.png"></image>
         <text class='rating'>{{spot.cached_votes_total}}</text>
         <image class='icon' src="/assets/location.png"></image>
         <view bindtap="onShareAppMessage">
