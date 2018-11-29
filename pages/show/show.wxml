@@ -1,12 +1,17 @@
 <view class="container">
-  <!------Image OF SKATESPOT-----------> 
-  <view class="image" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');">
-      </view>
-  <!---add in url to make dynamic: {{photo}} -->
+
+<!----------image slider----------------->
+<swiper class="image-size" indicator-dots="true" autoplay="false" indicator-active-color="#5cc1b3">
+    <block wx:for="{{bannerImages}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
 
 
  <!------ Upload your own photo -----------> 
-  <view class="camera"><image src="/assets/camera-white.png"></image></view>
+  <!-- <view class="camera"><image src="/assets/camera-white.png"></image></view> -->
 
 <!------ icons -----------> 
     <view class="icons">

@@ -2,27 +2,11 @@
 const app = getApp()
 
 Page({
-  
-  /* Share Function */
-  onShareAppMessage: function () {
-    return {
-      title: 'Skate City | Go Skate',
-      path: 'pages/show/show'
-    }
-  },
-
-  onShareAppMessage: function () {
-    console.log('share')
-    wx.showShareMenu({
-      withShareTicket: true
-    })
-  },
-
   /**
    * Page initial data
    */
   data: {
-    // skatespots: {},
+    bannerImages: ['https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'],
     latitude: 23.099994,
     longitude: 113.324520,
     markers: [{
@@ -40,6 +24,23 @@ Page({
       longitude: 113.304520,
       iconPath: '/image/location.png'
     }]
+   
+  },
+
+  
+  /* Share Function */
+  onShareAppMessage: function () {
+    return {
+      title: 'Skate City | Go Skate',
+      path: 'pages/show/show'
+    }
+  },
+
+  onShareAppMessage: function () {
+    console.log('share')
+    wx.showShareMenu({
+      withShareTicket: true
+    })
   },
 
 
