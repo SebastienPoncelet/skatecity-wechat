@@ -12,7 +12,10 @@ Page({
     hasUserInfo: false,
     skatespots: {},
     // tab of list and map 
+
+
     tabs: ["Skate Spots", "Skate Map"],
+
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,

@@ -6,7 +6,6 @@ Page({
    * Page initial data
    */
   data: {
-
     bannerImages: ['https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'],
     autoplay: false,
     latitude: 23.099994,
@@ -55,6 +54,7 @@ Page({
       });
 
   },
+
   /* Share Function */
   onShareAppMessage: function () {
     return {
@@ -99,6 +99,14 @@ Page({
     });
 
   },
+
+  mapScroll() {
+    wx.pageScrollTo({
+      scrollTop: 500,
+      duration: 300
+    })
+  },
+
 
   /**
    * Lifecycle function--Called when page is initially rendered
