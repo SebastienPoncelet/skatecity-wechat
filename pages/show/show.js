@@ -71,6 +71,14 @@ Page({
 
   },
 
+  mapScroll() {
+    wx.pageScrollTo({
+      scrollTop: 500,
+      duration: 300
+    })
+  },
+
+
   /**
    * Lifecycle function--Called when page is initially rendered
    */
