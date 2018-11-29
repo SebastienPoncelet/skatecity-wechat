@@ -4,7 +4,6 @@ const app = getApp()
 wx.cloud.init({ env: 'skate-city-0169ad' })
 const db = wx.cloud.database()
 
-
 Page({
   data: {
     filtered_styles:[],
@@ -43,7 +42,6 @@ Page({
   },
 
   //Choose Image Function
-
   takePhoto: function () {
     let that = this
     wx.showLoading()
@@ -84,7 +82,7 @@ Page({
   showSuccessModal: function() {
     wx.hideLoading()
     wx.showToast({
-      title: 'Upload Success!',
+      title: 'Upload Successful!',
       icon: 'success'
     })
   },
@@ -110,7 +108,7 @@ Page({
       user_id: userId,
       description: description,
       location: address,
-      styles: this.data.filtered_styles.join(',')
+      styles: this.data.filtered_styles.join(', ')
     }
     this.postFormData(spot)
   },

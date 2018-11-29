@@ -16,9 +16,10 @@
   <image class="camera" src="/assets/camera-white.png"></image>
   </view>
 
+
 <!------ icons -----------> 
     <view class="icons">
-        <image class='icon' src="/assets/likes.png"></image>
+        <image bindtap="sendRating"  data-id="user_id" class='icon' src="/assets/likes.png"></image>
         <text class='rating'>{{spot.cached_votes_total}}</text>
         <image class='icon' bindtap="mapScroll" src="/assets/location.png"></image>
         <view class="shareborder"bindtap="onShareAppMessage">
@@ -58,6 +59,27 @@
         <button bindtap="moveToLocation" class="page-body-button" type="primary">Your Location</button>
       </view>
     </view>
+
+
+<!----------near by spots swiper---------------->
+    <view class="scrollingswiper">
+  <view class='toprated'>Near by Spots</view>
+
+</view>
+<view class='scroll-bar'>
+  <view class='scroll-left' bindtap='scrollLeft'>
+    <text class='iconfont icon-back'></text>
+  </view>
+  <scroll-view scroll-x class='scroll-list-box' scroll-into-view="in-{{scrollInto}}" scroll-with-animation>
+    <view class='scroll-list'>
+      <view class='scroll-item' id="in-{{index}}" style='background-image:url(https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)' wx:for="{{scrollList}}"></view>
+    </view>
+  </scroll-view>
+  <view class='scroll-right' bindtap='scrollRight'>
+    <text class='iconfont icon-right'></text>
+  </view>
+</view>
+   
 
 <!-----container end---->
 </view>

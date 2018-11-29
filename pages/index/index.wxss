@@ -13,13 +13,15 @@
   margin-left: 0vh;
 }
 
+
 .weui-navbar__title {
   color:#484848;
-  font-size:16px;
+  font-size:15px;
   font-weight:bold;
 }
 
 .weui-tab__content {
+  background-color: white;
   margin-top:2.5vh;
 }
 
@@ -28,7 +30,7 @@
 }
 
 .weui-navbar__title-type {
-border:2px solid #5cc1b3;
+ border:2px solid #5cc1b3;
 color:#08605F;
 background-color:white;
 border-radius:20px;
@@ -57,9 +59,10 @@ margin:5vh;
 
 .card-footer .icon {
   width:8vw;
-height:4vh;
-margin-left:-20vh;
+  height:4vh;
+  margin-left:-20vh;
 }
+
 
 .filters {
   display:flex;
@@ -68,14 +71,14 @@ margin-left:-20vh;
 }
 
 .type {
-  background-color:white;
-  border-radius:8px;
-  padding:1vh;
-  margin:1.5vh;
-  font-size:15px;
-  /* border:1px solid #5cc1b3; */
-  color: #5cc1b3;
-  box-shadow: 0px 1px 7px rgba(0,0,0,0.1);
+background-color:white;
+border-radius:8px;
+padding:1vh;
+margin:1.5vh;
+font-size:14px;
+/* border:1px solid #5cc1b3; */
+color: #5cc1b3;
+box-shadow:1px 2px 5px rgba(0,0,0,0.15);
 }
 
 .all {
@@ -89,18 +92,17 @@ margin-left:-20vh;
 }
 
 .cards {
-  margin-top: 8vh;
+  margin-top: 3vh;
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  margin: 2vh;
-  height: 36vh;
-  box-shadow: 1px 2px 30px rgba(0,0,0,0.15);
+  margin: 19px;
+  height: 33vh;
+  box-shadow: 1px 2px 7px rgba(0,0,0,0.10);
   border-radius: 6px;
   position: relative;
-  margin-top:3.5vh;
 }
 
 .card-body {
@@ -115,7 +117,8 @@ margin-left:-20vh;
 
 .card-footer {
   background-color: white;
-  height: 10vh;
+  /* height: 10vh; */
+  padding: 10px 0;
   border-radius: 6px;
   display: flex;
   justify-content: space-between;
@@ -134,53 +137,56 @@ margin-left:-20vh;
   position:absolute;
   top:0vh;
   margin:2vh;
-  font-size:16px;
+  font-size:14px;
   font-weight:bold;
 }
 
-.card-footer .location {
-  margin:1vh;
-  /* background-color:rgba(0, 0, 0, 0.5); */
-  /* background-color:#435058; */
-  /* color:white; */
-  color: black;
-  width:34vw;
-  text-align:center;
-  font-size:15px;
-  border-radius:9px;
-  opacity:0.7;
-  font-weight:bold;
+.card-footer .styles {
+margin:1vh;
+color:#303030;
+width:34vw;
+text-align:center;
+font-size:14px;
+border-radius:9px;
+opacity:0.7;
+font-weight:bold;
 }
 
 .page-body {
   width:100vw;
-  margin-top:-9vh;
+margin-top:-9vh;
 }
 
 .page-section-gap{
   box-sizing: border-box;
-  margin-top:14.5vh;
+  margin-top:15vh;
   border-top:2px solid white;
 }
 
 .page-body-button {
   margin-bottom: 30rpx;
+  width:74vw;
+  border-radius:22px;
+  font-size:30rpx;
+  background-color: #5cc1b3 !important; 
+  margin-top:1vh;
+}
+
+.btn-area {
+  background-color: white;
+  padding:2vh;
 }
 
 .image-size {
   height:38vh;
   width:100vw;
-  background-size: cover !important;
+   background-size: cover !important;
   background-position: center;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   position: relative;
   margin-top:-14vh;
 }
 
-.scroll-background {
-  background-color: white;
-  height:26vh;
-}
 .scroll-bar {
   background: white;
   display: flex;
@@ -188,8 +194,9 @@ margin-left:-20vh;
 }
 
 .scroll-list-box {
-  height: 15vh;
+  height: 20vh;
   width: 100vw;
+  margin-left:1vh;
 }
 
 .scroll-list {
@@ -199,21 +206,19 @@ margin-left:-20vh;
 
 .scroll-item {
   display:inline-block;
-  width:323rpx;
-  height:187rpx;
+  width:347rpx;
+  height:227rpx;
   background-repeat:no-repeat;
   background-position:center;
-  background-size:321rpx;
+  background-size:333rpx;
   background-color:white;
-  border-radius:12px;
-  margin-left:2vh;
-  box-shadow: 1px 2px 6px rgba(0,0,0,0.15);
+  border:5px solid white;
+  border-radius:23px;
 }
 
 .toprated {
-  margin:4vh;
-  font-weight:bold;
-  font-size:15px;
-  padding-top:3vh;
-  padding-bottom:1vh;
+margin:4vh;
+font-weight:bold;
+font-size:15px;
+
 }

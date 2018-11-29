@@ -24,11 +24,81 @@ Page({
       latitude: 23.099994,
       longitude: 113.304520,
       iconPath: '/image/location.png'
-    }]
+    }],
    
+  scrollInto: 0,
+    scrollList: [
+      { id: '1' },
+      { id: '2' },
+      { id: '3' },
+      { id: '1' },
+      { id: '2' },
+      { id: '3' },
+      { id: '4' },
+      { id: '1' },
+      { id: '2' }]
   },
 
-  
+
+
+
+
+
+
+  scrollLeft: function (e) {
+    var into = this.data.scrollInto;
+    var length = this.data.scrollList.length;
+    if (into > 0) {
+      this.setData({
+        scrollInto: into - 1,
+      })
+    } else {
+      this.setData({
+        scrollInto: length - 3,
+      })
+    }
+  },
+  scrollRight: function (e) {
+    var into = this.data.scrollInto;
+    if (into < this.data.scrollList.length - 3) {
+      this.setData({
+        scrollInto: into + 1,
+      })
+    } else {
+      this.setData({
+        scrollInto: 0,
+      })
+    }
+  },
+
+
+  /* Send Rating */
+    sendRating: function () {
+      // console.log(this.data.spot);
+      const options = this.data.options
+      console.log("Options", options)
+      const spotId = options.id
+      const userId = app.globalData.userId
+      console.log("User ID", userId)
+      wx.request({
+        
+
+        // url: 'http://skatecity.wogengapp.cn/api/v1/show/',
+        url: 'http://localhost:3000/api/v1/spots/' + options.id,
+        method: 'PUT',
+        data: { user_id: userId, id: parseInt(spotId) },
+        // console.log("DATA", data),
+        success(res) {
+          console.log("Rating Sent", res)
+          wx.hideToast();
+
+        }
+        
+
+      });
+
+  },
+
   /* Share Function */
   onShareAppMessage: function () {
     return {
@@ -42,7 +112,9 @@ Page({
     wx.showShareMenu({
       withShareTicket: true
     })
+
     spot: { }
+
   },
 
 
@@ -52,6 +124,7 @@ Page({
   onLoad: function (options) {
     console.log("OPTIONS",options)
     let page = this
+    this.setData({options: options})
     wx.request({
       // url: 'http://skatecity.wogengapp.cn/api/v1/show/',
       url: 'http://localhost:3000/api/v1/spots/'+ options.id,
