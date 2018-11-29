@@ -4,7 +4,10 @@ const app = getApp()
 var sliderWidth = 96;
 
 Page({
+
   data: {
+    bannerImages: ['https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'],
+    autoplay: false,
     userInfo: {},
     hasUserInfo: false,
     skatespots: null,
@@ -32,9 +35,48 @@ Page({
       latitude: 31.223790,
       longitude: 121.445293,
       iconPath: '/assets/location copy.png'
-    }]
+    }],
+    scrollInto: 0,
+    scrollList: [
+      { id: '1' },
+      { id: '2' },
+      { id: '3' },
+      { id: '1' },
+      { id: '2' },
+      { id: '3' },
+      { id: '4' },
+      { id: '1' },
+      { id: '2' }]
   },
 
+
+  scrollLeft: function (e) {
+    var into = this.data.scrollInto;
+    var length = this.data.scrollList.length;
+    if (into > 0) {
+      this.setData({
+        scrollInto: into - 1,
+      })
+    } else {
+      this.setData({
+        scrollInto: length - 3,
+      })
+    }
+  },
+  scrollRight: function (e) {
+    var into = this.data.scrollInto;
+    if (into < this.data.scrollList.length - 3) {
+      this.setData({
+        scrollInto: into + 1,
+      })
+    } else {
+      this.setData({
+        scrollInto: 0,
+      })
+    }
+  },
+
+  
   onLoad: function (options) {
     wx.request({
       url: 'http://skate_city.wogengapp.cn/api/v1/spots/',

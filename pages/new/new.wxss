@@ -55,6 +55,8 @@ width: 80%;
   margin: 40px 20px;
   animation-duration: 4s;
   animation-name: fadeIn;
+  display: flex;
+  flex-wrap: wrap;
   
 }
 
