@@ -41,7 +41,8 @@
             </view>
           </view>
             <view class="card-footer">
-              <text class='rating'>{{skatespot.rating}}</text>
+              <text class='rating'>{{skatespot.cached_votes_total}}</text>
+
               <image class='icon' src="/assets/heart.png"></image>
               <text class='location'>{{skatespot.location}}</text>
               
