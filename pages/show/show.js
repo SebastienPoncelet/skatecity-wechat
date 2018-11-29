@@ -6,6 +6,7 @@ Page({
    * Page initial data
    */
   data: {
+
     bannerImages: ['https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'],
     autoplay: false,
     latitude: 23.099994,
@@ -42,6 +43,9 @@ Page({
     wx.showShareMenu({
       withShareTicket: true
     })
+
+    spot: { }
+
   },
 
 
@@ -49,7 +53,24 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
-    // console.log(options)
+    console.log("OPTIONS",options)
+    let page = this
+    wx.request({
+      // url: 'http://skatecity.wogengapp.cn/api/v1/show/',
+      url: 'http://localhost:3000/api/v1/spots/'+ options.id,
+      method: 'GET',
+      success(res) {
+        console.log("Data received", res)
+        const spot = res.data.spot;
+        // Update local data
+        page.setData({
+          spot: spot
+        });
+        wx.hideToast();
+
+      }
+
+    });
 
   },
 
