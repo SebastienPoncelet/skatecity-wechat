@@ -16,9 +16,10 @@
   <image class="camera" src="/assets/camera-white.png"></image>
   </view>
 
+
 <!------ icons -----------> 
     <view class="icons">
-        <image class='icon' src="/assets/likes.png"></image>
+        <image bindtap="sendRating"  data-id="user_id" class='icon' src="/assets/likes.png"></image>
         <text class='rating'>{{spot.cached_votes_total}}</text>
         <image class='icon' bindtap="mapScroll" src="/assets/location.png"></image>
         <view class="shareborder"bindtap="onShareAppMessage">
