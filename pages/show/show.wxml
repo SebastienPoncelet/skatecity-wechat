@@ -11,6 +11,7 @@
 <!------ icons -----------> 
     <view class="icons">
         <image class='icon' src="/assets/likes.png"></image>
+        <text class='rating'>{{spot.cached_votes_total}}</text>
         <image class='icon' src="/assets/location.png"></image>
         <view bindtap="onShareAppMessage">
  <button class="share-btn" open-type="share" type="primary"><image class='icon' src="/assets/share.png"></image></button>
@@ -23,7 +24,7 @@
           <text>{{spot.name}}</text>
         </view>
         <view class="types">
-       <text class="type">{{spot.style}}</text>
+       <text class="type">{{spot.tag_list}}</text>
         </view>
         <view class="description">
           <text>{{spot.description}}</text>
