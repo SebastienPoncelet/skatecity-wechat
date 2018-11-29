@@ -18,8 +18,6 @@ Page({
     })
   },
 
-
-
   /**
    * Page initial data
    */
