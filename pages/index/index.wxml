@@ -18,13 +18,13 @@
 <!-------------FILTER Tags---------->
 
 
-<view class='scroll-bar'>
-  <view class='scroll-left' bindtap='scrollLeft'>
-    <text class='iconfont icon-back'></text>
+<view class='1scroll-bar'>
+  <view class='1scroll-left' bindtap='scrollLeft'>
+    <text class='1iconfont icon-back'></text>
   </view>
-  <scroll-view scroll-x class='scroll-list-box' scroll-into-view="in-{{scrollInto}}" scroll-with-animation>
-    <view class='scroll-list'>
-      <view class='scroll-item' id="in-{{index}}"> 
+  <scroll-view scroll-x class='1scroll-list-box' scroll-into-view="in-{{scrollInto}}" scroll-with-animation>
+    <view class='1scroll-list'>
+      <view class='1scroll-item' id="in-{{index}}"> 
       <view class="filters">
      <view class="type">All</view>
       <view class="type">Skateparks</view>
