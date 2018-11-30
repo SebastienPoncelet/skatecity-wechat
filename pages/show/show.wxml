@@ -9,19 +9,12 @@
   </block>
 </swiper>
 
-
- <!------ Upload your own photo -----------> 
-
-  <view class="camera-size">
-  <image class="camera" src="/assets/camera-white.png"></image>
-  </view>
-
-
 <!------ icons -----------> 
     <view class="icons">
         <image bindtap="sendRating"  data-id="user_id" class='icon' src="/assets/likes.png"></image>
         <text class='rating'>{{spot.cached_votes_total}}</text>
         <image class='icon' bindtap="mapScroll" src="/assets/maroonlocation.png"></image>
+      <image class="camera" src="/assets/cameramaroon.png"></image>
         <view class="shareborder"bindtap="onShareAppMessage">
  <button class="share-btn" plain="false" open-type="share" type="default"><image class='icon' src="/assets/maroonshare.png"></image></button>
 </view>

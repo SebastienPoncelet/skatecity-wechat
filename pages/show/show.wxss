@@ -58,11 +58,11 @@
 }
 
 .camera {
-position:absolute;
-bottom:58vh;
-right:0vh;
-width:7vh;
-height:6vh;
+  margin:1vh;
+  height:4.5vh;
+  color:#505050;
+  width:4.5vh;
+  opacity:0.9;
 }
 
 .icons {
