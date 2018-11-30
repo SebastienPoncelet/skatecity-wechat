@@ -42,7 +42,9 @@
   
       </view>
     </view>
-  </view>
+
+    </view>
+
   </scroll-view>
   <view class='scroll-right' bindtap='scrollRight'>
     <text class='iconfont icon-right'></text>
