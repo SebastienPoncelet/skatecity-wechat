@@ -1,6 +1,6 @@
 <!--pages/new/new.wxml-->
 
-<view class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 50%), url('/assets/create.jpg');">
+<view class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 50%), url('http://115.28.2.176/skate/create.jpg');">
 <view class="h1">ADD A NEW SKATE SPOT</view>
 <view class='container'>
 <view class="form-fields">
