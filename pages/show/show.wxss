@@ -138,7 +138,7 @@
 }
 
 .scroll-list-box {
-  height: 20vh;
+  height: 25vh;
   width: 100vw;
   margin-left:1vh;
 }
@@ -178,5 +178,16 @@ margin-left:7vh;
   color:#787878;
   position:relative;
   left: -2vh;
+}
+
+.fixed-bar {
+  background-color:#435058;
+  position: fixed;
+  bottom: 0;
+  justify-content: space-around;
+  display: flex;
+  width: 100vw;
+  color:#ffffff;
+  padding:10px;
 }
 

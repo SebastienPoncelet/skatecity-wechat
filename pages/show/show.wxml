@@ -9,7 +9,16 @@
   </block>
 </swiper>
 
-<!------ icons -----------> 
+
+ <!------ Upload your own photo -----------> 
+
+  <view class="camera-size">
+  <image class="camera" src="/assets/camera-white.png"></image>
+  </view>
+
+
+<!------ ICONS -----------> 
+
     <view class="icons">
         <image bindtap="sendRating"  data-id="user_id" class='icon' src="/assets/likes.png"></image>
         <text class='rating'>{{spot.cached_votes_total}}</text>
@@ -34,7 +43,7 @@
         </view>
       </view>
 
-<!------map -----------> 
+<!------ MAP -----------> 
       <view class="page-body">
       <view class="page-section page-section-gap">
         <map
@@ -53,15 +62,14 @@
       </view>
     </view>
 
-
 <!----------near by spots swiper---------------->
-    <view class="scrollingswiper">
-  <view class='toprated'>Near by Spots</view>
+  <view class="scrollingswiper">
+    <view class='toprated'>Near by Spots</view>
+  </view>
 
-</view>
-<view class='scroll-bar'>
-  <view class='scroll-left' bindtap='scrollLeft'>
-    <text class='iconfont icon-back'></text>
+  <view class='scroll-bar'>
+    <view class='scroll-left' bindtap='scrollLeft'>
+      <text class='iconfont icon-back'></text>
   </view>
   <scroll-view scroll-x class='scroll-list-box' scroll-into-view="in-{{scrollInto}}" scroll-with-animation>
     <view class='scroll-list'>
@@ -73,7 +81,17 @@
   </view>
 </view>
    
+<!---------FIXED BAR ----------------->
+<view class="fixed-bar">
+  <!--Create button -->
+  <view class="create-button">
+  
+  <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+		disabled="{{disabled}}" bindtap="goCreate" hover-class="other-button-hover"> Add a spot </button>
 
+
+  </view>
+  </view>
 <!-----container end---->
 </view>
 
