@@ -1,7 +1,7 @@
 <view class="container">
 
 <!----------image slider----------------->
-<swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#5cc1b3">
+<swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
     <block wx:for="{{bannerImages}}">
     <swiper-item>
       <image src="{{item}}" class="image-size" />
@@ -9,21 +9,14 @@
   </block>
 </swiper>
 
-
- <!------ Upload your own photo -----------> 
-
-  <view class="camera-size">
-  <image class="camera" src="/assets/camera-white.png"></image>
-  </view>
-
-
 <!------ icons -----------> 
     <view class="icons">
         <image bindtap="sendRating"  data-id="user_id" class='icon' src="/assets/likes.png"></image>
         <text class='rating'>{{spot.cached_votes_total}}</text>
-        <image class='icon' bindtap="mapScroll" src="/assets/location.png"></image>
+        <image class='icon' bindtap="mapScroll" src="/assets/maroonlocation.png"></image>
+      <image class="camera" src="/assets/cameramaroon.png"></image>
         <view class="shareborder"bindtap="onShareAppMessage">
- <button class="share-btn" plain="false" open-type="share" type="default"><image class='icon' src="/assets/share.png"></image></button>
+ <button class="share-btn" plain="false" open-type="share" type="default"><image class='icon' src="/assets/maroonshare.png"></image></button>
 </view>
     </view>
 

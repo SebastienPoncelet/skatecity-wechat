@@ -38,7 +38,7 @@
 .type {
   font-size:4vw;
   margin-top:1.5vh;
-  color:#5cc1b3;
+  color:#872419;
   /* border-bottom:1px solid #E8E8E8; */
   padding-bottom:12px;
   background-color:white;
@@ -46,7 +46,7 @@
   border-radius:9px;
   margin:1vh;
   /* font-weight:bold; */
-  border: 1px solid #5cc1b3;
+  border: 1px solid #872419;
 }
 
 .description {
@@ -58,11 +58,11 @@
 }
 
 .camera {
-position:absolute;
-bottom:58vh;
-right:0vh;
-width:7vh;
-height:6vh;
+  margin:1vh;
+  height:4.5vh;
+  color:#505050;
+  width:4.5vh;
+  opacity:0.9;
 }
 
 .icons {
@@ -105,7 +105,7 @@ height:6vh;
   width:85vw;
   border-radius:22px;
   font-size:30rpx;
-  background-color: #5cc1b3 !important; 
+  background-color: #872419 !important; 
   margin-top:1vh;
 }
 

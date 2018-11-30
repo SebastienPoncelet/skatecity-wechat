@@ -32,7 +32,7 @@
 }
 
 .weui-navbar__title-type {
- border:2px solid #5cc1b3;
+ border:2px solid #872419;
 color:#08605F;
 background-color:white;
 border-radius:20px;
@@ -62,7 +62,6 @@ margin:5vh;
 .card-footer .icon {
   width:8vw;
   height:4vh;
-  margin-left:-20vh;
 }
 
 
@@ -91,7 +90,7 @@ color: #872419;
   margin:1.5vh;
   font-size:15px;
   /* border:1px solid #5cc1b3; */
-  color: #5cc1b3;
+  color: #872419;
 }
 
 .cards {
@@ -101,65 +100,61 @@ color: #872419;
 .card {
   display: flex;
   flex-direction: column;
-  margin: 4.5vh 2vh;
+  margin: 5.5vh 0;
   height: 39vh;
   box-shadow: 1px 2px 7px rgba(0,0,0,0.10);
-  border-radius: 6px;
+  /* border-radius: 6px; */
   position: relative;
   background-color:white;
 }
 
-.rating-tag {
+.rating-icon {
   display:flex;
-  flex-direction:column;
-  margin-right:1.5vh;
+  flex-direction:row;
+  align-items:center;
 }
 
 .card-body {
   height: 58vh;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  /* text-shadow: 0 1px 3px rgba(0,0,0,0.6); */
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
-  border-radius: 6px 6px 0 0;
+  /* border-radius: 6px 6px 0 0; */
 }
 
 .card-footer {
-  background-color: white;
-  /* height: 10vh; */
-  padding: 10px 0;
-  border-radius: 6px;
   display: flex;
   justify-content: space-between;
-  align-items: center
+  align-items: center;
+  margin-top:28vh;
 }
 
 .card-footer .rating {
   margin:2vh;
   font-size:4vw;
-  font-weight:thin;
-  color:#787878;
+  font-weight:bold;
+  color:white;
 }
 
-.rating-tag .name {
-  color:#484848;
-  margin:2vh;
-  font-size:14px;
-  font-weight:bold;
-  margin: 0 1vh;
-  padding-top:2vh;
+.card-description .name {
+  font-size:15.5px;
+font-weight:bold;
+margin:2vh;
+
 }
 
 .card-footer .styles {
-margin:0.5vh;
-color:#303030;
-width:34vw;
-text-align:center;
+background-color:white;
+color:#872419;
 font-size:14px;
-opacity:0.7;
-/* font-weight:bold; */
-padding-bottom:0.5vh;
+border-radius:1vh;
+margin:1vh;
+padding-right:1vh;
+padding-left:1vh;
+height:3.5vh;
+
 }
 
 .page-body {
@@ -178,7 +173,7 @@ margin-top:-9vh;
   width:85vw;
   border-radius:22px;
   font-size:30rpx;
-  background-color: #5cc1b3 !important; 
+  background-color: #872419 !important; 
   margin-top:1vh;
 }
 

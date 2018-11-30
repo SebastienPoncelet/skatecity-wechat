@@ -59,17 +59,18 @@
         <view class="card-body" data-id="{{skatespot.id}}" bindtap='showSkatespot' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/168335/pexels-photo-168335.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');">
 
             <view class="card-description">
-                <!-- <text class="name">{{skatespot.name}}</text> -->
-            </view>
-          </view>
-            <view class="card-footer">
-              <text class='rating'>{{skatespot.cached_votes_total}}</text>
-              <image class='icon' src="/assets/likes.png"></image>
-            <view class="rating-tag">
                 <text class="name">{{skatespot.name}}</text>
-              <text class='styles'>{{skatespot.tag_list}}</text>
-      </view>
             </view>
+
+          <view class="card-footer">
+          <view class="rating-icon">
+              <text class='rating'>{{skatespot.cached_votes_total}}</text>
+                <image class='icon' src="/assets/likes.png"></image>
+          </view>
+              <text class='styles'>{{skatespot.tag_list}}</text>
+          </view>
+          </view>
+      
         </view>
     </block>
   </view>
