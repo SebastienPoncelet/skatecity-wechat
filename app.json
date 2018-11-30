@@ -27,7 +27,7 @@
         {
           "pagePath": "pages/new/new",
           "iconPath": "/assets/icons/add_unactiveg.png",
-          "selectedIconPath": "/assets/icons/add.png"
+          "selectedIconPath": "/assets/addgrey.png"
         }
       ]
     }
