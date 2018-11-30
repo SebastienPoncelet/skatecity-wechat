@@ -1,6 +1,6 @@
 /* pages/new/new.wxss */
 .container {
-width: 80%;
+width: 85%;
 }
 
 .banner {
@@ -128,17 +128,20 @@ animation-duration: 5s;
 }
 
 .skatestyle-checkbox {
-  display:flex;
+display:flex;
+flex-direction:column;
 flex-wrap:wrap;
 font-size:15px;
 margin-top:2vh;
-width:67vw;
-
+width:90vw;
+height:120px;
+padding-left:20px;
 }
 
+
 .checkbox {
-  padding:0.5vh;
-  margin:0.5vh;
+ margin-right:auto;
+ padding-bottom:5px;
 }
 
 @keyframes slideInRight {
