@@ -8,7 +8,7 @@
 
 .weui-navbar__slider {
   width: 50%;
-  background-color: #5cc1b3;
+  background-color: #872419;
   /* for where the slider starts and ends */ 
   margin-left: 0vh;
 }
@@ -30,7 +30,7 @@
 }
 
 .weui-navbar__title-type {
- border:2px solid #5cc1b3;
+ border:2px solid #872419;
 color:#08605F;
 background-color:white;
 border-radius:20px;
@@ -77,7 +77,7 @@ padding:1vh;
 margin:1.5vh;
 font-size:14px;
 /* border:1px solid #5cc1b3; */
-color: #5cc1b3;
+color: #872419;
 box-shadow:1px 2px 5px rgba(0,0,0,0.15);
 }
 
@@ -88,7 +88,7 @@ box-shadow:1px 2px 5px rgba(0,0,0,0.15);
   margin:1.5vh;
   font-size:15px;
   /* border:1px solid #5cc1b3; */
-  color: #5cc1b3;
+  color: #872419;
 }
 
 .cards {
@@ -175,7 +175,7 @@ margin-top:-9vh;
   width:85vw;
   border-radius:22px;
   font-size:30rpx;
-  background-color: #5cc1b3 !important; 
+  background-color: #872419 !important; 
   margin-top:1vh;
 }
 
