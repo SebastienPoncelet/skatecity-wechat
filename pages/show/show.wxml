@@ -1,7 +1,7 @@
 <view class="container">
 
 <!----------image slider----------------->
-<swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#5cc1b3">
+<swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
     <block wx:for="{{bannerImages}}">
     <swiper-item>
       <image src="{{item}}" class="image-size" />

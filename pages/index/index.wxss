@@ -1,4 +1,6 @@
 /**index.wxss**/
+
+
 .weui-tab {
   position: relative;
   height: 100%;
@@ -66,7 +68,7 @@ margin:5vh;
 
 .filters {
   display:flex;
-  padding-top:2vh;
+  padding-top:1vh;
   margin-left:2vh;
 }
 
@@ -77,8 +79,9 @@ padding:1vh;
 margin:1.5vh;
 font-size:14px;
 /* border:1px solid #5cc1b3; */
-color: #872419;
 box-shadow:1px 2px 5px rgba(0,0,0,0.15);
+color: #872419;
+
 }
 
 .all {
@@ -92,7 +95,7 @@ box-shadow:1px 2px 5px rgba(0,0,0,0.15);
 }
 
 .cards {
-  margin-top: 3vh;
+  margin-top: 1vh;
 }
 
 .card {
@@ -227,5 +230,4 @@ margin-top:-9vh;
 margin:4vh;
 font-weight:bold;
 font-size:15px;
-
 }

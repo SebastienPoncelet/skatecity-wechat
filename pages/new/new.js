@@ -8,14 +8,14 @@ Page({
   data: {
     filtered_styles:[],
     styles: [
-      { name: 'Skateparks', value: 'Skateparks', checked: false},
       { name: 'Rails', value: 'Rails', checked: false },
       { name: 'Bowls', value: 'Bowls', checked: false },
       { name: 'Pools', value: 'Pools', checked: false },
       { name: 'Ramps', value: 'Ramps', checked: false},
-      { name: 'Slopes', value: 'Slopes', checked: false },
       { name: 'Ledges', value: 'Ledges', checked: false},
       { name: 'Stairs', value: 'Stairs', checked: false },
+      { name: 'Slopes', value: 'Slopes', checked: false },
+      { name: 'Skateparks', value: 'Skatepark', checked: false },
     ]
   },
 
@@ -115,8 +115,8 @@ Page({
 
   postFormData: function(spot) {
     wx.request({
-      // url: `http://skatecity.wogengapp.cn/api/v1/spots/`,
-      url: 'http://localhost:3000/api/v1/spots/',
+      url: `http://skatecity.wogengapp.cn/api/v1/spots/`,
+      // url: 'http://localhost:3000/api/v1/spots/',
       method: 'POST',
       data: { spot },
       success(res) {
