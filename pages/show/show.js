@@ -19,11 +19,11 @@ Page({
     covers: [{
       latitude: 23.099994,
       longitude: 113.344520,
-      iconPath: '/image/location.png'
+      iconPath: '/assets/pin.png'
     }, {
       latitude: 23.099994,
       longitude: 113.304520,
-      iconPath: '/image/location.png'
+        iconPath: '//assets/pin.png'
     }],
    
   scrollInto: 0,
@@ -240,6 +240,8 @@ Page({
         longitude: 113.3345211,
       }]
     })
-  }
+  },
+
+
 
 })
