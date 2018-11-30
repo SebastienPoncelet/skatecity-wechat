@@ -39,8 +39,8 @@ Page({
       wx.request({
         
 
-        // url: 'http://skatecity.wogengapp.cn/api/v1/show/',
-        url: 'http://localhost:3000/api/v1/spots/' + options.id,
+        url: 'http://skatecity.wogengapp.cn/api/v1/spots/' + options.id,
+        // url: 'http://localhost:3000/api/v1/spots/' + options.id,
         method: 'PUT',
         data: { user_id: userId, id: parseInt(spotId) },
         // console.log("DATA", data),
