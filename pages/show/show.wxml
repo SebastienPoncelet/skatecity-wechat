@@ -12,9 +12,9 @@
 
  <!------ Upload your own photo -----------> 
 
-  <view class="camera-size">
+  <!-- <view class="camera-size">
   <image class="camera" src="/assets/camera-white.png"></image>
-  </view>
+  </view> -->
 
 
 <!------ ICONS -----------> 
@@ -73,7 +73,7 @@
   </view>
   <scroll-view scroll-x class='scroll-list-box' scroll-into-view="in-{{scrollInto}}" scroll-with-animation>
     <view class='scroll-list'>
-      <view class='scroll-item' id="in-{{index}}" style='background-image:url(https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)' wx:for="{{scrollList}}"></view>
+      <view class='scroll-item' id="in-{{index}}" style='background-image:url(http://115.28.2.176/skate/2.jpg)' wx:for="{{scrollList}}"></view>
     </view>
   </scroll-view>
   <view class='scroll-right' bindtap='scrollRight'>
@@ -84,12 +84,8 @@
 <!---------FIXED BAR ----------------->
 <view class="fixed-bar">
   <!--Create button -->
-  <view class="create-button">
-  
-  <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-		disabled="{{disabled}}" bindtap="goCreate" hover-class="other-button-hover"> Add a spot </button>
-
-
+  <view class="create-button" bindtap="goCreate">
+  Create A Skate Spot
   </view>
   </view>
 <!-----container end---->
