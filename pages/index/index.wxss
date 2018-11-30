@@ -62,7 +62,6 @@ margin:5vh;
 .card-footer .icon {
   width:8vw;
   height:4vh;
-  margin-left:-20vh;
 }
 
 
@@ -112,7 +111,7 @@ color: #872419;
 .rating-icon {
   display:flex;
   flex-direction:row;
-  margin-left:1vh;
+  align-items:center;
 }
 
 .card-body {

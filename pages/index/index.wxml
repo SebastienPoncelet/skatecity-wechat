@@ -87,7 +87,7 @@
     <view class="page-section page-section-gap">
       <map
         id="myMap"
-        style="width: 100%; height: 350px;"
+        style="width: 100%; height: 75vh;"
         latitude="{{latitude}}"
         longitude="{{longitude}}"
         markers="{{markers}}"
@@ -102,11 +102,11 @@
 
 <!-------------image scroll of most popular  ----------------->
  
-<view class="scrollingswiper">
+<!-- <view class="scrollingswiper">
   <view class='toprated'>Top Rated Spots</view>
-
-</view>
-<view class='scroll-bar'>
+</view> -->
+<!-- Dynamic Scroll Bar for Skate Spots -->
+<!-- <view class='scroll-bar'>
   <view class='scroll-left' bindtap='scrollLeft'>
     <text class='iconfont icon-back'></text>
   </view>
@@ -118,12 +118,8 @@
   <view class='scroll-right' bindtap='scrollRight'>
     <text class='iconfont icon-right'></text>
   </view>
-</view>
+</view> -->
    
-   
-   
-   
-
     <!-----end of map tab---->
   </view>
  </view>
