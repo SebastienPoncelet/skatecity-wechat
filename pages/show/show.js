@@ -98,6 +98,12 @@ Page({
       });
 
   },
+  /* Create Button */
+  goCreate: function () {
+    wx.switchTab({
+      url: '../new/new'
+    });
+  },
 
   /* Share Function */
   onShareAppMessage: function () {

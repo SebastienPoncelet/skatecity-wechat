@@ -81,8 +81,14 @@
    
 <!---------FIXED BAR ----------------->
 <view class="fixed-bar">
-  <!--Book button -->
-  <view class="create-button" bindtap='goCreate' >Create A Skate Spot</view>
+  <!--Create button -->
+  <view class="create-button">
+  
+  <button type="default" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+		disabled="{{disabled}}" bindtap="goCreate" hover-class="other-button-hover"> Add a spot </button>
+
+
+  </view>
   </view>
 <!-----container end---->
 </view>
