@@ -33,11 +33,11 @@ Page({
     covers: [{
       latitude: 31.229557,
       longitude: 121.445293,
-      iconPath: '/assets/location copy.png'
+      iconPath: '/assets/pin.png'
     }, {
       latitude: 31.223790,
       longitude: 121.445293,
-      iconPath: '/assets/location copy.png'
+      iconPath: '/assets/pin.png'
     }],
     scrollInto: 0,
     scrollList: [
