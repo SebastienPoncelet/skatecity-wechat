@@ -1,12 +1,34 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/landing/landing",
+    "pages/show/show",
+    "pages/new/new"
   ],
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
-  }
+    "navigationBarBackgroundColor": "#435058",
+    "navigationBarTitleText": "Skate City",
+    "navigationBarTextStyle":"white"
+  },
+
+    "tabBar": {
+      "backgroundColor": "#FFFFFE",
+      "borderStyle": "#D3D3D3",
+      "selectedColor": "#D03232",
+      "color": "#888888",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "iconPath": "/assets/icons/home-unactive.png",
+          "selectedIconPath": "/assets/icons/home.png"
+        },
+        {
+          "pagePath": "pages/new/new",
+          "iconPath": "/assets/icons/add_unactiveg.png",
+          "selectedIconPath": "/assets/addgrey.png"
+        }
+      ]
+    }
 }

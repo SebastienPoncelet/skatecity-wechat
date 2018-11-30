@@ -1,0 +1,29 @@
+<!--pages/new/new.wxml-->
+
+<view class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.4) 50%), url('/assets/create.jpg');">
+<view class="h1">ADD A NEW SKATE SPOT</view>
+<view class='container'>
+<view class="form-fields">
+<form bindsubmit="bindSubmit" bindreset="formReset">
+  <input value="{{ name }}" class="desc" name="name" placeholder="Name The Spot" />
+  <input value='{{ description }}' class="desc" name="description" placeholder="Enter a Description" />
+  <input value='{{ address }}' class="desc" name="address" placeholder="Enter The Address" />
+  
+<view class="skatestyle-title">Check Skate Style Below:</view>
+
+  <checkbox-group bindchange="checkboxChange">
+    <view class="skatestyle-checkbox">
+    
+      <label class="checkbox" wx:for="{{styles}}" wx:for-item="style">
+        <checkbox value="{{style.name}}" checked="{{style.checked}}"/>{{style.value}}
+      </label>
+    </view>
+  </checkbox-group>
+
+  <button class="btn-upload" bindtap="takePhoto">Upload Some Photos</button>
+  <button class="btn-submit" formType="submit">Save The Spot</button>
+</form>
+</view>
+</view>
+
+</view>

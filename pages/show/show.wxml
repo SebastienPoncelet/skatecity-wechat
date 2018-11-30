@@ -1,0 +1,80 @@
+<view class="container">
+
+<!----------image slider----------------->
+<swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
+    <block wx:for="{{bannerImages}}">
+    <swiper-item>
+      <image src="{{item}}" class="image-size" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<!------ icons -----------> 
+    <view class="icons">
+        <image bindtap="sendRating"  data-id="user_id" class='icon' src="/assets/likes.png"></image>
+        <text class='rating'>{{spot.cached_votes_total}}</text>
+        <image class='icon' bindtap="mapScroll" src="/assets/maroonlocation.png"></image>
+      <image class="camera" src="/assets/cameramaroon.png"></image>
+        <view class="shareborder"bindtap="onShareAppMessage">
+ <button class="share-btn" plain="false" open-type="share" type="default"><image class='icon' src="/assets/maroonshare.png"></image></button>
+</view>
+    </view>
+
+  <!------NAME AND DESCRIPTION -----------> 
+      <view class="name-description">
+        <view class="name">
+          <text>{{spot.name}}</text>
+        </view>
+        <view class="types">
+       <text class="type">{{spot.tag_list}}</text>
+
+        </view>
+        <view class="description">
+          <text>{{spot.description}}</text>
+        </view>
+      </view>
+
+<!------map -----------> 
+      <view class="page-body">
+      <view class="page-section page-section-gap">
+        <map
+          id="myMap"
+          style="width: 100%; height: 300px;"
+          latitude="{{latitude}}"
+          longitude="{{longitude}}"
+          markers="{{markers}}"
+          covers="{{covers}}"
+          show-location
+        ></map>
+      </view>
+      <view class="btn-area">
+        <button bindtap="getCenterLocation" class="page-body-button" type="primary">Get center on the spots</button>
+        <button bindtap="moveToLocation" class="page-body-button" type="primary">Your Location</button>
+      </view>
+    </view>
+
+
+<!----------near by spots swiper---------------->
+    <view class="scrollingswiper">
+  <view class='toprated'>Near by Spots</view>
+
+</view>
+<view class='scroll-bar'>
+  <view class='scroll-left' bindtap='scrollLeft'>
+    <text class='iconfont icon-back'></text>
+  </view>
+  <scroll-view scroll-x class='scroll-list-box' scroll-into-view="in-{{scrollInto}}" scroll-with-animation>
+    <view class='scroll-list'>
+      <view class='scroll-item' id="in-{{index}}" style='background-image:url(https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)' wx:for="{{scrollList}}"></view>
+    </view>
+  </scroll-view>
+  <view class='scroll-right' bindtap='scrollRight'>
+    <text class='iconfont icon-right'></text>
+  </view>
+</view>
+   
+
+<!-----container end---->
+</view>
+
+
