@@ -114,7 +114,9 @@ Page({
   },
 
   postFormData: function(spot) {
+    console.log(spot);
     wx.request({
+
       url: app.globalData.host + 'api/v1/spots/',
       // url: 'http://localhost:3000/api/v1/spots/',
       method: 'POST',

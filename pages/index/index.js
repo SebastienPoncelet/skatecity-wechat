@@ -89,6 +89,7 @@ Page({
     let page = this
 
     wx.request({
+
       // url: 'https://skatecity.wogengapp.cn/api/v1/spots/',
       url: app.globalData.host + 'api/v1/spots/',
       method: 'GET',

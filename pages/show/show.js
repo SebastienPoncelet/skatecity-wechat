@@ -81,7 +81,7 @@ Page({
       const userId = app.globalData.userId
       console.log("User ID", userId)
       wx.request({
-      
+
         url: app.globalData.host + 'api/v1/spots/' + options.id,
         // url: 'http://localhost:3000/api/v1/spots/' + options.id,
         method: 'PUT',
@@ -131,6 +131,7 @@ Page({
     let page = this
     this.setData({options: options})
     wx.request({
+
       url: app.globalData.host + 'api/v1/spots/' + options.id,
       // url: 'http://localhost:3000/api/v1/spots/'+ options.id,
       method: 'GET',
