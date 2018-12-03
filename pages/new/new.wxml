@@ -5,7 +5,7 @@
 <view class='container'>
 <view class="form-fields">
 <form bindsubmit="bindSubmit" bindreset="formReset">
-  <input value="{{ name }}" class="desc" name="name" placeholder="Name The Spot" />
+  <input value="{{ name }}" class="desc" name="spot[name]" placeholder="Name The Spot" />
   <input value='{{ description }}' class="desc" name="description" placeholder="Enter a Description" />
   <input value='{{ address }}' class="desc" name="address" placeholder="Enter The Address" />
   

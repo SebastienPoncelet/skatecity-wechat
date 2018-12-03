@@ -1,8 +1,7 @@
 // pages/new/new.js
 
 const app = getApp()
-wx.cloud.init({ env: 'skate-city-0169ad' })
-const db = wx.cloud.database()
+const AV = require('../../utils/av-weapp-min.js');
 
 Page({
   data: {
@@ -41,34 +40,7 @@ Page({
     // console.log(filtered_styles)
   },
 
-  //Choose Image Function
-  takePhoto: function () {
-    let that = this
-    wx.showLoading()
-    wx.chooseImage({
-      count: 5,
-      sizeType: ['compressed'],
-      sourceType: ['album', 'camera'],
-      success: function (res) {
-        console.log("log res from take photo", res)
-        var photoPath = res.tempFilePaths[0]
-        console.log("log tempPath", photoPath)
-        wx.cloud.uploadFile({
-          cloudPath: `${Date.now()}-${Math.floor(Math.random(0, 1) * 10000000)}`,
-          filePath: photoPath,
-          success: res => {
-            console.log("success", res)
-            that.setData({
-              fileID: res.fileID
-            });
-            that.showSuccessModal()
-            console.log("cloud id to store", that.data.fileID)
-          },
-          fail: console.error
-        })
-      }
-    });
-  },
+  
 
 
   // New Skate Spot Submission
@@ -104,11 +76,17 @@ Page({
     let userId = app.globalData.userId
 
     let spot = {
-      name: name,
-      user_id: userId,
-      description: description,
-      location: address,
-      styles: this.data.filtered_styles.join(', ')
+      spot: {
+        name: name,
+        user_id: userId,
+        description: description,
+        location: address,
+        styles: this.data.filtered_styles.join(', ')
+      },
+      image: {
+        //add variable from image save below
+        url: ''
+      }
     }
     this.postFormData(spot)
   },
@@ -135,6 +113,25 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+  },
+
+  //Choose Image Function, add variable after saving the photo, then add to url above
+  takePhoto: function () {
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['compressed'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
+        let tempFilePath = res.tempFilePaths[0];
+        new AV.File('file-name', {
+          blob: {
+            uri: tempFilePath,
+          },
+        }).save().then(
+          file => console.log("Save URL", file.url())
+        ).catch(console.error);
+      }
+    });
   },
 
   /**
