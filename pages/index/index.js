@@ -10,7 +10,7 @@ Page({
     autoplay: false,
     userInfo: {},
     hasUserInfo: false,
-    skatespots: {},
+    skatespots: null,
     // tab of list and map 
 
 
@@ -82,9 +82,7 @@ Page({
 
   
   onLoad: function (options) {
-
     console.log(app.globalData)
-
 
     let page = this
 
@@ -99,13 +97,16 @@ Page({
         skatespots = skatespots.map((item) => {
           item.tag_list = item.tag_list.join(', ')
           return item
+          console.log('finding out what item is', skatespots)
         });
         // Update local data
         page.setData({
-          skatespots: skatespots
+          skatespots: skatespots,
+          activespots: skatespots
         });
+
         wx.hideToast();
-        console.log("SKATESPOTS", page.skatespots)
+        console.log("SKATESPOTS", skatespots)
   
       }
 
@@ -161,6 +162,63 @@ Page({
 
     // Get api data
     
+
+
+
+  filterType: function (e) {
+    const tag = e.currentTarget.dataset.id;
+    let page = this;
+    page.setData({
+      // counts: 1
+    });
+    if (page.data.tag == tag) {
+      page.setData({
+        tag: null
+      });
+    } else {
+      page.setData({
+        tag: tag
+      });
+    }
+
+    // apiClient.get({
+      // path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}&page=${page.data.counts}`,
+
+      wx.request({
+        // url: 'https://skatecity.wogengapp.cn/api/v1/spots/',
+        url: app.globalData.host + 'api/v1/spots/',
+        method: 'GET',
+
+      success(res) {
+        console.log("tagged items", res.data.items)
+        var _items = res.data.items;
+        var _lastPage = res.data.last_page.last_page;
+        // // var storage = wx.getStorageSync(key)
+        // // save profile at this.data.profile
+        page.setData({
+          items: _items,
+          lastPage: _lastPage
+        });
+
+        //console.log(123, page)
+
+      }
+    })
+  },
+
+
+
+
+
+
+  filterType: function (e) {
+    var activespots = [];
+    var tag = skatespots.tag_list;
+    if (spots.tag_list == e.currentTarget.dataset.id) {
+        return activespots.push(tag);
+    }
+  },
+
 
   // links to the show page 
   showSkatespot: function (e) {

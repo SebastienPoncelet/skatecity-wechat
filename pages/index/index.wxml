@@ -29,7 +29,7 @@
   <view class="filters">
       <view class="type" bindtap="filterType">All</view>
       <view class="type" bindtap="filterType">Skateparks</view>
-      <view class="type" bindtap="filterType">Ledges</view>
+      <view class="type" data-id="ledges" bindtap="filterType">Ledges</view>
       <view class="type" bindtap="filterType">Pools</view>
       <view class="type" bindtap="filterType">Ramps</view>
 
@@ -54,7 +54,7 @@
 
     <!----------List of ALL cards in List tab unfiltered------------------->
   <view class="cards">
-    <block wx:for="{{skatespots}}" wx:key="index" wx:for-item="skatespot">
+    <block wx:for="{{activespots}}" wx:key="index" wx:for-item="skatespot">
       <view class="card">
         <view class="card-body" data-id="{{skatespot.id}}" bindtap='showSkatespot' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{skatespot.photo}}');">
 
