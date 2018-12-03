@@ -12,7 +12,7 @@ App({
       env: '736f-sock-m-72589c'
     })
 
-    const host = 'http://skatecity.wogengapp.cn/'
+    const host = 'https://skatecity.wogengapp.cn/'
     // const host = 'http://localhost:3000/'
     console.log('processing to login')
     wx.login({
@@ -38,7 +38,7 @@ App({
     })
   },
   globalData: {
-    host: "http://skatecity.wogengapp.cn/",
+    host: "https://skatecity.wogengapp.cn/",
     // host: 'http://localhost:3000/',
     userId: null,
     userInfo: {}

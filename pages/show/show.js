@@ -83,7 +83,7 @@ Page({
       wx.request({
         
 
-        url: 'http://skatecity.wogengapp.cn/api/v1/spots/' + options.id,
+        url: 'https://skatecity.wogengapp.cn/api/v1/spots/' + options.id,
         // url: 'http://localhost:3000/api/v1/spots/' + options.id,
         method: 'PUT',
         data: { user_id: userId, id: parseInt(spotId) },
@@ -132,7 +132,7 @@ Page({
     let page = this
     this.setData({options: options})
     wx.request({
-      url: 'http://skatecity.wogengapp.cn/api/v1/spots/' + options.id,
+      url: 'https://skatecity.wogengapp.cn/api/v1/spots/' + options.id,
       // url: 'http://localhost:3000/api/v1/spots/'+ options.id,
       method: 'GET',
       success(res) {
