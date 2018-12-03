@@ -83,11 +83,16 @@ Page({
   
   onLoad: function (options) {
 
+    console.log(app.globalData)
+
+
     let page = this
 
     wx.request({
-      // url: 'http://skatecity.wogengapp.cn/api/v1/spots/',
-      url: 'http://localhost:3000/api/v1/spots/',
+
+      // url: 'https://skatecity.wogengapp.cn/api/v1/spots/',
+      url: app.globalData.host + 'api/v1/spots/',
+
       method: 'GET',
       success(res) {
         console.log("Data received", res)
