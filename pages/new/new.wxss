@@ -25,7 +25,7 @@ width: 85%;
   padding: 2px;
   border-bottom: 4px solid rgb(255,255,255);
   padding:10px;
-  animation-duration: 3s;
+  animation-duration: 1.5s;
   animation-name: zoomInDown;
 }
 
@@ -53,7 +53,7 @@ width: 85%;
   border-bottom: 1px solid #F0F0F0;
   width: 80%;
   margin: 40px 20px;
-  animation-duration: 4s;
+  animation-duration: 3s;
   animation-name: fadeIn;
 }
 
@@ -125,6 +125,8 @@ animation-duration: 5s;
   animation-duration: 4s;
   animation-name: fadeIn;
   font-size:15px;
+  animation-duration: 3s;
+  animation-name: fadeIn;
 }
 
 .skatestyle-checkbox {
@@ -136,6 +138,8 @@ margin-top:2vh;
 width:90vw;
 height:120px;
 padding-left:20px;
+animation-duration: 3s;
+animation-name: fadeIn;
 }
 
 
