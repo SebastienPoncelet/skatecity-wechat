@@ -92,6 +92,7 @@ Page({
 
       // url: 'https://skatecity.wogengapp.cn/api/v1/spots/',
       url: app.globalData.host + 'api/v1/spots/',
+
       method: 'GET',
       success(res) {
         console.log("Data received", res)

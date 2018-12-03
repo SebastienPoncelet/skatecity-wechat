@@ -18,6 +18,7 @@ App({
     // })
 
     const host = this.globalData.host;
+
     console.log('processing to login')
     wx.login({
       success: (res) => {

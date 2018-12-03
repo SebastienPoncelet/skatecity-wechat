@@ -19,6 +19,54 @@ Page({
     photo_url: ''
   },
 
+
+//------------------------Allows user to choose current location------------------------//
+  userGetLocation: function (e) {
+    wx.getLocation({
+      type: 'gcj02', //Return can be used as the latitude and longitude of wx.openLocation
+      success: function (res) {
+        console.log("getLocation", res)
+        var latitude = res.latitude
+        console.log("latitude", latitude)
+        var longitude = res.longitude
+        console.log("longitude", longitude)
+        // Use maps in WeChat to check location.
+        // Requires user authorisation!!!! TO BE CHECKED
+        wx.openLocation({
+          latitude: latitude,
+          longitude: longitude,
+          scale: 28
+        })
+      }
+    })
+  },
+
+//------------------------Allows user to choose a location------------------------//
+  userChooseLocation: function (e) {
+   // Cannot use the "this" command within success
+    let that = this
+    wx.chooseLocation({
+      success: function (res) {
+        // console.log("name", name)
+        var address = res.address
+        // console.log("address", address)
+        var latitude = res.latitude
+        // console.log("latitude", latitude)
+        var longitude = res.longitude
+        // console.log("longitude", longitude)
+        that.setData({
+          // Changing the address value to the one selected on the map.
+          // This will then be saved in "spot" object, sent in POST request lower in this page.
+          address: address
+        })
+      }
+    })
+  },
+
+
+
+
+
   //Checkboxes for Skate Type
   checkboxChange: function (e) {
     this.setData({
@@ -95,9 +143,9 @@ Page({
   postFormData: function(spot) {
     console.log(spot);
     wx.request({
-
       url: app.globalData.host + 'api/v1/spots/',
       // url: 'http://localhost:3000/api/v1/spots/',
+
       method: 'POST',
       data: spot,
       success(res) {
