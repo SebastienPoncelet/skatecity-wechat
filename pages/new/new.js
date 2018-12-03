@@ -15,7 +15,8 @@ Page({
       { name: 'Stairs', value: 'Stairs', checked: false },
       { name: 'Slopes', value: 'Slopes', checked: false },
       { name: 'Skateparks', value: 'Skatepark', checked: false },
-    ]
+    ],
+    photo_url: ''
   },
 
   //Checkboxes for Skate Type
@@ -85,7 +86,7 @@ Page({
       },
       image: {
         //add variable from image save below
-        url: ''
+        url: this.data.photo_url
       }
     }
     this.postFormData(spot)
@@ -98,7 +99,7 @@ Page({
       url: app.globalData.host + 'api/v1/spots/',
       // url: 'http://localhost:3000/api/v1/spots/',
       method: 'POST',
-      data: { spot },
+      data: spot,
       success(res) {
         console.log('post successful!', res)
         // set data on main & show
@@ -117,8 +118,9 @@ Page({
 
   //Choose Image Function, add variable after saving the photo, then add to url above
   takePhoto: function () {
+    const that = this;
     wx.chooseImage({
-      count: 1,
+      count: 8,
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success: function (res) {
@@ -128,7 +130,11 @@ Page({
             uri: tempFilePath,
           },
         }).save().then(
-          file => console.log("Save URL", file.url())
+          file => {
+            that.setData({
+              photo_url: file.attributes.url
+            })
+          }
         ).catch(console.error);
       }
     });
