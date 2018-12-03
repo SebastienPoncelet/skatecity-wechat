@@ -63,6 +63,7 @@
   color:#505050;
   width:4.5vh;
   opacity:0.9;
+  margin-left:4vh;
 }
 
 .icons {
@@ -173,6 +174,12 @@ margin-left:7vh;
   margin-top:-3vh;
 }
 
+.icons .rating {
+  color:#787878;
+  position:relative;
+  left: -2vh;
+}
+
 .fixed-bar {
   background-color:#435058;
   position: fixed;
@@ -183,5 +190,4 @@ margin-left:7vh;
   color:#ffffff;
   padding:10px;
 }
-
 
