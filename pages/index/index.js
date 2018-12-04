@@ -177,10 +177,9 @@ Page({
   //},
 
 
+
   // Save reference to page
-
   // Get api data
-
 
 
 
@@ -188,9 +187,6 @@ Page({
     const tag = e.currentTarget.dataset.id;
     console.log("log of the tag :", tag)
     let page = this
-    page.setData({
-      counts: 1
-    });
     if (page.data.tag == tag) {
       page.setData({
         tag: null
@@ -200,49 +196,27 @@ Page({
         tag: tag
       });
     }
-
-    // apiClient.get({
-    // path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}&page=${page.data.counts}`,
-
-    wx.request({
-
-      // url: 'https://skatecity.wogengapp.cn/api/v1/spots/',
-      url: app.globalData.host + 'api/v1/spots/',
-      method: 'GET',
-      success(res) {
-        console.log("Data received", res)
-        let skatespots = res.data.spots;
-        skatespots = skatespots.map((item) => {
-          item.tag_list = item.tag_list.join(', ')
-          return item
-          console.log('finding out what item is', skatespots)
-        });
-        // Update local data
-        page.setData({
-          skatespots: skatespots,
-          activespots: skatespots
-        });
-
-        wx.hideToast();
-        console.log("SKATESPOTS", skatespots)
-
-      }
-
+    console.log(page.data.tag)
+    var activespots = []
+    const length = this.data.skatespots.length
+    for (let i = 0; i < length; ++i) {
+      var spot = this.data.skatespots[i]
+      console.log(spot.tag_list)
+      if (spot.tag_list.includes(page.data.tag)) {
+        activespots.push(spot);
+        console.log(spot)
+        console.log(this.data.activespots)
+      } 
+    }
+    page.setData({
+      activespots: activespots
     })
   },
 
+// empty array for active spots 
+// check if condition for spot if set of tag includes tag from page.tag 
+// append to active spots array 
 
-
-
-
-
-  //filterType: function (e) {
-  //var activespots = [];
-  //var tag = skatespots.tag_list;
-  //if (spots.tag_list == e.currentTarget.dataset.id) {
-  //  return activespots.push(tag);
-  //}
-  //},
 
 
   // links to the show page 
