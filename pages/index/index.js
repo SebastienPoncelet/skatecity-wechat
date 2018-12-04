@@ -98,6 +98,7 @@ Page({
           return item
           console.log('finding out what item is', skatespots)
         });
+        app.globalData['activespots'] = skatespots;
         // Update local data
         page.setData({
           skatespots: skatespots,

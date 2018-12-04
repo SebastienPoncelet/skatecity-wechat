@@ -17,16 +17,16 @@ Page({
       name: 'T.I.T 创意园'
     }],
   scrollInto: 0,
-    scrollList: [
-      { id: '1' },
-      { id: '2' },
-      { id: '3' },
-      { id: '1' },
-      { id: '2' },
-      { id: '3' },
-      { id: '4' },
-      { id: '1' },
-      { id: '2' }],
+    // scrollList: [
+    //   { id: '1' },
+    //   { id: '2' },
+    //   { id: '3' },
+    //   { id: '1' },
+    //   { id: '2' },
+    //   { id: '3' },
+    //   { id: '4' },
+    //   { id: '1' },
+    //   { id: '2' }],
     tabs: ["Map", "More photos"],
     activeIndex: 0,
     sliderOffset: 0,
@@ -152,6 +152,9 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    this.setData({activespots: app.globalData['activespots']})
+    console.log('DATA', this.data)
+    console.log('ACTIVESPOTS', this.data.activespots)
     console.log("OPTIONS",options)
     // console.log("AppGlobalData", app.globalData.userId)
     let page = this
@@ -187,7 +190,7 @@ Page({
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
-          sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
+          sliderLeft: (res.windowWidth / that.data.tabs.length - res.sliderWidth) / 2,
           sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
         });
       }
@@ -221,7 +224,8 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    console.log("OPTIONS On show", options)
+    let options = this.data.options;
+    console.log("OPTIONS On show", this.data.options)
     // console.log("AppGlobalData", app.globalData.userId)
     let page = this
     this.setData({ options: options })
