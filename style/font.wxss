@@ -1,13 +1,13 @@
 /* style/font.wxss */
 
 @font-face {
-    font-family: 'Roboto';
+    /* font-family: 'Roboto';
     src: url('Roboto-Regular-webfont.eot');
     src: url('Roboto-Regular-webfont.eot?#iefix') format('embedded-opentype'),
          url('Roboto-Regular-webfont.woff') format('woff'),
          url('Roboto-Regular-webfont.ttf') format('truetype'),
          url('Roboto-Regular-webfont.svg#RobotoRegular') format('svg');
-    font-weight: normal;
+    font-weight: normal; */
     font-style: normal;
 }
  

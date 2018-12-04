@@ -63,7 +63,6 @@ Page({
     })
   },
 
-
   /* Create Button */
   goCreate: function () {
     wx.navigateTo({
@@ -78,31 +77,12 @@ Page({
     });
   },
 
-
   //Checkboxes for Skate Type
   checkboxChange: function (e) {
     this.setData({
       filtered_styles: e.detail.value
     })
-    // console.log('checkbox发生change事件，携带value值为：', e.detail.value)
-    // let styles = this.data.styles.map((item) => {
-    //   // indexOf checks for a name, and makes sure we're still in the array.
-    //   // If index is -1 then it's not in the list, because index starts at 0.
-    //   if (e.detail.value.indexOf(item.name) > -1) {
-    //     item.checked = true
-    //   }
-    //   return item;
-    // })
-    // this.setData({
-    //   styles: styles
-    // })
-    // console.log(this.data.styles)
-    // let filtered_styles = this.data.styles.filter((item) => item.checked);
-    // console.log(filtered_styles)
   },
-
-  
-
 
   // New Skate Spot Submission
   bindSubmit: function (e) {
@@ -141,7 +121,7 @@ Page({
         name: name,
         user_id: userId,
         description: description,
-        location: address,
+        address: address,
         styles: this.data.filtered_styles.join(', ')
       },
       image: {
