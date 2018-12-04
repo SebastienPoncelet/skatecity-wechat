@@ -18,7 +18,7 @@
   display:flex;
   flex-direction:column;
   margin-top:2vh;
-  padding:3vh;
+  padding:1vh;
   border-radius:14px;
   background-color:white;
   width:84vw;
@@ -77,7 +77,6 @@
   width:84vw;
   padding:3vh;
   border-radius:14px;
-  margin-top:3vh;
   /* box-shadow: 0px 3px 15px rgba(0,0,0,0.1); */
   display:flex;
   flex-direction:row;
@@ -200,7 +199,8 @@ font-family: 'Roboto';
   display: flex;
   width: 100vw;
   color:#ffffff;
-  padding:10px;
+  padding:1vh;
+  height:5.5vh;
 }
 
 
@@ -240,12 +240,19 @@ font-family: 'Roboto';
   margin-left: 0vh;
 }
 
+.weui-navbar {
+  border:1px solid white;
+}
+
 
 .weui-navbar__item.weui-bar__item_on {
 color: #872419;
-
+font-weight:bold;
 }
 
+.weui-navbar__item {
+  color: #435058;
+}
 
 .weui-tab {
   margin-top:-8vh;
@@ -261,3 +268,14 @@ color: #872419;
   width:100vw;
   height:39vh;
 }
+
+.home-button {
+  width:10vw;
+  height:5vh;
+}
+
+.create-button {
+  width:10vw;
+  height:5vh;
+}
+

@@ -12,10 +12,7 @@ Page({
     hasUserInfo: false,
     skatespots: null,
     // tab of list and map 
-
-
     tabs: ["Skate Spots", "Skate Map"],
-
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
@@ -184,21 +181,27 @@ Page({
     const length = this.data.skatespots.length
     for (let i = 0; i < length; ++i) {
       var spot = this.data.skatespots[i]
-      console.log(spot.tag_list)
-      if (spot.tag_list.includes(page.data.tag)) {
+
+      // var tags = spot.tag_list.toString().split(' ');
+      // for (let i = 0; i < tags.length; ++i) {
+      //   console.log("test", tags[i]);
+      // }
+  //  console.log("trying to split tags", spot.tag_list.toString().split(' '))
+     
+        if (spot.tag_list.includes(page.data.tag)) {
         activespots.push(spot);
         console.log(spot)
         console.log(this.data.activespots)
       } 
     }
+
+
     page.setData({
       activespots: activespots
     })
   },
 
-// empty array for active spots 
-// check if condition for spot if set of tag includes tag from page.tag 
-// append to active spots array 
+
 
 
 
@@ -215,7 +218,20 @@ Page({
     });
   },
 
+  /* Create Button */
+  goCreate: function () {
+    wx.navigateTo({
+      url: '../new/new'
+    });
+  },
 
+  /* Home Button */
+  goHome: function () {
+    wx.navigateTo({
+      url: '../index/index'
+    });
+  },
+  
   onReady: function(e) {
     // Use wx.createMapContext to acquire map context
     this.mapCtx = wx.createMapContext('myMap')

@@ -117,8 +117,15 @@ Page({
   },
   /* Create Button */
   goCreate: function () {
-    wx.switchTab({
+    wx.navigateTo({
       url: '../new/new'
+    });
+  },
+
+  /* Home Button */
+  goHome: function () {
+    wx.navigateTo({
+      url: '../index/index'
     });
   },
 

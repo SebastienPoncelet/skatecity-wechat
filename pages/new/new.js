@@ -62,6 +62,21 @@ Page({
       }
     })
   },
+
+  /* Create Button */
+  goCreate: function () {
+    wx.navigateTo({
+      url: '../new/new'
+    });
+  },
+
+  /* Home Button */
+  goHome: function () {
+    wx.navigateTo({
+      url: '../index/index'
+    });
+  },
+
   //Checkboxes for Skate Type
   checkboxChange: function (e) {
     this.setData({
