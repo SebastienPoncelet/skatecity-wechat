@@ -27,16 +27,15 @@
       <view class="filters">
      
   <view class="filters">
-      <view class="type" bindtap="filterType">All</view>
-      <view class="type" bindtap="filterType">Skateparks</view>
+      <view class="type" data-id="all" bindtap="filterType">All</view>
+      <view class="type" data-id="skateparks" bindtap="filterType">Skateparks</view>
       <view class="type" data-id="ledges" bindtap="filterType">Ledges</view>
-      <view class="type" bindtap="filterType">Pools</view>
-      <view class="type" bindtap="filterType">Ramps</view>
-
-      <view class="type" bindtap="filterType">Slopes</view>
-      <view class="type" bindtap="filterType">Rails</view>
-      <view class="type" bindtap="filterType">Stairs</view>
-      <view class="type" bindtap="filterType">Bowls</view>
+      <view class="type" data-id="pools" bindtap="filterType">Pools</view>
+      <view class="type" data-id="ramps" bindtap="filterType">Ramps</view>
+      <view class="type" data-id="slopes" bindtap="filterType">Slopes</view>
+      <view class="type" data-id="rails" bindtap="filterType">Rails</view>
+      <view class="type" data-id="stairs" bindtap="filterType">Stairs</view>
+      <view class="type" data-id="bowls" bindtap="filterType">Bowls</view>
   </view>
  
   

@@ -1,4 +1,6 @@
 /**index.wxss**/
+@import '/style/font.wxss';
+
 
 
 .weui-tab {
@@ -20,7 +22,14 @@
   color:#484848;
   font-size:15px;
   font-weight:bold;
+  font-family: 'Roboto';
+
 }
+
+.weui-navbar__item .weui-bar__item_on {
+  color: red !important;
+}
+
 
 .weui-tab__content {
   background-color: white;
@@ -80,6 +89,7 @@ font-size:14px;
 /* border:1px solid #5cc1b3; */
 box-shadow:1px 2px 5px rgba(0,0,0,0.15);
 color: #872419;
+font-family: 'Roboto';
 
 }
 
@@ -136,12 +146,16 @@ color: #872419;
   font-size:4vw;
   font-weight:bold;
   color:white;
+  font-family: 'Roboto';
+
 }
 
 .card-description .name {
   font-size:15.5px;
 font-weight:bold;
 margin:2vh;
+font-family: 'Roboto';
+
 
 }
 
@@ -154,6 +168,8 @@ margin:1vh;
 padding-right:1vh;
 padding-left:1vh;
 height:3.5vh;
+font-family: 'Roboto';
+
 
 }
 
@@ -175,6 +191,8 @@ margin-top:-9vh;
   font-size:30rpx;
   background-color: #872419 !important; 
   margin-top:1vh;
+  font-family: 'Roboto';
+
 }
 
 .btn-area {

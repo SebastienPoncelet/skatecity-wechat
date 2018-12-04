@@ -159,55 +159,44 @@ Page({
 
 
      // Save reference to page
-
     // Get api data
-    
 
-
-
-  filterType: function (e) {
-    const tag = e.currentTarget.dataset.id;
-    let page = this;
-    page.setData({
-      // counts: 1
-    });
-    if (page.data.tag == tag) {
-      page.setData({
-        tag: null
-      });
-    } else {
-      page.setData({
-        tag: tag
-      });
-    }
-
+  // filterType: function (e) {
+  //   const tag = e.currentTarget.dataset.id;
+  //   let page = this;
+  //   page.setData({
+  //     // counts: 1
+  //   });
+  //   if (page.data.tag == tag) {
+  //     page.setData({
+  //       tag: null
+  //     });
+  //   } else {
+  //     page.setData({
+  //       tag: tag
+  //     });
+  //   }
     // apiClient.get({
       // path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}&page=${page.data.counts}`,
+  //     wx.request({
+  //       // url: 'https://skatecity.wogengapp.cn/api/v1/spots/',
+  //       url: app.globalData.host + 'api/v1/spots/',
+  //       method: 'GET',
 
-      wx.request({
-        // url: 'https://skatecity.wogengapp.cn/api/v1/spots/',
-        url: app.globalData.host + 'api/v1/spots/',
-        method: 'GET',
-
-      success(res) {
-        console.log("tagged items", res.data.items)
-        var _items = res.data.items;
-        var _lastPage = res.data.last_page.last_page;
-        // // var storage = wx.getStorageSync(key)
-        // // save profile at this.data.profile
-        page.setData({
-          items: _items,
-          lastPage: _lastPage
-        });
-
-        //console.log(123, page)
-
-      }
-    })
-  },
-
-
-
+  //     success(res) {
+  //       console.log("tagged items", res.data.items)
+  //       var _items = res.data.items;
+  //       var _lastPage = res.data.last_page.last_page;
+  //       // // var storage = wx.getStorageSync(key)
+  //       // // save profile at this.data.profile
+  //       page.setData({
+  //         items: _items,
+  //         lastPage: _lastPage
+  //       });
+  //       //console.log(123, page)
+  //     }
+  //   })
+  // },
 
 
 
@@ -215,9 +204,14 @@ Page({
     var activespots = [];
     var tag = skatespots.tag_list;
     if (spots.tag_list == e.currentTarget.dataset.id) {
-        return activespots.push(tag);
+        activespots.push(tag);
     }
+    page.setData({
+      activespots: activespots
+    });
   },
+
+
 
 
   // links to the show page 
