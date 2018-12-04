@@ -23,18 +23,17 @@
     <view class='1scroll-list'>
       <view class='1scroll-item' id="in-{{index}}"> 
       <view class="filters">
-     
-  <view class="filters">
-      <view class="type" data-id="all" bindtap="filterType">All</view>
-      <view class="type" data-id="skateparks" bindtap="filterType">Skateparks</view>
-      <view class="type" data-id="ledges" bindtap="filterType">Ledges</view>
-      <view class="type" data-id="pools" bindtap="filterType">Pools</view>
-      <view class="type" data-id="ramps" bindtap="filterType">Ramps</view>
-      <view class="type" data-id="slopes" bindtap="filterType">Slopes</view>
-      <view class="type" data-id="rails" bindtap="filterType">Rails</view>
-      <view class="type" data-id="stairs" bindtap="filterType">Stairs</view>
-      <view class="type" data-id="bowls" bindtap="filterType">Bowls</view>
-  </view>
+        <view class="filters">
+            <view class="type" data-id="All" bindtap="filterType">All</view>
+            <view class="type" data-id="Skateparks" bindtap="filterType">Skateparks</view>
+            <view class="type" data-id="Ledges" bindtap="filterType">Ledges</view>
+            <view class="type" data-id="Pools" bindtap="filterType">Pools</view>
+            <view class="type" data-id="Ramps" bindtap="filterType">Ramps</view>
+            <view class="type" data-id="Slopes" bindtap="filterType">Slopes</view>
+            <view class="type" data-id="Rails" bindtap="filterType">Rails</view>
+            <view class="type" data-id="Stairs" bindtap="filterType">Stairs</view>
+            <view class="type" data-id="Bowls" bindtap="filterType">Bowls</view>
+        </view>
       </view>
     </view>
 
