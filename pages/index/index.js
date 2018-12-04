@@ -19,7 +19,7 @@ Page({
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0,
-    
+
     // map 
     latitude: null,
     longitude: null,
@@ -40,21 +40,39 @@ Page({
       iconPath: '/assets/pin.png'
     }],
     scrollInto: 0,
-    scrollList: [
-      { id: '1' },
-      { id: '2' },
-      { id: '3' },
-      { id: '1' },
-      { id: '2' },
-      { id: '3' },
-      { id: '4' },
-      { id: '1' },
-      { id: '2' }]
+    scrollList: [{
+        id: '1'
+      },
+      {
+        id: '2'
+      },
+      {
+        id: '3'
+      },
+      {
+        id: '1'
+      },
+      {
+        id: '2'
+      },
+      {
+        id: '3'
+      },
+      {
+        id: '4'
+      },
+      {
+        id: '1'
+      },
+      {
+        id: '2'
+      }
+    ]
   },
-  
 
 
-  scrollLeft: function (e) {
+
+  scrollLeft: function(e) {
     var into = this.data.scrollInto;
     var length = this.data.scrollList.length;
     if (into > 0) {
@@ -67,7 +85,7 @@ Page({
       })
     }
   },
-  scrollRight: function (e) {
+  scrollRight: function(e) {
     var into = this.data.scrollInto;
     if (into < this.data.scrollList.length - 3) {
       this.setData({
@@ -80,8 +98,8 @@ Page({
     }
   },
 
-  
-  onLoad: function (options) {
+
+  onLoad: function(options) {
     console.log(app.globalData)
 
     let page = this
@@ -107,12 +125,12 @@ Page({
 
         wx.hideToast();
         console.log("SKATESPOTS", skatespots)
-  
+
       }
 
     });
 
-    
+
 
     // Display toast when loading
     wx.showToast({
@@ -121,11 +139,11 @@ Page({
       duration: 3000
     });
 
-    
+
 
     wx.getLocation({
       type: 'wgs84', // **1
-      success: function (res) {
+      success: function(res) {
         var latitude = res.latitude
         var longitude = res.longitude
         var accuracy = res.accuracy
@@ -141,7 +159,7 @@ Page({
 
   },
 
-  tabClick: function (e) {
+  tabClick: function(e) {
     this.setData({
       sliderOffset: e.currentTarget.offsetLeft,
       activeIndex: e.currentTarget.id
@@ -158,18 +176,19 @@ Page({
   //},
 
 
-     // Save reference to page
+  // Save reference to page
 
-    // Get api data
-    
-
+  // Get api data
 
 
-  filterType: function (e) {
+
+
+  filterType: function(e) {
     const tag = e.currentTarget.dataset.id;
-    let page = this;
+    console.log("log of the tag :", tag)
+    let page = this
     page.setData({
-      // counts: 1
+      counts: 1
     });
     if (page.data.tag == tag) {
       page.setData({
@@ -182,27 +201,32 @@ Page({
     }
 
     // apiClient.get({
-      // path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}&page=${page.data.counts}`,
+    // path: `items?keyword=${page.data.keyword || ""}&tag=${page.data.tag || ""}&city=${page.data.city || ""}&method=${page.data.method || ""}&page=${page.data.counts}`,
 
-      wx.request({
-        // url: 'https://skatecity.wogengapp.cn/api/v1/spots/',
-        url: app.globalData.host + 'api/v1/spots/',
-        method: 'GET',
+    wx.request({
 
+      // url: 'https://skatecity.wogengapp.cn/api/v1/spots/',
+      url: app.globalData.host + 'api/v1/spots/',
+      method: 'GET',
       success(res) {
-        console.log("tagged items", res.data.items)
-        var _items = res.data.items;
-        var _lastPage = res.data.last_page.last_page;
-        // // var storage = wx.getStorageSync(key)
-        // // save profile at this.data.profile
+        console.log("Data received", res)
+        let skatespots = res.data.spots;
+        skatespots = skatespots.map((item) => {
+          item.tag_list = item.tag_list.join(', ')
+          return item
+          console.log('finding out what item is', skatespots)
+        });
+        // Update local data
         page.setData({
-          items: _items,
-          lastPage: _lastPage
+          skatespots: skatespots,
+          activespots: skatespots
         });
 
-        //console.log(123, page)
+        wx.hideToast();
+        console.log("SKATESPOTS", skatespots)
 
       }
+
     })
   },
 
@@ -211,17 +235,17 @@ Page({
 
 
 
-  filterType: function (e) {
-    var activespots = [];
-    var tag = skatespots.tag_list;
-    if (spots.tag_list == e.currentTarget.dataset.id) {
-        return activespots.push(tag);
-    }
-  },
+  //filterType: function (e) {
+  //var activespots = [];
+  //var tag = skatespots.tag_list;
+  //if (spots.tag_list == e.currentTarget.dataset.id) {
+  //  return activespots.push(tag);
+  //}
+  //},
 
 
   // links to the show page 
-  showSkatespot: function (e) {
+  showSkatespot: function(e) {
     console.log(1, e)
     const data = e.currentTarget.dataset.id;
     console.log('check data', data)
@@ -234,11 +258,11 @@ Page({
   },
 
 
-  onReady: function (e) {
+  onReady: function(e) {
     // Use wx.createMapContext to acquire map context
     this.mapCtx = wx.createMapContext('myMap')
   },
-  moveToLocation: function () {
+  moveToLocation: function() {
     this.mapCtx.moveToLocation()
   },
 
