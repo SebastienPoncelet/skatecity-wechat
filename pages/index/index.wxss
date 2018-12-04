@@ -1,7 +1,14 @@
 /**index.wxss**/
 @import '/style/font.wxss';
 
+.weui-navbar__item.weui-bar__item_on {
+color: #872419;
+font-weight:bold;
+}
 
+.weui-navbar__item {
+  color: #435058;
+}
 
 .weui-tab {
   position: relative;
