@@ -57,6 +57,17 @@ width: 85%;
   animation-name: fadeIn;
 }
 
+.desc-address {
+  padding: 5px;
+  font-size: 15px;
+  color: rgb(255,255,255);
+  border-bottom: 1px solid #F0F0F0;
+  width: 80%;
+  margin: 40px 20px;
+  animation-duration: 3s;
+  animation-name: fadeIn;
+}
+
 .btn-upload {
 margin-bottom:8px;
 color:white;

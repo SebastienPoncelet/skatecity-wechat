@@ -6,20 +6,18 @@
 <view class="form-fields">
 <form bindsubmit="bindSubmit" bindreset="formReset">
   <input value="{{ name }}" class="desc" name="name" placeholder="Name The Spot" />
-  <input value='{{ description }}' class="desc" name="description" placeholder="Enter a Description" />
-  <input value='{{ address }}' class="desc" name="address" placeholder="Enter The Address" />
+  <input value='{{ description }}' class="desc" name="description" placeholder="Add a Description" />
+  <input value='{{ address }}'  bindtap="userChooseLocation" class="desc" name="address" placeholder="Get Location From Map" />
+ 
   
 <view class="skatestyle-title">Check Skate Style Below:</view>
-
   <checkbox-group bindchange="checkboxChange">
-    <view class="skatestyle-checkbox">
-    
+    <view class="skatestyle-checkbox">   
       <label class="checkbox" wx:for="{{styles}}" wx:for-item="style">
         <checkbox value="{{style.name}}" checked="{{style.checked}}"/>{{style.value}}
       </label>
     </view>
   </checkbox-group>
-  <button class="btn-upload" bindtap="userChooseLocation">Choose Location</button>
   <button class="btn-upload" bindtap="takePhoto">Upload Some Photos</button>
   <button class="btn-submit" formType="submit">Save The Spot</button>
 </form>
