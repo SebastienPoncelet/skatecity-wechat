@@ -26,7 +26,11 @@ Page({
       { id: '3' },
       { id: '4' },
       { id: '1' },
-      { id: '2' }]
+      { id: '2' }],
+    tabs: ["Map", "More photos"],
+    activeIndex: 0,
+    sliderOffset: 0,
+    sliderLeft: 0
   },
 
 
@@ -140,6 +144,23 @@ Page({
 
       }
 
+    });
+
+  // map and more photos tab bar 
+    var that = this;
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
+          sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
+        });
+      }
+    });
+  },
+  tabClick: function (e) {
+    this.setData({
+      sliderOffset: e.currentTarget.offsetLeft,
+      activeIndex: e.currentTarget.id
     });
 
   },
