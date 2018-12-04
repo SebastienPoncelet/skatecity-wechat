@@ -1,5 +1,8 @@
 /* pages/show/show.wxss */
 
+@import '/style/font.wxss';
+
+
 .container {
   height: 100%;
   display: flex;
@@ -8,7 +11,7 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-  background-color: #F8F8F8;
+  /* background-color: #F8F8F8; */
 }
 
 .name-description {
@@ -21,6 +24,8 @@
   width:84vw;
   /* box-shadow: 0px 3px 15px rgba(0,0,0,0.1); */
   margin-bottom: 14vh;
+  font-family: 'Roboto';
+
 }
 
 .name {
@@ -55,6 +60,7 @@
   color: 	#787878;
   border-top:1px solid #E8E8E8;
   padding-top:2vh;
+  font-family: 'Roboto';
 }
 
 .camera {
@@ -99,6 +105,7 @@
  .page-section-gap{
   box-sizing: border-box;
   padding: 0 30rpx;
+  margin-top:1vh;
 }
 
 .page-body-button {
@@ -108,6 +115,8 @@
   font-size:30rpx;
   background-color: #872419 !important; 
   margin-top:1vh;
+  font-family: 'Roboto';
+
 }
 
 .btn-area {
@@ -167,6 +176,7 @@ background-color:white;
 width:100vw;
 padding:2vh;
 margin-left:7vh;
+font-family: 'Roboto';
 
 }
 
@@ -191,3 +201,47 @@ margin-left:7vh;
   padding:10px;
 }
 
+
+.page__bd{
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-tab__content{
+    padding-top: 60px;
+    text-align: center;
+}
+
+.weui-navbar__title {
+  font-family: 'Roboto';
+}
+
+.weui-navbar__slider {
+  width: 50%;
+  background-color: #872419;
+  /* for where the slider starts and ends */ 
+  margin-left: 0vh;
+}
+
+
+.weui-navbar__item.weui-bar__item_on {
+color: #872419;
+
+}
+
+
+.weui-tab {
+  margin-top:-8vh;
+}
+.imagemore {
+  width:100vw;
+  height:34vh;
+  background-size: cover! important;
+  margin-top:-8vh;
+}
+
+.image-sizemore {
+  width:100vw;
+  height:39vh;
+}

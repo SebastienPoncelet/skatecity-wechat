@@ -15,8 +15,6 @@
 
 
 <!-------------FILTER Tags---------->
-
-
 <view class='1scroll-bar'>
   <view class='1scroll-left' bindtap='scrollLeft'>
     <text class='1iconfont icon-back'></text>
@@ -27,19 +25,16 @@
       <view class="filters">
      
   <view class="filters">
-      <view class="type" bindtap="filterType">All</view>
-      <view class="type" bindtap="filterType">Skateparks</view>
-      <view class="type" bindtap="filterType">Ledges</view>
-      <view class="type" bindtap="filterType">Pools</view>
-      <view class="type" bindtap="filterType">Ramps</view>
-
-      <view class="type" bindtap="filterType">Slopes</view>
-      <view class="type" bindtap="filterType">Rails</view>
-      <view class="type" bindtap="filterType">Stairs</view>
-      <view class="type" bindtap="filterType">Bowls</view>
+      <view class="type" data-id="all" bindtap="filterType">All</view>
+      <view class="type" data-id="skateparks" bindtap="filterType">Skateparks</view>
+      <view class="type" data-id="ledges" bindtap="filterType">Ledges</view>
+      <view class="type" data-id="pools" bindtap="filterType">Pools</view>
+      <view class="type" data-id="ramps" bindtap="filterType">Ramps</view>
+      <view class="type" data-id="slopes" bindtap="filterType">Slopes</view>
+      <view class="type" data-id="rails" bindtap="filterType">Rails</view>
+      <view class="type" data-id="stairs" bindtap="filterType">Stairs</view>
+      <view class="type" data-id="bowls" bindtap="filterType">Bowls</view>
   </view>
- 
-  
       </view>
     </view>
 
@@ -54,14 +49,13 @@
 
     <!----------List of ALL cards in List tab unfiltered------------------->
   <view class="cards">
-    <block wx:for="{{skatespots}}" wx:key="index" wx:for-item="skatespot">
+    <block wx:for="{{activespots}}" wx:key="index" wx:for-item="skatespot">
       <view class="card">
         <view class="card-body" data-id="{{skatespot.id}}" bindtap='showSkatespot' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{skatespot.photo}}');">
 
             <view class="card-description">
                 <text class="name">{{skatespot.name}}</text>
             </view>
-
           <view class="card-footer">
           <view class="rating-icon">
               <text class='rating'>{{skatespot.cached_votes_total}}</text>
