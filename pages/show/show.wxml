@@ -74,8 +74,8 @@
         ></map>
       </view>
       <view class="btn-area">
-        <button bindtap="getCenterLocation" class="page-body-button" type="primary">Get center on the spots</button>
-        <button bindtap="moveToLocation" class="page-body-button" type="primary">Your Location</button>
+        <button bindtap="getCenterLocation" class="page-body-button" type="primary">Center The Skate Spot</button>
+        <button bindtap="moveToLocation" class="page-body-button" type="primary">Your Current Location</button>
       </view>
     </view>
 <!------end of map tab---------->

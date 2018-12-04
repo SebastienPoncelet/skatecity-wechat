@@ -51,7 +51,7 @@
   <view class="cards">
     <block wx:for="{{activespots}}" wx:key="index" wx:for-item="skatespot">
       <view class="card">
-        <view class="card-body" data-id="{{skatespot.id}}" bindtap='showSkatespot' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{skatespot.photo}}');">
+        <view class="card-body" data-id="{{skatespot.id}}" bindtap='showSkatespot' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{skatespots.images}}');">
 
             <view class="card-description">
                 <text class="name">{{skatespot.name}}</text>
