@@ -43,6 +43,23 @@
         </view>
       </view>
 
+
+
+<view class="page">
+    <view class="page__bd">
+        <view class="weui-tab">
+            <view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+            </view>
+            <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+                
+                
 <!------ MAP -----------> 
       <view class="page-body">
       <view class="page-section page-section-gap">
@@ -61,6 +78,26 @@
         <button bindtap="moveToLocation" class="page-body-button" type="primary">Your Current Location</button>
       </view>
     </view>
+<!------end of map tab---------->
+    </view>
+                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+      <swiper class="imagemore" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
+    <block wx:for="{{bannerImages}}">
+    <swiper-item>
+      <image src="{{item}}" class="image-sizemore" />
+    </swiper-item>
+  </block>
+</swiper>
+ <!------end of photo tab---------->         
+                </view>
+    
+    
+            </view>
+        </view>
+    </view>
+</view>
+
+
 
 <!----------near by spots swiper---------------->
   <view class="scrollingswiper">

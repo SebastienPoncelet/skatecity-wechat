@@ -1,3 +1,7 @@
+
+@import '/style/font.wxss';
+
+
 /* pages/new/new.wxss */
 .container {
 width: 85%;
@@ -27,7 +31,10 @@ width: 85%;
   padding:10px;
   animation-duration: 1s;
   animation-name: zoomInDown;
+  font-family: 'Roboto';
+
 }
+
 
  .form-fields {
   margin:15px 8px;
@@ -55,6 +62,8 @@ width: 85%;
   margin: 40px 20px;
   animation-duration: 3s;
   animation-name: fadeIn;
+  font-family: 'Roboto';
+
 }
 
 .desc-address {
@@ -69,6 +78,7 @@ width: 85%;
 }
 
 .btn-upload {
+  font-family: 'Roboto';
 margin-bottom:8px;
 color:white;
 font-size: 15px;
@@ -83,6 +93,7 @@ animation-name: fadeIn;
 }
 
 .btn-submit {
+  font-family: 'Roboto';
 margin-bottom:8px;
 color:white;
 font-size: 16px;
@@ -138,6 +149,8 @@ animation-duration: 5s;
   font-size:15px;
   animation-duration: 3s;
   animation-name: fadeIn;
+  font-family: 'Roboto';
+
 }
 
 .skatestyle-checkbox {
@@ -151,6 +164,8 @@ height:120px;
 padding-left:20px;
 animation-duration: 3s;
 animation-name: fadeIn;
+font-family: 'Roboto';
+
 }
 
 
