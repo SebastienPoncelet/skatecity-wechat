@@ -40,33 +40,16 @@ Page({
       iconPath: '/assets/pin.png'
     }],
     scrollInto: 0,
-    scrollList: [{
-        id: '1'
-      },
-      {
-        id: '2'
-      },
-      {
-        id: '3'
-      },
-      {
-        id: '1'
-      },
-      {
-        id: '2'
-      },
-      {
-        id: '3'
-      },
-      {
-        id: '4'
-      },
-      {
-        id: '1'
-      },
-      {
-        id: '2'
-      }
+    scrollList: [
+      { id: '1' },
+      { id: '2' },
+      { id: '3' },
+      { id: '1' },
+      { id: '2' },
+      { id: '3' },
+      { id: '4' },
+      { id: '1' },
+      { id: '2' }
     ]
   },
 
@@ -143,7 +126,7 @@ Page({
 
 
     wx.getLocation({
-      type: 'wgs84', // **1
+      type: 'wgs84', 
       success: function(res) {
         var latitude = res.latitude
         var longitude = res.longitude
