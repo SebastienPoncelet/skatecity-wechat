@@ -16,16 +16,6 @@ Page({
       longitude: 113.324520,
       name: 'T.I.T 创意园'
     }],
-    covers: [{
-      latitude: 23.099994,
-      longitude: 113.344520,
-      iconPath: '/assets/pin.png'
-    }, {
-      latitude: 23.099994,
-      longitude: 113.304520,
-        iconPath: '//assets/pin.png'
-    }],
-   
   scrollInto: 0,
     scrollList: [
       { id: '1' },
@@ -38,11 +28,6 @@ Page({
       { id: '1' },
       { id: '2' }]
   },
-
-
-
-
-
 
 
   scrollLeft: function (e) {
@@ -81,9 +66,9 @@ Page({
       const userId = app.globalData.userId
       console.log("User ID", userId)
       wx.request({
-
         url: app.globalData.host + 'api/v1/spots/' + options.id,
         // url: 'http://localhost:3000/api/v1/spots/' + options.id,
+
         method: 'PUT',
         data: { user_id: userId, id: parseInt(spotId) },
         // console.log("DATA", data),
@@ -128,10 +113,10 @@ Page({
    */
   onLoad: function (options) {
     console.log("OPTIONS",options)
+    // console.log("AppGlobalData", app.globalData.userId)
     let page = this
     this.setData({options: options})
     wx.request({
-
       url: app.globalData.host + 'api/v1/spots/' + options.id,
       // url: 'http://localhost:3000/api/v1/spots/'+ options.id,
       method: 'GET',
@@ -139,8 +124,17 @@ Page({
         console.log("Data received", res)
         const spot = res.data.spot;
         // Update local data
+        const markers = [{
+          id: spot.id,
+          latitude: spot.latitude,
+          longitude: spot.longitude,
+          name: spot.name
+        }]
         page.setData({
-          spot: spot
+          spot: spot,
+          markers: markers,
+          latitude: spot.latitude,
+          longitude: spot.longitude
         });
         wx.hideToast();
 
@@ -149,6 +143,7 @@ Page({
     });
 
   },
+
 
   mapScroll() {
     wx.pageScrollTo({

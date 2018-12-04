@@ -1,6 +1,11 @@
 //app.js
-wx.cloud.init()
-const db = wx.cloud.database()
+const AV = require('./utils/av-weapp-min.js')
+const config = require('./key')
+
+AV.init({
+  appId: config.appId,
+  appKey: config.appSecret,
+});
 
 App({
 
@@ -8,11 +13,12 @@ App({
     // app.status = function () {
     //   console.log("status", globalData)
     // }
-    wx.cloud.init({
-      env: '736f-sock-m-72589c'
-    })
+    // wx.cloud.init({
+    //   env: '736f-sock-m-72589c'
+    // })
 
     const host = this.globalData.host;
+
     console.log('processing to login')
     wx.login({
       success: (res) => {
@@ -39,6 +45,7 @@ App({
   globalData: {
     host: "https://skatecity.wogengapp.cn/",
   //host: 'http://localhost:3000/',
+
     userId: null,
     userInfo: {}
   }
