@@ -26,8 +26,10 @@
 
 }
 
-.weui-navbar__item .weui-bar__item_on {
-  color: red !important;
+
+.weui-navbar__item.weui-bar__item_on {
+color: #872419;
+
 }
 
 

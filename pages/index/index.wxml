@@ -15,8 +15,6 @@
 
 
 <!-------------FILTER Tags---------->
-
-
 <view class='1scroll-bar'>
   <view class='1scroll-left' bindtap='scrollLeft'>
     <text class='1iconfont icon-back'></text>
@@ -37,8 +35,6 @@
       <view class="type" data-id="stairs" bindtap="filterType">Stairs</view>
       <view class="type" data-id="bowls" bindtap="filterType">Bowls</view>
   </view>
- 
-  
       </view>
     </view>
 
@@ -60,7 +56,6 @@
             <view class="card-description">
                 <text class="name">{{skatespot.name}}</text>
             </view>
-
           <view class="card-footer">
           <view class="rating-icon">
               <text class='rating'>{{skatespot.cached_votes_total}}</text>
