@@ -118,13 +118,14 @@
   </view>
 </view>
    
-<!---------FIXED BAR ----------------->
+<!---------fixed bottom tab bar  ----------------->
 <view class="fixed-bar">
+  <!--Home button----->
+  <image class='home-button' bindtap="goHome" src="/assets/homewhite.png"></image>
   <!--Create button -->
-  <view class="create-button" bindtap="goCreate">
-  Create A Skate Spot
+  <image class='create-button' bindtap="goCreate" src="/assets/addwhite.png"></image>
   </view>
-  </view>
+
 <!-----container end---->
 </view>
 

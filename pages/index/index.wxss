@@ -26,9 +26,9 @@ font-weight:bold;
 
 
 .weui-navbar__title {
-  color:#484848;
+  /* color:#484848; */
   font-size:15px;
-  font-weight:bold;
+  /* font-weight:bold; */
   font-family: 'Roboto';
 
 }
@@ -36,7 +36,6 @@ font-weight:bold;
 
 .weui-navbar__item.weui-bar__item_on {
 color: #872419;
-
 }
 
 
@@ -184,13 +183,14 @@ font-family: 'Roboto';
 
 .page-body {
   width:100vw;
-margin-top:-9vh;
+margin-top:-7vh;
 }
 
 .page-section-gap{
   box-sizing: border-box;
-  margin-top:14vh;
+  margin-top:11vh;
   border-top:2px solid white;
+  margin-bottom:-2vh;
 }
 
 .page-body-button {
@@ -252,4 +252,26 @@ margin-top:-9vh;
 margin:4vh;
 font-weight:bold;
 font-size:15px;
+}
+
+.home-button {
+  width:10vw;
+  height:5vh;
+}
+
+.create-button {
+  width:10vw;
+  height:5vh;
+}
+
+.fixed-bar {
+  background-color:#435058;
+  position: fixed;
+  bottom: 0;
+  justify-content: space-around;
+  display: flex;
+  width: 100vw;
+  color:#ffffff;
+  padding:1vh;
+  height:5.5vh;
 }

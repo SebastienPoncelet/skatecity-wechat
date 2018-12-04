@@ -235,7 +235,20 @@ Page({
     });
   },
 
+  /* Create Button */
+  goCreate: function () {
+    wx.navigateTo({
+      url: '../new/new'
+    });
+  },
 
+  /* Home Button */
+  goHome: function () {
+    wx.navigateTo({
+      url: '../index/index'
+    });
+  },
+  
   onReady: function(e) {
     // Use wx.createMapContext to acquire map context
     this.mapCtx = wx.createMapContext('myMap')

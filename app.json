@@ -11,23 +11,5 @@
     "navigationBarBackgroundColor": "#435058",
     "navigationBarTitleText": "Skate City",
     "navigationBarTextStyle": "white"
-  },
-  "tabBar": {
-    "backgroundColor": "#FFFFFE",
-    "borderStyle": "#D3D3D3",
-    "selectedColor": "#872419",
-    "color": "#435058",
-    "list": [
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "/assets/icons/home.png",
-        "selectedIconPath": "/assets/icons/home.png"
-      },
-      {
-        "pagePath": "pages/new/new",
-        "iconPath": "/assets/iongreyadd.png",
-        "selectedIconPath": "/assets/ionmaroonadd.png"
-      }
-    ]
   }
 }
