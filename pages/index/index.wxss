@@ -113,6 +113,7 @@ font-family: 'Roboto';
 
 .cards {
   margin-top: 1vh;
+  margin-bottom:11vh;
 }
 
 .card {

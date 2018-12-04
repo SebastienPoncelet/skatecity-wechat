@@ -235,6 +235,8 @@ Page({
     });
   },
 
+
+/* FIXED TAB BAR AT THE BOTTOM */
   /* Create Button */
   goCreate: function () {
     wx.navigateTo({
@@ -248,7 +250,7 @@ Page({
       url: '../index/index'
     });
   },
-  
+
   onReady: function(e) {
     // Use wx.createMapContext to acquire map context
     this.mapCtx = wx.createMapContext('myMap')
