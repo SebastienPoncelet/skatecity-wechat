@@ -6,7 +6,7 @@ Page({
    * Page initial data
    */
   data: {
-    bannerImages: ['https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'],
+    // bannerImages: ['https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'],
     autoplay: false,
     latitude: 23.099994,
     longitude: 113.324520,
@@ -60,6 +60,31 @@ Page({
     }
   },
 
+  /*  Uploading Photos */
+
+  takePhoto: function () {
+    const that = this;
+    wx.chooseImage({
+      count: 4,
+      sizeType: ['compressed'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
+        let tempFilePath = res.tempFilePaths[0];
+        new AV.File('file-name', {
+          blob: {
+            uri: tempFilePath,
+          },
+        }).save().then(
+          file => {
+            that.setData({
+              photo_url: file.attributes.url
+            })
+          }
+        ).catch(console.error);
+      }
+    });
+  },
+
 
   /* Send Rating */
     sendRating: function () {
@@ -78,8 +103,12 @@ Page({
         // console.log("DATA", data),
         success(res) {
           console.log("Rating Sent", res)
+          console.log("log spotId :", spotId)
+          const data = spotId
           wx.hideToast();
-
+          wx.reLaunch({
+            url: `../show/show?id=${data}`
+          })
         }
         
 
@@ -194,7 +223,35 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    console.log("OPTIONS On show", options)
+    // console.log("AppGlobalData", app.globalData.userId)
+    let page = this
+    this.setData({ options: options })
+    wx.request({
+      url: app.globalData.host + 'api/v1/spots/' + options.id,
+      // url: 'http://localhost:3000/api/v1/spots/'+ options.id,
+      method: 'GET',
+      success(res) {
+        console.log("Data received", res)
+        const spot = res.data.spot;
+        // Update local data
+        const markers = [{
+          id: spot.id,
+          latitude: spot.latitude,
+          longitude: spot.longitude,
+          name: spot.name
+        }]
+        page.setData({
+          spot: spot,
+          markers: markers,
+          latitude: spot.latitude,
+          longitude: spot.longitude
+        });
+        wx.hideToast();
 
+      }
+
+    });
   },
 
   /**
@@ -232,46 +289,59 @@ Page({
 
   }, 
 
+
+
   onReady: function (e) {
     this.mapCtx = wx.createMapContext('myMap')
+      // wx.openLocation({
+      //   latitude: this.data.latitude,
+      //   longitude: this.data.longitude,
+      //   scale: 28
+      // })
   },
+
+  //------------Getting spot's location------------//
   getCenterLocation: function () {
+    let that = this
     this.mapCtx.getCenterLocation({
       success: function (res) {
-        console.log(res.longitude)
-        console.log(res.latitude)
+        // Assigning spot's longitude/latitude that were saved in this page global data in the GET request.
+        res.longitude = that.data.longitude
+        res.latitude = that.data.latitude
       }
     })
   },
+
+  //------------Centering map on spot's location------------//
   moveToLocation: function () {
     this.mapCtx.moveToLocation()
   },
-  translateMarker: function () {
-    this.mapCtx.translateMarker({
-      markerId: 1,
-      autoRotate: true,
-      duration: 1000,
-      destination: {
-        latitude: 23.10229,
-        longitude: 113.3345211,
-      },
-      animationEnd() {
-        console.log('animation end')
-      }
-    })
-  },
-  includePoints: function () {
-    this.mapCtx.includePoints({
-      padding: [10],
-      points: [{
-        latitude: 23.10229,
-        longitude: 113.3345211,
-      }, {
-        latitude: 23.00229,
-        longitude: 113.3345211,
-      }]
-    })
-  },
+  // translateMarker: function () {
+  //   this.mapCtx.translateMarker({
+  //     markerId: 1,
+  //     autoRotate: true,
+  //     duration: 1000,
+  //     destination: {
+  //       latitude: 23.10229,
+  //       longitude: 113.3345211,
+  //     },
+  //     animationEnd() {
+  //       console.log('animation end')
+  //     }
+  //   })
+  // },
+  // includePoints: function () {
+  //   this.mapCtx.includePoints({
+  //     padding: [10],
+  //     points: [{
+  //       latitude: 23.10229,
+  //       longitude: 113.3345211,
+  //     }, {
+  //       latitude: 23.00229,
+  //       longitude: 113.3345211,
+  //     }]
+  //   })
+  // },
 
 
 
