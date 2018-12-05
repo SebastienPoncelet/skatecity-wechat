@@ -24,7 +24,7 @@
       <view class='1scroll-item' id="in-{{index}}"> 
       <view class="filters">
         <view class="filters">
-            <view class="type" data-id="All" bindtap="displayAll">All</view>
+            <view class="type" data-id="All" bindtap="filterType">All</view>
             <view class="type" data-id="Skateparks" bindtap="filterType">Skateparks</view>
             <view class="type" data-id="Ledges" bindtap="filterType">Ledges</view>
             <view class="type" data-id="Pools" bindtap="filterType">Pools</view>
@@ -60,7 +60,9 @@
               <text class='rating'>{{skatespot.cached_votes_total}}</text>
                 <image class='icon' src="/assets/likes-white.png"></image>
           </view>
-              <text class='styles'>{{skatespot.tag_list}}</text>
+            <view wx:for="{{skatespot.tag_list}}" wx:key="tags" wx:for-item="tag" wx:index="index">
+              <text class='styles'>{{tag}}</text>
+              </view>
           </view>
           </view>
         </view>

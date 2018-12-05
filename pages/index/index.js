@@ -88,23 +88,15 @@ Page({
       success(res) {
         console.log("Data received", res)
         let skatespots = res.data.spots;
-        skatespots = skatespots.map((item) => {
-          item.tag_list = item.tag_list.join(', ')
-          return item
-          console.log('finding out what item is', skatespots)
-        });
         app.globalData['activespots'] = skatespots;
         // Update local data
         page.setData({
           skatespots: skatespots,
           activespots: skatespots
         });
-
         wx.hideToast();
         console.log("SKATESPOTS", skatespots)
-
       }
-
     });
 
 
@@ -188,29 +180,35 @@ Page({
     const tag = e.currentTarget.dataset.id;
     console.log("log of the tag :", tag)
     let page = this
-    if (page.data.tag == tag) {
+    // if (page.data.tag == tag) {
+    //   page.setData({
+    //     tag: null
+    //   });
+    // } else {
+    //   page.setData({
+    //     tag: tag
+    //   });
+    // }
+    // console.log(page.data.tag)
+    if (tag != 'All') {
+      var activespots = []
+      const length = this.data.skatespots.length
+      for (let i = 0; i < length; ++i) {
+        var spot = this.data.skatespots[i]
+          if (spot.tag_list.includes(tag)) {
+          activespots.push(spot);
+          console.log(spot)
+          console.log(this.data.activespots)
+        } 
+      }
       page.setData({
-        tag: null
-      });
+        activespots: activespots
+      })
     } else {
       page.setData({
-        tag: tag
-      });
+        activespots: page.data.skatespots
+      })
     }
-    console.log(page.data.tag)
-    var activespots = []
-    const length = this.data.skatespots.length
-    for (let i = 0; i < length; ++i) {
-      var spot = this.data.skatespots[i]
-        if (spot.tag_list.includes(page.data.tag)) {
-        activespots.push(spot);
-        console.log(spot)
-        console.log(this.data.activespots)
-      } 
-    }
-    page.setData({
-      activespots: activespots
-    })
   },
 
 
