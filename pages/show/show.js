@@ -17,16 +17,16 @@ Page({
       name: 'T.I.T 创意园'
     }],
   scrollInto: 0,
-    scrollList: [
-      { id: '1' },
-      { id: '2' },
-      { id: '3' },
-      { id: '1' },
-      { id: '2' },
-      { id: '3' },
-      { id: '4' },
-      { id: '1' },
-      { id: '2' }],
+    // scrollList: [
+    //   { id: '1' },
+    //   { id: '2' },
+    //   { id: '3' },
+    //   { id: '1' },
+    //   { id: '2' },
+    //   { id: '3' },
+    //   { id: '4' },
+    //   { id: '1' },
+    //   { id: '2' }],
     tabs: ["Map", "More photos"],
     activeIndex: 0,
     sliderOffset: 0,
@@ -106,17 +106,19 @@ Page({
           console.log("log spotId :", spotId)
           const data = spotId
           wx.hideToast();
+
           wx.reLaunch({
             url: `../show/show?id=${data}`
           })
+
         }
-        
-
       });
-
   },
 
+
   /* FIXED TAB BAR AT THE BOTTOM */
+
+
   /* Create Button */
   goCreate: function () {
     wx.navigateTo({
@@ -144,9 +146,7 @@ Page({
     wx.showShareMenu({
       withShareTicket: true
     })
-
     spot: { }
-
   },
 
 
@@ -154,6 +154,9 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    this.setData({activespots: app.globalData['activespots']})
+    console.log('DATA', this.data)
+    console.log('ACTIVESPOTS', this.data.activespots)
     console.log("OPTIONS",options)
     // console.log("AppGlobalData", app.globalData.userId)
     let page = this
@@ -179,9 +182,7 @@ Page({
           longitude: spot.longitude
         });
         wx.hideToast();
-
       }
-
     });
 
   // map and more photos tab bar 
@@ -189,7 +190,7 @@ Page({
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
-          sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
+          sliderLeft: (res.windowWidth / that.data.tabs.length - res.sliderWidth) / 2,
           sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
         });
       }
@@ -223,7 +224,8 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
-    console.log("OPTIONS On show", options)
+    let options = this.data.options;
+    console.log("OPTIONS On show", this.data.options)
     // console.log("AppGlobalData", app.globalData.userId)
     let page = this
     this.setData({ options: options })
@@ -290,14 +292,10 @@ Page({
   }, 
 
 
-
+ //------------Creating a map on this page------------//
   onReady: function (e) {
     this.mapCtx = wx.createMapContext('myMap')
-      // wx.openLocation({
-      //   latitude: this.data.latitude,
-      //   longitude: this.data.longitude,
-      //   scale: 28
-      // })
+
   },
 
   //------------Getting spot's location------------//
@@ -316,6 +314,9 @@ Page({
   moveToLocation: function () {
     this.mapCtx.moveToLocation()
   },
+
+
+
   // translateMarker: function () {
   //   this.mapCtx.translateMarker({
   //     markerId: 1,
