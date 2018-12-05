@@ -21,8 +21,7 @@ Page({
     sliderOffset: 0,
     sliderLeft: 0,
 
-    //------------Map------------//
-    //------------Adding markers to the map------------//
+    //------------Map - Adding markers to the map------------//
     // Initialize "markers" as an empty array to then be able to fill it out with hashes with each spot id+longitude+latitude+address
     latitude: null,
     longitude: null,
@@ -160,24 +159,8 @@ Page({
     }
   },
 
-  //getCenterLocation: function (e) {
-  //let data = this
-  //wx.openLocation({
-  //latitude: data.data.latitude,
-  //longitude: data.data.longitude,
-  //scale: 28
-  //})
-  //},
+  //------------Tag Filter------------//
 
-
-
-  // Save reference to page
-  // Get api data
-
-
-
-
-// filter tags 
   filterType: function(e) {
     const tag = e.currentTarget.dataset.id;
     console.log("log of the tag :", tag)
@@ -216,7 +199,6 @@ Page({
   
     },
 
-
   //------------Links to the show page from List Tab------------//
   showSkatespot: function(e) {
     console.log(1, e)
@@ -229,7 +211,6 @@ Page({
       url: `../show/show?id=${data}`
     });
   },
-
 
 /* FIXED TAB BAR AT THE BOTTOM */
   /* Create Button */
@@ -245,8 +226,6 @@ Page({
       url: '../index/index'
     });
   },
-
-
 
   onReady: function(e) {
     // Use wx.createMapContext to acquire map context
