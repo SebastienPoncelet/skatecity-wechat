@@ -29,7 +29,7 @@ Page({
     //   { id: '4' },
     //   { id: '1' },
     //   { id: '2' }],
-    tabs: ["Map", "More photos"],
+    tabs: ["Map", "More Photos"],
     activeIndex: 0,
     sliderOffset: 0,
     sliderLeft: 0
