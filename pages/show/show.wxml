@@ -26,7 +26,7 @@
       <image class="camera" bindtap="takePhoto" src="/assets/cameramaroon.png"></image>
         <view class="shareborder"bindtap="onShareAppMessage">
  <button class="share-btn" plain="false" open-type="share" type="default"><image class='icon' src="/assets/maroonshare.png"></image></button>
-</view>
+        </view>
     </view>
 
   <!------NAME AND DESCRIPTION ----------->
@@ -40,7 +40,7 @@
                 <text class='type'>{{spot}}</text>
           </view>
         </view>
-        
+
         <view class="description">
           <text>{{spot.description}}</text>
         </view>
@@ -78,11 +78,13 @@
           show-location
         ></map>
       </view>
-      <view class="btn-area">
+      <!---- <view class="btn-area">
         <button bindtap="getCenterLocation" class="page-body-button" type="primary">Center The Skate Spot</button>
-        <button bindtap="moveToLocation" class="page-body-button" type="primary">Your Current Location</button>
+        <button bindtap="moveToLocation" class="page-body-button" type="primary">Your Current Location</button> ---->
+      <view class="icons">
+        <image class='icon' bindtap="getCenterLocation" src="/assets/Spot_1.png"></image>
+        <image class="icon" bindtap="moveToLocation" src="/assets/Location.png"></image>
       </view>
-    </view>
     </view>
     <!------end of map tab---------->
     <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
@@ -92,9 +94,9 @@
       <image src="{{image.url}}" class="image-size" />
     </swiper-item>
   </block>
-</swiper>
+
  <!------end of photo tab---------->
-</swiper> -->
+
 <view class="image-container">
   <view class="grid">
 <!-- <block wx:for="{{spot.images}}" wx:for-item="image"> </block>-->
@@ -109,7 +111,7 @@
       <image class="images-row" src="http://115.28.2.176/skate/3.jpg"></image>
     </view>
   </view>
- <!------end of photo tab---------->         
+ <!------end of photo tab---------->
                 </view>
             </view>
         </view>
@@ -162,5 +164,5 @@
 
 <!-----container end---->
 </view>
-
+</view>
 
