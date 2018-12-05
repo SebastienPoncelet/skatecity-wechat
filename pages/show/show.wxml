@@ -93,7 +93,7 @@
 <view class="image-container">
   <view class="grid">
 <!-- <block wx:for="{{spot.images}}" wx:for-item="image"> </block>-->
-      <image class="images-row" src="http://115.28.2.176/skate/1.jpg"></image>
+      <image mode="aspectFill" bindtap="openImage" class="images-row" src="http://115.28.2.176/skate/1.jpg"></image>
       <image class="images-row" src="http://115.28.2.176/skate/2.jpg"></image>
       <image class="images-row" src="http://115.28.2.176/skate/3.jpg"></image>
       <image class="images-row" src="http://115.28.2.176/skate/3.jpg"></image>
