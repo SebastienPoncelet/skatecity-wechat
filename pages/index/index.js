@@ -209,6 +209,7 @@ Page({
         activespots: page.data.skatespots
       })
     }
+    
   },
 
 
