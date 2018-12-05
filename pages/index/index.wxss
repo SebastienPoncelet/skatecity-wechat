@@ -113,8 +113,7 @@ color: #872419;
 }
 
 .cards {
-  margin-top: 1vh;
-  margin-bottom:11vh;
+  margin:-3vh 0 11vh 0;
 }
 
 .card {
@@ -165,8 +164,6 @@ color: #872419;
 font-weight:bold;
 margin:2vh;
 //font-family: 'Roboto';
-
-
 }
 
 .card-footer .styles {
@@ -292,4 +289,9 @@ font-size:15px;
   56.46% { -webkit-transform: matrix3d(1.001, 0, 0, 0, 0, 1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.001, 0, 0, 0, 0, 1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   81.48% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
+}
+
+.activefilter {
+    color: white;
+    background-color:#872419;
 }
