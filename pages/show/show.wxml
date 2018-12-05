@@ -34,10 +34,13 @@
         <view class="name">
           <text>{{spot.name}}</text>
         </view>
-        <view class="types">
-       <text class="type">{{spot.tag_list}}</text>
 
+        <view class="types">
+          <view wx:for="{{spot.tag_list}}" wx:key="spots" wx:for-item="spot" wx:index="index">
+                <text class='type'>{{spot}}</text>
+          </view>
         </view>
+        
         <view class="description">
           <text>{{spot.description}}</text>
         </view>

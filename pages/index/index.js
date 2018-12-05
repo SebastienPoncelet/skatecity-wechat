@@ -212,14 +212,6 @@ Page({
   },
 
 
-  // filter tag display ALL cards 
-  displayAll: function () {
-    wx.navigateTo({
-      url: '../index/index'
-    });
-  },
-
-
   //------------Links to the show page from List Tab------------//
   showSkatespot: function(e) {
     console.log(1, e)

@@ -38,6 +38,7 @@
 
 .types {
   margin:2vh 0 2vh -1vh;
+  display: flex;
 }
 
 .type {

@@ -174,10 +174,9 @@ background-color:white;
 color:#872419;
 font-size:14px;
 border-radius:1vh;
-margin:1vh;
-padding-right:1vh;
-padding-left:1vh;
 height:3.5vh;
+padding:0.5vh;
+margin:0.5vh;
 //font-family: 'Roboto';
 
 
@@ -276,6 +275,10 @@ font-size:15px;
   color:#ffffff;
   padding:1vh;
   height:5.5vh;
+}
+
+.styles-flex {
+  display: flex;
 }
 
 @keyframes animation { 
