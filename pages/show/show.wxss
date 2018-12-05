@@ -38,6 +38,7 @@
 
 .types {
   margin:2vh 0 2vh -1vh;
+  display: flex;
 }
 
 .type {
@@ -97,6 +98,10 @@
 
 .share-btn {
   border: 1px solid white !important; 
+}
+
+.page {
+  z-index: 0;
 }
 
 .page-body {
@@ -202,6 +207,7 @@ font-family: 'Roboto';
   color:#ffffff;
   padding:1vh;
   height:5.5vh;
+  z-index:10;
 }
 
 .image-container {
@@ -271,6 +277,7 @@ font-family: 'Roboto';
 
 .weui-navbar {
   border:1px solid white;
+  background-color:white;
 }
 
 

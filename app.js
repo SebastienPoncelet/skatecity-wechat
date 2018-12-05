@@ -19,7 +19,7 @@ App({
 
     const host = this.globalData.host;
 
-    console.log('processing to login')
+    console.log('processing to login', host)
     wx.login({
       success: (res) => {
         console.log(res)
@@ -46,7 +46,6 @@ App({
 
     // host: "https://skatecity.wogengapp.cn/",
   host: 'http://localhost:3000/',
-
 
     userId: null,
     userInfo: {}

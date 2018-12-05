@@ -60,10 +60,13 @@
               <text class='rating'>{{skatespot.cached_votes_total}}</text>
                 <image class='icon' src="/assets/likes-white.png"></image>
           </view>
-              <text class='styles'>{{skatespot.tag_list}}</text>
+              <view class="styles-flex">
+                <view wx:for="{{skatespot.tag_list}}" wx:key="tags" wx:for-item="tag" wx:index="index">
+                <text class='styles'>{{tag}}</text>
+              </view>
+              </view>
           </view>
           </view>
-      
         </view>
     </block>
   </view>
