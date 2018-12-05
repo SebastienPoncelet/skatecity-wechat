@@ -101,7 +101,8 @@
 }
 
 .page {
-  z-index: 0;
+  z-index: 1;
+  position:relative;
 }
 
 .page-body {
@@ -122,8 +123,8 @@
   font-size:30rpx;
   background-color: #872419 !important; 
   margin-top:1vh;
-  font-family: 'Roboto';
-
+  position:relative;
+  z-index:1;
 }
 
 .btn-area {
@@ -207,9 +208,8 @@ font-family: 'Roboto';
   color:#ffffff;
   padding:1vh;
   height:5.5vh;
-  z-index:10;
+  z-index: 5 !important;
 }
-
 .image-container {
   width:100vw;
 } 
