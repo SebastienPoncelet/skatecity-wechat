@@ -110,9 +110,23 @@
   </view>
   <scroll-view scroll-x class='scroll-list-box' scroll-into-view="in-{{scrollInto}}" scroll-with-animation>
     <view class='scroll-list'>
-      <view class='scroll-item' id="in-{{index}}" style='background-image:url(http://115.28.2.176/skate/2.jpg)' wx:for="{{scrollList}}"></view>
-    </view>
-    
+      <block wx:for="{{activespots}}" wx:key="index" wx:for-item="skatespot">
+      <view class="card scroll-item">
+        <view class="card-body" data-id="{{skatespot.id}}" bindtap='showSkatespot' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{skatespot.images[0].url}}');">
+
+          <view class="card-footer">
+          <view class="rating-icon">
+              <text class='rating'>{{skatespot.cached_votes_total}}</text>
+                <image class='icon' src="/assets/likes-white.png"></image>
+          </view>
+      
+          </view>
+          </view>
+      
+        </view>
+    </block>
+  </view>
+      
   </scroll-view>
   <view class='scroll-right' bindtap='scrollRight'>
     <text class='iconfont icon-right'></text>
