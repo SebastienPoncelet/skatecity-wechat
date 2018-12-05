@@ -1,21 +1,23 @@
+// TEST CHANGE
+
+
+
 // pages/show/show.js
 const app = getApp()
 
 Page({
-  /**
-   * Page initial data
-   */
+
+  //------------Setting up global data for this page------------//
   data: {
     // bannerImages: ['https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'],
     autoplay: false,
-    latitude: 23.099994,
-    longitude: 113.324520,
-    markers: [{
-      id: 1,
-      latitude: 23.099994,
-      longitude: 113.324520,
-      name: 'T.I.T 创意园'
-    }],
+
+   //------------Map - Adding marker to the map------------//
+   // Initialize "marker" as an empty array to then be able to fill it out with hashes with each spot id+longitude+latitude+address
+    latitude: null,
+    longitude: null,
+    marker: [{}],//Empty hash as a show page only has one marker because it corresponds to only one spot
+
   scrollInto: 0,
     // scrollList: [
     //   { id: '1' },
@@ -60,8 +62,7 @@ Page({
     }
   },
 
-  /*  Uploading Photos */
-
+  //----Uploading Photos----//
   takePhoto: function () {
     const that = this;
     wx.chooseImage({
@@ -85,8 +86,7 @@ Page({
     });
   },
 
-
-  /* Send Rating */
+  //----Send Rating----//
     sendRating: function () {
       // console.log(this.data.spot);
       const options = this.data.options
@@ -115,25 +115,22 @@ Page({
       });
   },
 
-
-  /* FIXED TAB BAR AT THE BOTTOM */
-
-
-  /* Create Button */
+  //------------FIXED TAB BAR AT THE BOTTOM------------//
+  //----Create Button----//
   goCreate: function () {
     wx.navigateTo({
       url: '../new/new'
     });
   },
 
-  /* Home Button */
+  //----Home Button----//
   goHome: function () {
     wx.navigateTo({
       url: '../index/index'
     });
   },
 
-  /* Share Function */
+  //----Share Function----//
   onShareAppMessage: function () {
     return {
       title: 'Skate City | Go Skate',
@@ -149,35 +146,38 @@ Page({
     spot: { }
   },
 
-
-  /**
-   * Lifecycle function--Called when page load
-   */
+  //------------Lifecycle function--Called when page load------------//
   onLoad: function (options) {
     this.setData({activespots: app.globalData['activespots']})
-    console.log('DATA', this.data)
-    console.log('ACTIVESPOTS', this.data.activespots)
-    console.log("OPTIONS",options)
+    // console.log('DATA', this.data)
+    // console.log('ACTIVESPOTS', this.data.activespots)
+    // console.log("OPTIONS",options)
     // console.log("AppGlobalData", app.globalData.userId)
-    let page = this
+    let that = this
     this.setData({options: options})
     wx.request({
       url: app.globalData.host + 'api/v1/spots/' + options.id,
-      // url: 'http://localhost:3000/api/v1/spots/'+ options.id,
       method: 'GET',
       success(res) {
         console.log("Data received", res)
         const spot = res.data.spot;
         // Update local data
-        const markers = [{
+        let markers = []
+        const marker = {
+          iconPath: '/assets/pin.png',
+          width: 30,
+          height: 30,
           id: spot.id,
           latitude: spot.latitude,
           longitude: spot.longitude,
           name: spot.name
-        }]
-        page.setData({
+        }
+        markers.push(marker)
+        //----Setting up page data----//
+        // Page data coordinates are the spot's ones by default now.
+        that.setData({
           spot: spot,
-          markers: markers,
+          marker: markers,
           latitude: spot.latitude,
           longitude: spot.longitude
         });
@@ -185,8 +185,8 @@ Page({
       }
     });
 
-  // map and more photos tab bar 
-    var that = this;
+  // map and more photos tab bar
+    // var that = this;
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
@@ -204,7 +204,6 @@ Page({
 
   },
 
-
   mapScroll() {
     wx.pageScrollTo({
       scrollTop: 500,
@@ -212,17 +211,12 @@ Page({
     })
   },
 
-
-  /**
-   * Lifecycle function--Called when page is initially rendered
-   */
+  //------------Lifecycle function--Called when page is initially rendered------------//
   onReady: function () {
 
   },
 
-  /**
-   * Lifecycle function--Called when page show
-   */
+  //------------Lifecycle function--Called when page show------------//
   onShow: function () {
     let options = this.data.options;
     console.log("OPTIONS On show", this.data.options)
@@ -237,7 +231,7 @@ Page({
         console.log("Data received", res)
         const spot = res.data.spot;
         // Update local data
-        const markers = [{
+        const marker = [{
           id: spot.id,
           latitude: spot.latitude,
           longitude: spot.longitude,
@@ -245,51 +239,39 @@ Page({
         }]
         page.setData({
           spot: spot,
-          markers: markers,
+          marker: marker,
           latitude: spot.latitude,
           longitude: spot.longitude
         });
         wx.hideToast();
-
       }
-
     });
   },
 
-  /**
-   * Lifecycle function--Called when page hide
-   */
+  //------------Lifecycle function--Called when page hide------------//
   onHide: function () {
 
   },
 
-  /**
-   * Lifecycle function--Called when page unload
-   */
+  //------------Lifecycle function--Called when page unload------------//
   onUnload: function () {
 
   },
 
-  /**
-   * Page event handler function--Called when user drop down
-   */
+  //------------Page event handler function--Called when user drop down------------//
   onPullDownRefresh: function () {
 
   },
 
-  /**
-   * Called when page reach bottom
-   */
+  //------------Called when page reach bottom------------//
   onReachBottom: function () {
 
   },
 
-  /**
-   * Called when user click on the top right corner to share
-   */
+  //------------Called when user click on the top right corner to share------------//
   onShareAppMessage: function () {
 
-  }, 
+  },
 
 
  //------------Creating a map on this page------------//
@@ -299,51 +281,21 @@ Page({
   },
 
   //------------Getting spot's location------------//
+  // We need to change the page data coordinates to the spot's ones.
+  // This because they get changed to the user's ones when "moveToLocation" function is called.
   getCenterLocation: function () {
     let that = this
-    this.mapCtx.getCenterLocation({
-      success: function (res) {
-        // Assigning spot's longitude/latitude that were saved in this page global data in the GET request.
-        res.longitude = that.data.longitude
-        res.latitude = that.data.latitude
-      }
+    that.setData({
+      latitude: that.data.spot.latitude,
+      longitude: that.data.spot.longitude
     })
+    this.mapCtx.getCenterLocation()
   },
 
   //------------Centering map on spot's location------------//
   moveToLocation: function () {
     this.mapCtx.moveToLocation()
+    // "moveToLocation" seems to move and center by default on the user's location.
+    // It also seems to change the page data coordinates to the user's ones.
   },
-
-
-
-  // translateMarker: function () {
-  //   this.mapCtx.translateMarker({
-  //     markerId: 1,
-  //     autoRotate: true,
-  //     duration: 1000,
-  //     destination: {
-  //       latitude: 23.10229,
-  //       longitude: 113.3345211,
-  //     },
-  //     animationEnd() {
-  //       console.log('animation end')
-  //     }
-  //   })
-  // },
-  // includePoints: function () {
-  //   this.mapCtx.includePoints({
-  //     padding: [10],
-  //     points: [{
-  //       latitude: 23.10229,
-  //       longitude: 113.3345211,
-  //     }, {
-  //       latitude: 23.00229,
-  //       longitude: 113.3345211,
-  //     }]
-  //   })
-  // },
-
-
-
 })
