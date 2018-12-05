@@ -114,6 +114,7 @@ color: #872419;
 
 .cards {
   margin-top: 1vh;
+  margin-bottom:11vh;
 }
 
 .card {
