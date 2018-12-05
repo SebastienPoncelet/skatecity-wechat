@@ -63,6 +63,8 @@ Page({
     })
   },
 
+
+/* FIXED TAB BAR AT THE BOTTOM */ 
   /* Create Button */
   goCreate: function () {
     wx.navigateTo({
