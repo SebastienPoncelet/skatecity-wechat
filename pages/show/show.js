@@ -6,7 +6,7 @@ Page({
    * Page initial data
    */
   data: {
-    bannerImages: ['https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'],
+    // bannerImages: ['https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940', 'https://images.pexels.com/photos/305250/pexels-photo-305250.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'],
     autoplay: false,
     latitude: 23.099994,
     longitude: 113.324520,
@@ -17,16 +17,16 @@ Page({
       name: 'T.I.T 创意园'
     }],
   scrollInto: 0,
-    scrollList: [
-      { id: '1' },
-      { id: '2' },
-      { id: '3' },
-      { id: '1' },
-      { id: '2' },
-      { id: '3' },
-      { id: '4' },
-      { id: '1' },
-      { id: '2' }],
+    // scrollList: [
+    //   { id: '1' },
+    //   { id: '2' },
+    //   { id: '3' },
+    //   { id: '1' },
+    //   { id: '2' },
+    //   { id: '3' },
+    //   { id: '4' },
+    //   { id: '1' },
+    //   { id: '2' }],
     tabs: ["Map", "More photos"],
     activeIndex: 0,
     sliderOffset: 0,
@@ -60,6 +60,31 @@ Page({
     }
   },
 
+  /*  Uploading Photos */
+
+  takePhoto: function () {
+    const that = this;
+    wx.chooseImage({
+      count: 4,
+      sizeType: ['compressed'],
+      sourceType: ['album', 'camera'],
+      success: function (res) {
+        let tempFilePath = res.tempFilePaths[0];
+        new AV.File('file-name', {
+          blob: {
+            uri: tempFilePath,
+          },
+        }).save().then(
+          file => {
+            that.setData({
+              photo_url: file.attributes.url
+            })
+          }
+        ).catch(console.error);
+      }
+    });
+  },
+
 
   /* Send Rating */
     sendRating: function () {
@@ -78,15 +103,29 @@ Page({
         // console.log("DATA", data),
         success(res) {
           console.log("Rating Sent", res)
+          console.log("log spotId :", spotId)
+          const data = spotId
           wx.hideToast();
+
+          wx.reLaunch({
+            url: `../show/show?id=${data}`
+          })
+
         }
       });
   },
 
   /* Create Button */
   goCreate: function () {
-    wx.switchTab({
+    wx.navigateTo({
       url: '../new/new'
+    });
+  },
+
+  /* Home Button */
+  goHome: function () {
+    wx.navigateTo({
+      url: '../index/index'
     });
   },
 
@@ -111,6 +150,9 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad: function (options) {
+    this.setData({activespots: app.globalData['activespots']})
+    console.log('DATA', this.data)
+    console.log('ACTIVESPOTS', this.data.activespots)
     console.log("OPTIONS",options)
     // console.log("AppGlobalData", app.globalData.userId)
     let page = this
@@ -144,7 +186,7 @@ Page({
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
-          sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
+          sliderLeft: (res.windowWidth / that.data.tabs.length - res.sliderWidth) / 2,
           sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
         });
       }
@@ -178,7 +220,36 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow: function () {
+    let options = this.data.options;
+    console.log("OPTIONS On show", this.data.options)
+    // console.log("AppGlobalData", app.globalData.userId)
+    let page = this
+    this.setData({ options: options })
+    wx.request({
+      url: app.globalData.host + 'api/v1/spots/' + options.id,
+      // url: 'http://localhost:3000/api/v1/spots/'+ options.id,
+      method: 'GET',
+      success(res) {
+        console.log("Data received", res)
+        const spot = res.data.spot;
+        // Update local data
+        const markers = [{
+          id: spot.id,
+          latitude: spot.latitude,
+          longitude: spot.longitude,
+          name: spot.name
+        }]
+        page.setData({
+          spot: spot,
+          markers: markers,
+          latitude: spot.latitude,
+          longitude: spot.longitude
+        });
+        wx.hideToast();
 
+      }
+
+    });
   },
 
   /**

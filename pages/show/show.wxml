@@ -2,9 +2,9 @@
 
 <!----------image slider----------------->
 <swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
-    <block wx:for="{{bannerImages}}">
+    <block wx:for="{{spot.images}}" wx:for-item="image">
     <swiper-item>
-      <image src="{{item}}" class="image-size" />
+      <image src="{{image.url}}" class="image-size" />
     </swiper-item>
   </block>
 </swiper>
@@ -23,7 +23,7 @@
         <image bindtap="sendRating"  data-id="user_id" class='icon' src="/assets/likes.png"></image>
         <text class='rating'>{{spot.cached_votes_total}}</text>
         <image class='icon' bindtap="mapScroll" src="/assets/maroonlocation.png"></image>
-      <image class="camera" src="/assets/cameramaroon.png"></image>
+      <image class="camera" bindtap="takePhoto" src="/assets/cameramaroon.png"></image>
         <view class="shareborder"bindtap="onShareAppMessage">
  <button class="share-btn" plain="false" open-type="share" type="default"><image class='icon' src="/assets/maroonshare.png"></image></button>
 </view>
@@ -55,6 +55,8 @@
                     </view>
                 </block>
                 <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+
+
             </view>
             <view class="weui-tab__panel">
                 <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
@@ -78,20 +80,18 @@
         <button bindtap="moveToLocation" class="page-body-button" type="primary">Your Current Location</button>
       </view>
     </view>
-<!------end of map tab---------->
     </view>
-                <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
-      <swiper class="imagemore" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
-    <block wx:for="{{bannerImages}}">
+    <!------end of map tab---------->
+    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+      <swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
+    <block wx:for="{{spot.images}}" wx:for-item="image">
     <swiper-item>
-      <image src="{{item}}" class="image-sizemore" />
+      <image src="{{image.url}}" class="image-size" />
     </swiper-item>
   </block>
 </swiper>
  <!------end of photo tab---------->         
                 </view>
-    
-    
             </view>
         </view>
     </view>
@@ -99,7 +99,7 @@
 
 
 
-<!----------near by spots swiper---------------->
+<!----------Near by spots swiper---------------->
   <view class="scrollingswiper">
     <view class='toprated'>Near by Spots</view>
   </view>
@@ -110,21 +110,37 @@
   </view>
   <scroll-view scroll-x class='scroll-list-box' scroll-into-view="in-{{scrollInto}}" scroll-with-animation>
     <view class='scroll-list'>
-      <view class='scroll-item' id="in-{{index}}" style='background-image:url(http://115.28.2.176/skate/2.jpg)' wx:for="{{scrollList}}"></view>
-    </view>
+      <block wx:for="{{activespots}}" wx:key="index" wx:for-item="skatespot">
+      <view class="card scroll-item">
+        <view class="card-body" data-id="{{skatespot.id}}" bindtap='showSkatespot' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{skatespot.images[0].url}}');">
+
+          <view class="card-footer">
+          <view class="rating-icon">
+              <text class='rating'>{{skatespot.cached_votes_total}}</text>
+                <image class='icon' src="/assets/likes-white.png"></image>
+          </view>
+      
+          </view>
+          </view>
+      
+        </view>
+    </block>
+  </view>
+      
   </scroll-view>
   <view class='scroll-right' bindtap='scrollRight'>
     <text class='iconfont icon-right'></text>
   </view>
 </view>
    
-<!---------FIXED BAR ----------------->
+<!---------fixed bottom tab bar  ----------------->
 <view class="fixed-bar">
+  <!--Home button----->
+  <image class='home-button' bindtap="goHome" src="/assets/homewhite.png"></image>
   <!--Create button -->
-  <view class="create-button" bindtap="goCreate">
-  Create A Skate Spot
+  <image class='create-button' bindtap="goCreate" src="/assets/addwhite.png"></image>
   </view>
-  </view>
+
 <!-----container end---->
 </view>
 
