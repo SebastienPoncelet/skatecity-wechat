@@ -10,14 +10,14 @@
 </swiper>
 
 
- <!------ Upload your own photo -----------> 
+ <!------ Upload your own photo ----------->
 
   <!-- <view class="camera-size">
   <image class="camera" src="/assets/camera-white.png"></image>
   </view> -->
 
 
-<!------ ICONS -----------> 
+<!------ ICONS ----------->
 
     <view class="icons">
         <image bindtap="sendRating"  data-id="user_id" class='icon' src="/assets/likes.png"></image>
@@ -29,7 +29,7 @@
 </view>
     </view>
 
-  <!------NAME AND DESCRIPTION -----------> 
+  <!------NAME AND DESCRIPTION ----------->
       <view class="name-description">
         <view class="name">
           <text>{{spot.name}}</text>
@@ -60,9 +60,9 @@
             </view>
             <view class="weui-tab__panel">
                 <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-                
-                
-<!------ MAP -----------> 
+
+
+<!------ MAP ----------->
       <view class="page-body">
       <view class="page-section page-section-gap">
         <map
@@ -90,7 +90,7 @@
     </swiper-item>
   </block>
 </swiper>
- <!------end of photo tab---------->         
+ <!------end of photo tab---------->
                 </view>
             </view>
         </view>
@@ -119,20 +119,20 @@
               <text class='rating'>{{skatespot.cached_votes_total}}</text>
                 <image class='icon' src="/assets/likes-white.png"></image>
           </view>
-      
+
           </view>
           </view>
-      
+
         </view>
     </block>
   </view>
-      
+
   </scroll-view>
   <view class='scroll-right' bindtap='scrollRight'>
     <text class='iconfont icon-right'></text>
   </view>
 </view>
-   
+
 <!---------fixed bottom tab bar  ----------------->
 <view class="fixed-bar">
   <!--Home button----->

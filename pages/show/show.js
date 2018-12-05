@@ -1,3 +1,7 @@
+// TEST CHANGE
+
+
+
 // pages/show/show.js
 const app = getApp()
 
@@ -58,8 +62,7 @@ Page({
     }
   },
 
-  /*  Uploading Photos */
-
+  //----Uploading Photos----//
   takePhoto: function () {
     const that = this;
     wx.chooseImage({
@@ -83,8 +86,7 @@ Page({
     });
   },
 
-
-  /* Send Rating */
+  //----Send Rating----//
     sendRating: function () {
       // console.log(this.data.spot);
       const options = this.data.options
@@ -112,7 +114,6 @@ Page({
         }
       });
   },
-
 
   //------------FIXED TAB BAR AT THE BOTTOM------------//
   //----Create Button----//
@@ -173,19 +174,18 @@ Page({
         }
         markers.push(marker)
         //----Setting up page data----//
+        // Page data coordinates are the spot's ones by default now.
         that.setData({
           spot: spot,
           marker: markers,
           latitude: spot.latitude,
           longitude: spot.longitude
-        });      
+        });
         wx.hideToast();
       }
     });
 
-  
-
-  // map and more photos tab bar 
+  // map and more photos tab bar
     // var that = this;
     wx.getSystemInfo({
       success: function (res) {
@@ -204,7 +204,6 @@ Page({
 
   },
 
-
   mapScroll() {
     wx.pageScrollTo({
       scrollTop: 500,
@@ -218,7 +217,7 @@ Page({
   },
 
   //------------Lifecycle function--Called when page show------------//
-  onShow: function () {   
+  onShow: function () {
     let options = this.data.options;
     console.log("OPTIONS On show", this.data.options)
     // console.log("AppGlobalData", app.globalData.userId)
@@ -272,7 +271,7 @@ Page({
   //------------Called when user click on the top right corner to share------------//
   onShareAppMessage: function () {
 
-  }, 
+  },
 
 
  //------------Creating a map on this page------------//
@@ -282,51 +281,21 @@ Page({
   },
 
   //------------Getting spot's location------------//
+  // We need to change the page data coordinates to the spot's ones.
+  // This because they get changed to the user's ones when "moveToLocation" function is called.
   getCenterLocation: function () {
     let that = this
-    this.mapCtx.getCenterLocation({
-      success: function (res) {
-        // Assigning spot's longitude/latitude that were saved in this page global data in the GET request.
-        res.longitude = that.data.longitude
-        res.latitude = that.data.latitude
-      }
+    that.setData({
+      latitude: that.data.spot.latitude,
+      longitude: that.data.spot.longitude
     })
+    this.mapCtx.getCenterLocation()
   },
 
   //------------Centering map on spot's location------------//
   moveToLocation: function () {
     this.mapCtx.moveToLocation()
+    // "moveToLocation" seems to move and center by default on the user's location.
+    // It also seems to change the page data coordinates to the user's ones.
   },
-
-
-
-  // translateMarker: function () {
-  //   this.mapCtx.translateMarker({
-  //     markerId: 1,
-  //     autoRotate: true,
-  //     duration: 1000,
-  //     destination: {
-  //       latitude: 23.10229,
-  //       longitude: 113.3345211,
-  //     },
-  //     animationEnd() {
-  //       console.log('animation end')
-  //     }
-  //   })
-  // },
-  // includePoints: function () {
-  //   this.mapCtx.includePoints({
-  //     padding: [10],
-  //     points: [{
-  //       latitude: 23.10229,
-  //       longitude: 113.3345211,
-  //     }, {
-  //       latitude: 23.00229,
-  //       longitude: 113.3345211,
-  //     }]
-  //   })
-  // },
-
-
-
 })
