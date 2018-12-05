@@ -94,7 +94,6 @@
   </block>
 </swiper>
  <!------end of photo tab---------->
-</swiper> -->
 <view class="image-container">
   <view class="grid">
 <!-- <block wx:for="{{spot.images}}" wx:for-item="image"> </block>-->
