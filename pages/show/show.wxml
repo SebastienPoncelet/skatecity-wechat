@@ -83,7 +83,7 @@
     </view>
     <!------end of map tab---------->
     <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
-      <swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
+      <!-- <swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
     <block wx:for="{{spot.images}}" wx:for-item="image">
     <swiper-item>
       <image src="{{image.url}}" class="image-size" />
@@ -91,6 +91,22 @@
   </block>
 </swiper>
  <!------end of photo tab---------->
+</swiper> -->
+<view class="image-container">
+  <view class="grid">
+<!-- <block wx:for="{{spot.images}}" wx:for-item="image"> </block>-->
+      <image class="images-row" src="http://115.28.2.176/skate/1.jpg"></image>
+      <image class="images-row" src="http://115.28.2.176/skate/2.jpg"></image>
+      <image class="images-row" src="http://115.28.2.176/skate/3.jpg"></image>
+      <image class="images-row" src="http://115.28.2.176/skate/3.jpg"></image>
+      <image class="images-row" src="http://115.28.2.176/skate/1.jpg"></image>
+      <image class="images-row" src="http://115.28.2.176/skate/2.jpg"></image>
+      <image class="images-row" src="http://115.28.2.176/skate/1.jpg"></image>
+      <image class="images-row" src="http://115.28.2.176/skate/2.jpg"></image>
+      <image class="images-row" src="http://115.28.2.176/skate/3.jpg"></image>
+    </view>
+  </view>
+ <!------end of photo tab---------->         
                 </view>
             </view>
         </view>

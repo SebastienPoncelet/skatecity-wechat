@@ -48,7 +48,6 @@ App({
   host: 'http://localhost:3000/',
 
 
-
     userId: null,
     userInfo: {}
   }
