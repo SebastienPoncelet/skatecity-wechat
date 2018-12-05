@@ -23,7 +23,7 @@
   background-color:white;
   width:84vw;
   /* box-shadow: 0px 3px 15px rgba(0,0,0,0.1); */
-  margin-bottom: 14vh;
+  margin-bottom: 3vh;
   animation: animation 3000ms linear both;
   font-family: 'Roboto';
 }
@@ -44,16 +44,15 @@
 
 .type {
   font-size:4vw;
-  margin-top:1.5vh;
   color:#872419;
   /* border-bottom:1px solid #E8E8E8; */
-  padding-bottom:12px;
   background-color:white;
   padding:1vh;
   border-radius:9px;
-  margin:1vh;
   /* font-weight:bold; */
   border: 1px solid #872419;
+  margin-right:1vh;
+  margin-bottom:5vh;
 }
 
 .description {
