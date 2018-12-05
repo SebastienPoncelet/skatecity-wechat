@@ -83,13 +83,28 @@
     </view>
     <!------end of map tab---------->
     <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
-      <swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
+      <!-- <swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
     <block wx:for="{{spot.images}}" wx:for-item="image">
     <swiper-item>
       <image src="{{image.url}}" class="image-size" />
     </swiper-item>
   </block>
-</swiper>
+</swiper> -->
+<view class="image-container">
+<!-- <block wx:for="{{spot.images}}" wx:for-item="image"> </block>-->
+    <view class="image-grid">
+      <view class="rows">
+      <image src="http://115.28.2.176/skate/1.jpg"></image>
+      </view>
+      <view class="rows">
+      <image src="http://115.28.2.176/skate/2.jpg"></image>
+      </view>
+      <view class="rows">
+      <image src="http://115.28.2.176/skate/3.jpg"></image>
+      </view>
+    </view>
+  </view>
+
  <!------end of photo tab---------->         
                 </view>
             </view>

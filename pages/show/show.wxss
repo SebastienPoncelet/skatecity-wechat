@@ -204,6 +204,25 @@ font-family: 'Roboto';
   height:5.5vh;
 }
 
+.image-container {
+  display: grid;
+  height:auto;
+  width:100vw; 
+}
+
+.image-grid {
+
+  grid-template-columns: repeat(auto-fill, minmax(33%, 3fr));
+  grid-template-rows: repeat(auto-fill, minmax(33%, 3fr));
+  grid-gap: 0px;
+  align-items: stretch;
+}
+
+.rows {
+width:100px;
+height:100px;
+}
+
 
 @keyframes animation { 
   0% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
