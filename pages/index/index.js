@@ -41,7 +41,9 @@ Page({
       { id: '4' },
       { id: '1' },
       { id: '2' }
-    ]
+    ],
+  filterTypes: ['All', 'Skateparks', 'Ledges', 'Pools', 'Ramps', 'Slopes', 'Rails', 'Stairs', 'Bowls'],
+  activeFilter: 'All'
   },
 //------------End of global data set up------------//
 
@@ -202,15 +204,17 @@ Page({
         } 
       }
       page.setData({
-        activespots: activespots
+        activespots: activespots,
+        activeFilter: tag
       })
     } else {
       page.setData({
-        activespots: page.data.skatespots
+        activespots: page.data.skatespots,
+        activeFilter: tag
       })
     }
-    
-  },
+  
+    },
 
 
   //------------Links to the show page from List Tab------------//

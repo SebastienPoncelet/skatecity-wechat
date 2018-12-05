@@ -291,8 +291,7 @@ font-size:15px;
   100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
 }
 
-
-.type:active {
+.activefilter {
     color: white;
-  background-color:#872419;
+    background-color:#872419;
 }
