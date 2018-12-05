@@ -106,15 +106,15 @@ Page({
           console.log("log spotId :", spotId)
           const data = spotId
           wx.hideToast();
+
           wx.reLaunch({
             url: `../show/show?id=${data}`
           })
+
         }
-        
-
       });
-
   },
+
   /* Create Button */
   goCreate: function () {
     wx.navigateTo({
@@ -142,9 +142,7 @@ Page({
     wx.showShareMenu({
       withShareTicket: true
     })
-
     spot: { }
-
   },
 
 
@@ -180,9 +178,7 @@ Page({
           longitude: spot.longitude
         });
         wx.hideToast();
-
       }
-
     });
 
   // map and more photos tab bar 
@@ -292,14 +288,10 @@ Page({
   }, 
 
 
-
+ //------------Creating a map on this page------------//
   onReady: function (e) {
     this.mapCtx = wx.createMapContext('myMap')
-      // wx.openLocation({
-      //   latitude: this.data.latitude,
-      //   longitude: this.data.longitude,
-      //   scale: 28
-      // })
+
   },
 
   //------------Getting spot's location------------//
@@ -318,6 +310,9 @@ Page({
   moveToLocation: function () {
     this.mapCtx.moveToLocation()
   },
+
+
+
   // translateMarker: function () {
   //   this.mapCtx.translateMarker({
   //     markerId: 1,
