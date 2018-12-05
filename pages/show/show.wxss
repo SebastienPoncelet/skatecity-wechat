@@ -99,6 +99,10 @@
   border: 1px solid white !important; 
 }
 
+.page {
+  z-index: 0;
+}
+
 .page-body {
   width:109vw;
   border-radius:-4px;
@@ -202,6 +206,7 @@ font-family: 'Roboto';
   color:#ffffff;
   padding:1vh;
   height:5.5vh;
+  z-index:10;
 }
 
 
