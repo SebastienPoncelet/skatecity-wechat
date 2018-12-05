@@ -121,34 +121,25 @@
   <view class="scrollingswiper">
     <view class='toprated'>Near by Spots</view>
   </view>
-
   <view class='scroll-bar'>
-    <view class='scroll-left' bindtap='scrollLeft'>
-      <text class='iconfont icon-back'></text>
+    <view class='scroll-left' bindtap='scrollLeft'> 
   </view>
-  <scroll-view scroll-x class='scroll-list-box' scroll-into-view="in-{{scrollInto}}" scroll-with-animation>
-    <view class='scroll-list'>
-      <block wx:for="{{activespots}}" wx:key="index" wx:for-item="skatespot">
-      <view class="card scroll-item">
-        <view class="card-body" data-id="{{skatespot.id}}" bindtap='showSkatespot' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{skatespot.images[0].url}}');">
-
-          <view class="card-footer">
-          <view class="rating-icon">
-              <text class='rating'>{{skatespot.cached_votes_total}}</text>
-                <image class='icon' src="/assets/likes-white.png"></image>
+    <scroll-view scroll-x class='scroll-list-box' scroll-into-view="in-{{scrollInto}}" scroll-with-animation>
+      <view class='scroll-list'>
+        <block wx:for="{{activespots}}" wx:key="index" wx:for-item="skatespot">
+          <view class="card scroll-item">
+            <view class="scroll-image" data-id="{{skatespot.id}}" bindtap='showSkatespot' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{skatespot.images[0].url}}');">
+              <view class="rating-icon">
+                  <text class='rating'>{{skatespot.cached_votes_total}}</text>
+                  <image class='icon' src="/assets/likes-white.png"></image>
+              </view>
+            </view>
           </view>
-
-          </view>
-          </view>
-
-        </view>
-    </block>
-  </view>
-
+        </block>
+      </view>
   </scroll-view>
-  <view class='scroll-right' bindtap='scrollRight'>
-    <text class='iconfont icon-right'></text>
-  </view>
+      <view class='scroll-right' bindtap='scrollRight'>
+      </view>
 </view>
 
 <!---------fixed bottom tab bar  ----------------->
