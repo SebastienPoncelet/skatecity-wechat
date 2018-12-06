@@ -61,12 +61,13 @@
 
 
             </view>
-            <view class="weui-tab__panel">
-                <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+            <!------ TO UNCOMMENT IF IT BUGS - START ----------->
+            <!-- <view class="weui-tab__panel">
+                <view class="weui-tab__content" hidden="{{activeIndex != 0}}"> -->
 
 
 <!------ MAP ----------->
-                    <view class="page-body">
+                    <!-- <view class="page-body">
       <view style="padding-top:40px; padding-bottom: 40px;">
         <map
           id="myMap"
@@ -76,23 +77,31 @@
           markers="{{marker}}"
           show-location
         ></map>
-      </view>
+      </view> -->
+      <!------ TO UNCOMMENT IF IT BUGS - END ----------->
+
       <!---- <view class="btn-area">
         <button bindtap="getCenterLocation" class="page-body-button" type="primary">Center The Skate Spot</button>
         <button bindtap="moveToLocation" class="page-body-button" type="primary">Your Current Location</button> ---->
-      <view class="icons">
-        <image class='icon' bindtap="getCenterLocation" src="/assets/Spot_1.png"></image>
+      <!-- <view class="icons">
+
+      <!------ TO UNCOMMENT IF IT BUGS - START ----------->
+        <!-- <image class='icon' bindtap="getCenterLocation" src="/assets/Spot_1.png"></image>
         <image class="icon" bindtap="moveToLocation" src="/assets/Location.png"></image>
       </view>
-    </view>
+    </view> --> -->
+    <!------ TO UNCOMMENT IF IT BUGS - END ----------->
+
     <!------end of map tab---------->
-    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+    <!------ TO UNCOMMENT IF IT BUGS - START ----------->
+    <!-- <view class="weui-tab__content" hidden="{{activeIndex != 1}}"> -->
       <!-- <swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
     <block wx:for="{{spot.images}}" wx:for-item="image">
     <swiper-item>
       <image src="{{image.url}}" class="image-size" />
     </swiper-item>
   </block>
+  <!------ TO UNCOMMENT IF IT BUGS - END ----------->
 
  <!------end of photo tab---------->
 
@@ -115,7 +124,7 @@
             </view>
         </view>
     </view>
-</view>
+<!-- </view> -->
 
 
 
@@ -153,6 +162,6 @@
   </view>
 
 <!-----container end---->
-</view>
-</view>
+<!-- </view> -->
+
 

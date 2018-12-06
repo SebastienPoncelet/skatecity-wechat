@@ -212,9 +212,15 @@ Page({
   },
 
   mapScroll() {
-    wx.pageScrollTo({
-      scrollTop: 500,
-      duration: 300
+    //----TO BE UNCOMMENTED IF BUGS----//
+    // wx.pageScrollTo({
+    //   scrollTop: 500,
+    //   duration: 300
+    // })
+    wx.openLocation({
+      latitude: this.data.latitude,
+      longitude: this.data.longitude,
+      scale: 28
     })
   },
 

@@ -45,7 +45,6 @@ App({
   globalData: {
 
   host: "https://skatecity.wogengapp.cn/",
-
   // host: 'http://localhost:3000/',
 
     userId: null,
