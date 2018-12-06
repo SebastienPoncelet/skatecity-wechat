@@ -12,6 +12,7 @@
   /* padding: 200rpx 0; */
   box-sizing: border-box;
   background-color: #F8F8F8;
+  overflow-x: hidden;
 }
 
 .name-description {
