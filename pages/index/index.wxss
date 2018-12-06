@@ -1,5 +1,9 @@
 /**index.wxss**/
 
+.container {
+  overflow-x: hidden;
+}
+
 .weui-navbar__item.weui-bar__item_on {
 color: #872419;
 font-weight:bolder;

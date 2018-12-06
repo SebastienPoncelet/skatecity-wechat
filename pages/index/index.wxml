@@ -1,6 +1,7 @@
 
 <view class="page">
     <view class="page__bd">
+<view class="container">
 <!-----------------LIST AND MAP TABBAR---------->
   <view class="weui-tab">
 
@@ -107,3 +108,8 @@
   <image class='create-button' bindtap="goCreate" src="/assets/addwhite.png"></image>
 </view>
 
+
+   
+    <!-----end of map tab---->
+  </view>
+ <!-- </view> -->

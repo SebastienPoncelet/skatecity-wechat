@@ -1,50 +1,55 @@
 <view class="container">
 
-<!----------image slider----------------->
-<swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
-    <block wx:for="{{spot.images}}" wx:for-item="image">
-    <swiper-item>
-      <image src="{{image.url}}" class="image-size" />
-    </swiper-item>
-  </block>
-</swiper>
+  <!----------image slider----------------->
+  <swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
+    <block wx:for="{{user_images}}" wx:for-item="image">
+      <swiper-item>
+        <image src="{{image}}" class="image-size" />
+      </swiper-item>
+    </block>
+  </swiper>
 
 
- <!------ Upload your own photo ----------->
+  <!------ Upload your own photo ----------->
 
   <!-- <view class="camera-size">
   <image class="camera" src="/assets/camera-white.png"></image>
   </view> -->
 
 
-<!------ ICONS ----------->
+  <!------ ICONS ----------->
 
-    <view class="icons">
-        <image bindtap="sendRating"  data-id="user_id" class='icon' src="/assets/likes.png"></image>
-        <text class='rating'>{{spot.cached_votes_total}}</text>
-        <image class='icon' bindtap="mapScroll" src="/assets/maroonlocation.png"></image>
-      <image class="camera" bindtap="takePhoto" src="/assets/cameramaroon.png"></image>
-        <view class="shareborder"bindtap="onShareAppMessage">
- <button class="share-btn" plain="false" open-type="share" type="default"><image class='icon' src="/assets/maroonshare.png"></image></button>
-        </view>
+  <view class="icons">
+    <image bindtap="sendRating" data-id="user_id" class='icon' src="/assets/likes.png"></image>
+    <text class='rating'>{{spot.cached_votes_total}}</text>
+    <image class='icon' bindtap="mapScroll" src="/assets/maroonlocation.png"></image>
+    <image class="camera" bindtap="takePhoto" src="/assets/cameramaroon.png"></image>
+    <view class="shareborder" bindtap="onShareAppMessage">
+      <button class="share-btn" plain="false" open-type="share" type="default">
+        <image class='icon' src="/assets/maroonshare.png"></image>
+      </button>
     </view>
+  </view>
 
   <!------NAME AND DESCRIPTION ----------->
-      <view class="name-description">
-        <view class="name">
-          <text>{{spot.name}}</text>
-        </view>
+  <view class="name-description">
+    <view class="name">
+      <text>{{spot.name}}</text>
+    </view>
 
-        <view class="types">
-          <view wx:for="{{spot.tag_list}}" wx:key="spots" wx:for-item="spot" wx:index="index">
-                <text class='type'>{{spot}}</text>
-          </view>
-        </view>
-
-        <view class="description">
-          <text>{{spot.description}}</text>
-        </view>
+    <view class="types">
+      <view wx:for="{{spot.tag_list}}" wx:key="spots" wx:for-item="spot" wx:index="index">
+        <text class='type'>{{spot}}</text>
       </view>
+    </view>
+
+    <view class="description">
+      <text>{{spot.description}}</text>
+    </view>
+  </view>
+
+
+
 
 
 
@@ -98,16 +103,9 @@
 
 <view class="image-container">
   <view class="grid">
-<!-- <block wx:for="{{spot.images}}" wx:for-item="image"> </block>-->
-      <image mode="aspectFill" bindtap="openImage" class="images-row" src="http://115.28.2.176/skate/1.jpg"></image>
-      <image class="images-row" src="http://115.28.2.176/skate/2.jpg"></image>
-      <image class="images-row" src="http://115.28.2.176/skate/3.jpg"></image>
-      <image class="images-row" src="http://115.28.2.176/skate/3.jpg"></image>
-      <image class="images-row" src="http://115.28.2.176/skate/1.jpg"></image>
-      <image class="images-row" src="http://115.28.2.176/skate/2.jpg"></image>
-      <image class="images-row" src="http://115.28.2.176/skate/1.jpg"></image>
-      <image class="images-row" src="http://115.28.2.176/skate/2.jpg"></image>
-      <image class="images-row" src="http://115.28.2.176/skate/3.jpg"></image>
+    <block wx:for="{{customer_images}}" wx:for-item="image">
+      <image mode="aspectFill" bindtap="openImage" class="images-row" src="{{image}}"></image>
+    </block>
     </view>
   </view>
  <!------end of photo tab---------->
@@ -117,42 +115,39 @@
     </view>
 </view>
 
-
-
-<!----------Near by spots swiper---------------->
+  <!----------Near by spots swiper---------------->
   <view class="scrollingswiper">
     <view class='toprated'>Near by Spots</view>
   </view>
   <view class='scroll-bar'>
-    <view class='scroll-left' bindtap='scrollLeft'> 
-  </view>
+    <view class='scroll-left' bindtap='scrollLeft'>
+    </view>
     <scroll-view scroll-x class='scroll-list-box' scroll-into-view="in-{{scrollInto}}" scroll-with-animation>
       <view class='scroll-list'>
         <block wx:for="{{activespots}}" wx:key="index" wx:for-item="skatespot">
           <view class="card scroll-item">
             <view class="scroll-image" data-id="{{skatespot.id}}" bindtap='showSkatespot' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{skatespot.images[0].url}}');">
               <view class="rating-icon">
-                  <text class='rating'>{{skatespot.cached_votes_total}}</text>
-                  <image class='icon' src="/assets/likes-white.png"></image>
+                <text class='rating'>{{skatespot.cached_votes_total}}</text>
+                <image class='icon' src="/assets/likes-white.png"></image>
               </view>
             </view>
           </view>
         </block>
       </view>
-  </scroll-view>
-      <view class='scroll-right' bindtap='scrollRight'>
-      </view>
-</view>
-
-<!---------fixed bottom tab bar  ----------------->
-<view class="fixed-bar">
-  <!--Home button----->
-  <image class='home-button' bindtap="goHome" src="/assets/homewhite.png"></image>
-  <!--Create button -->
-  <image class='create-button' bindtap="goCreate" src="/assets/addwhite.png"></image>
+    </scroll-view>
+    <view class='scroll-right' bindtap='scrollRight'>
+    </view>
   </view>
+
+  <!---------fixed bottom tab bar  ----------------->
+  <view class="fixed-bar">
+    <!--Home button----->
+    <image class='home-button' bindtap="goHome" src="/assets/homewhite.png"></image>
+    <!--Create button -->
+    <image class='create-button' bindtap="goCreate" src="/assets/addwhite.png"></image>
+  </view>
+</view>
 
 <!-----container end---->
 </view>
-</view>
-
