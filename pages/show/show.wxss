@@ -101,6 +101,7 @@
 .page {
   z-index: 1;
   position:relative;
+  width:100vw;
 }
 
 .page-body {
@@ -149,7 +150,7 @@
   background: white;
   display: flex;
   margin-top:-4vh;
-  margin-bottom:-16vh;
+  margin-bottom:2vh;
 }
 
 .scroll-list-box {
@@ -186,8 +187,7 @@ font-size:15px;
 background-color:white;
 width:100vw;
 padding:2vh;
-margin-left:7vh;
-font-family: 'Roboto';
+margin-left:0vh;
 
 }
 
@@ -212,6 +212,7 @@ font-family: 'Roboto';
 .fixed-bar {
   background-color:#435058;
   position: fixed;
+  left:0;
   bottom: 0;
   justify-content: space-around;
   display: flex;
@@ -280,7 +281,7 @@ font-family: 'Roboto';
 }
 
 .weui-navbar__slider {
-  width: 50%;
+  width: 50vw;
   background-color: #872419;
   /* for where the slider starts and ends */ 
   margin-left: 0vh;
