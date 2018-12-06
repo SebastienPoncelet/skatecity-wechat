@@ -62,6 +62,18 @@ Page({
     }
   },
 
+  showSkatespot: function (e) {
+    console.log(1, e)
+    const data = e.currentTarget.dataset.id;
+    console.log('check data', data)
+    const object = e.currentTarget.dataset.object
+    console.log('data transfer to the show page', data)
+
+    wx.navigateTo({
+      url: `../show/show?id=${data}`
+    });
+  },
+
   //----Uploading Photos----//
   takePhoto: function () {
     const that = this;
