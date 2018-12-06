@@ -1,7 +1,4 @@
 
-/* @import '/style/font.wxss'; */
-
-
 /* pages/new/new.wxss */
 .container {
 width: 85%;
@@ -32,7 +29,6 @@ overflow-x: hidden;
   padding:10px;
   animation-duration: 1s;
   animation-name: zoomInDown;
-  font-family: 'Roboto';
 
 }
 
@@ -63,7 +59,6 @@ overflow-x: hidden;
   margin: 40px 20px;
   animation-duration: 3s;
   animation-name: fadeIn;
-  font-family: 'Roboto';
 
 }
 
@@ -79,7 +74,6 @@ overflow-x: hidden;
 }
 
 .btn-upload {
-  font-family: 'Roboto';
 margin-bottom:8px;
 color:white;
 font-size: 15px;
@@ -94,7 +88,6 @@ animation-name: fadeIn;
 }
 
 .btn-submit {
-  font-family: 'Roboto';
 margin-bottom:8px;
 color:white;
 font-size: 16px;
@@ -150,7 +143,6 @@ animation-duration: 5s;
   font-size:15px;
   animation-duration: 3s;
   animation-name: fadeIn;
-  font-family: 'Roboto';
 
 }
 
@@ -165,7 +157,6 @@ height:120px;
 padding-left:20px;
 animation-duration: 3s;
 animation-name: fadeIn;
-font-family: 'Roboto';
 
 }
 
