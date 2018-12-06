@@ -10,7 +10,7 @@ Page({
       { name: 'Rails', value: 'Rails', checked: false },
       { name: 'Bowls', value: 'Bowls', checked: false },
       { name: 'Ramps', value: 'Ramps', checked: false},
-      { name: 'Pools', value: 'Ramps', checked: false },
+      { name: 'Pools', value: 'Pools', checked: false },
       { name: 'Ledges', value: 'Ledges', checked: false},
       { name: 'Stairs', value: 'Stairs', checked: false },
       { name: 'Slopes', value: 'Slopes', checked: false },
