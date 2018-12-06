@@ -166,6 +166,14 @@ Page({
       sizeType: ['compressed'],
       sourceType: ['album', 'camera'],
       success: function (res) {
+        wx.showToast({
+          title: 'Uploading...',
+          icon: 'loading',
+          duration: 1000
+        });
+
+
+
         let tempFilePath = res.tempFilePaths[0];
         new AV.File('file-name', {
           blob: {
@@ -173,6 +181,13 @@ Page({
           },
         }).save().then(
           file => {
+
+            wx.showToast({
+              title: 'Uploaded!',
+              icon: 'success',
+              duration: 1000
+            });
+
             that.setData({
               photo_url: file.attributes.url
             })
@@ -182,6 +197,7 @@ Page({
     });
   },
 
+ 
   /**
    * Lifecycle function--Called when page is initially rendered
    */
@@ -214,6 +230,8 @@ Page({
    * Page event handler function--Called when user drop down
    */
   onPullDownRefresh: function () {
+
+
 
   },
 

@@ -4,7 +4,7 @@
 
 // pages/show/show.js
 const app = getApp()
-
+const AV = require('../../utils/av-weapp-min.js');
 Page({
 
   //------------Setting up global data for this page------------//
@@ -80,6 +80,17 @@ Page({
             that.setData({
               photo_url: file.attributes.url
             })
+            wx.request({
+              url: app.globalData.host + 'api/v1/images/',
+              method: 'POST',
+              data: { user_id: app.globalData.userId, spot_id: that.data.spot.id, url: file.attributes.url},
+              success(res) {
+                console.log(res)
+                wx.reLaunch({
+                  url: `../show/show?id=${res.data.spot_id}`
+                })
+              }
+            });
           }
         ).catch(console.error);
       }
@@ -180,13 +191,24 @@ Page({
           name: spot.name
         }
         markers.push(marker)
+        let user_images = [];
+        let customer_images = [];
+        spot.images.forEach((item) => {
+          if (item.user_id == spot.user_id) {
+            user_images.push(item.url)
+          } else {
+            customer_images.push(item.url)
+          }
+        })
         //----Setting up page data----//
         // Page data coordinates are the spot's ones by default now.
         that.setData({
           spot: spot,
           marker: markers,
           latitude: spot.latitude,
-          longitude: spot.longitude
+          longitude: spot.longitude,
+          user_images: user_images,
+          customer_images: customer_images
         });
         wx.hideToast();
       }

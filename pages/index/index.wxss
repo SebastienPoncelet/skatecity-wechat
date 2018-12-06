@@ -1,5 +1,8 @@
 /**index.wxss**/
 @import '/style/font.wxss';
+.container {
+  
+}
 
 .weui-navbar__item.weui-bar__item_on {
 color: #872419;
