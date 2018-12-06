@@ -172,7 +172,7 @@ Page({
     console.log('running');
     wx.previewImage({
       current: 'http://115.28.2.176/skate/1.jpg',
-      urls: ['http://115.28.2.176/skate/3.jpg', 'http://115.28.2.176/skate/4.jpg']
+      urls: []
     })
   },
 
