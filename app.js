@@ -43,8 +43,6 @@ App({
     })
   },
   globalData: {
-
-
   // host: 'http://localhost:3000/',
   host: "https://skatecity.wogengapp.cn/",
 
