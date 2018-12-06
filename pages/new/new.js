@@ -7,10 +7,10 @@ Page({
   data: {
     filtered_styles:[],
     styles: [
-      { name: 'All', value: 'All', checked: false },
       { name: 'Rails', value: 'Rails', checked: false },
       { name: 'Bowls', value: 'Bowls', checked: false },
       { name: 'Ramps', value: 'Ramps', checked: false},
+      { name: 'Pools', value: 'Ramps', checked: false },
       { name: 'Ledges', value: 'Ledges', checked: false},
       { name: 'Stairs', value: 'Stairs', checked: false },
       { name: 'Slopes', value: 'Slopes', checked: false },
