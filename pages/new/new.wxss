@@ -5,6 +5,7 @@
 /* pages/new/new.wxss */
 .container {
 width: 85%;
+overflow-x: hidden;
 }
 
 .banner {
