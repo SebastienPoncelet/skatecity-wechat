@@ -1,6 +1,5 @@
 /* pages/show/show.wxss */
 
-/* @import '/style/font.wxss'; */
 
 
 .container {
@@ -25,7 +24,6 @@
   /* box-shadow: 0px 3px 15px rgba(0,0,0,0.1); */
   margin-bottom: 2vh;
   animation: animation 3000ms linear both;
-  font-family: 'Roboto';
 }
 
 .name {
@@ -61,7 +59,6 @@
   color: 	#787878;
   border-top:1px solid #E8E8E8;
   padding-top:2vh;
-  font-family: 'Roboto';
 }
 
 .camera {
@@ -188,7 +185,6 @@ background-color:white;
 width:100vw;
 padding:2vh;
 margin-left:7vh;
-font-family: 'Roboto';
 
 }
 
@@ -276,9 +272,7 @@ font-family: 'Roboto';
     text-align: center;
 }
 
-.weui-navbar__title {
-  font-family: 'Roboto';
-}
+
 
 .weui-navbar__slider {
   width: 50%;
