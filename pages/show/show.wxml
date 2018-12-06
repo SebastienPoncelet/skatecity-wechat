@@ -4,7 +4,7 @@
   <swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
     <block wx:for="{{user_images}}" wx:for-item="image">
       <swiper-item>
-        <image src="{{image}}" class="image-size" />
+        <image mode="aspectFill" src="{{image}}" class="image-size" />
       </swiper-item>
     </block>
   </swiper>
