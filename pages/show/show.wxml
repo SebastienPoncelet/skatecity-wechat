@@ -2,9 +2,9 @@
 
 <!----------image slider----------------->
 <swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
-    <block wx:for="{{spot.images}}" wx:for-item="image">
+    <block wx:for="{{user_images}}" wx:for-item="image">
     <swiper-item>
-      <image src="{{image.url}}" class="image-size" />
+      <image src="{{image}}" class="image-size" />
     </swiper-item>
   </block>
 </swiper>
@@ -107,16 +107,9 @@
 
 <view class="image-container">
   <view class="grid">
-<!-- <block wx:for="{{spot.images}}" wx:for-item="image"> </block>-->
-      <image mode="aspectFill" bindtap="openImage" class="images-row" src="http://115.28.2.176/skate/1.jpg"></image>
-      <image class="images-row" src="http://115.28.2.176/skate/2.jpg"></image>
-      <image class="images-row" src="http://115.28.2.176/skate/3.jpg"></image>
-      <image class="images-row" src="http://115.28.2.176/skate/3.jpg"></image>
-      <image class="images-row" src="http://115.28.2.176/skate/1.jpg"></image>
-      <image class="images-row" src="http://115.28.2.176/skate/2.jpg"></image>
-      <image class="images-row" src="http://115.28.2.176/skate/1.jpg"></image>
-      <image class="images-row" src="http://115.28.2.176/skate/2.jpg"></image>
-      <image class="images-row" src="http://115.28.2.176/skate/3.jpg"></image>
+    <block wx:for="{{customer_images}}" wx:for-item="image">
+      <image mode="aspectFill" bindtap="openImage" class="images-row" src="{{image}}"></image>
+    </block>
     </view>
   </view>
  <!------end of photo tab---------->
