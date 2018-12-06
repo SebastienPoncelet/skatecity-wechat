@@ -35,9 +35,15 @@
   background-position: center 0px;
   background-repeat: no-repeat;
 }
+
+.image-container{
+  width: 90%;
+  height: 30%;
+}
+
 .logo {
   width: 90%;
-  height: 20%;
+  height: 23vh;
   animation-duration: 3s;
   backface-visibility: visible !important;
   animation-name: flipInX;
