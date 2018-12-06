@@ -85,43 +85,43 @@
         </view>
       </view>
     </view>
- 
 
 
 
-  <!----------Near by spots swiper---------------->
-  <view class="scrollingswiper">
-    <view class='toprated'>Near by Spots</view>
-  </view>
-  <view class='scroll-bar'>
-    <view class='scroll-left' bindtap='scrollLeft'>
+
+    <!----------Near by spots swiper---------------->
+    <view class="scrollingswiper">
+      <view class='toprated'>Near by Spots</view>
     </view>
-    <scroll-view scroll-x class='scroll-list-box' scroll-into-view="in-{{scrollInto}}" scroll-with-animation>
-      <view class='scroll-list'>
-        <block wx:for="{{activespots}}" wx:key="index" wx:for-item="skatespot">
-          <view class="card scroll-item">
-            <view class="scroll-image" data-id="{{skatespot.id}}" bindtap='showSkatespot' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{skatespot.images[0].url}}');">
-              <view class="rating-icon">
-                <text class='rating'>{{skatespot.cached_votes_total}}</text>
-                <image class='icon' src="/assets/likes-white.png"></image>
+    <view class='scroll-bar'>
+      <view class='scroll-left' bindtap='scrollLeft'>
+      </view>
+      <scroll-view scroll-x class='scroll-list-box' scroll-into-view="in-{{scrollInto}}" scroll-with-animation>
+        <view class='scroll-list'>
+          <block wx:for="{{activespots}}" wx:key="index" wx:for-item="skatespot">
+            <view class="card scroll-item">
+              <view class="scroll-image" data-id="{{skatespot.id}}" bindtap='showSkatespot' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{skatespot.images[0].url}}');">
+                <view class="rating-icon">
+                  <text class='rating'>{{skatespot.cached_votes_total}}</text>
+                  <image class='icon' src="/assets/likes-white.png"></image>
+                </view>
               </view>
             </view>
-          </view>
-        </block>
+          </block>
+        </view>
+      </scroll-view>
+      <view class='scroll-right' bindtap='scrollRight'>
       </view>
-    </scroll-view>
-    </view>
-    <view class='scroll-right' bindtap='scrollRight'>
     </view>
 
 
-  <!---------fixed bottom tab bar  ----------------->
-  <view class="fixed-bar">
-    <!--Home button----->
-    <image class='home-button' bindtap="goHome" src="/assets/homewhite.png"></image>
-    <!--Create button -->
-    <image class='create-button' bindtap="goCreate" src="/assets/addwhite.png"></image>
+    <!---------fixed bottom tab bar  ----------------->
+    <view class="fixed-bar">
+      <!--Home button----->
+      <image class='home-button' bindtap="goHome" src="/assets/homewhite.png"></image>
+      <!--Create button -->
+      <image class='create-button' bindtap="goCreate" src="/assets/addwhite.png"></image>
+    </view>
   </view>
-   </view>
   <!-----container end---->
 </view>
