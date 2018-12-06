@@ -60,66 +60,32 @@
             </view>
           </block>
           <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
-
-
         </view>
-        <!------ TO UNCOMMENT IF IT BUGS - START ----------->
-        <!-- <view class="weui-tab__panel">
-                <view class="weui-tab__content" hidden="{{activeIndex != 0}}"> -->
-
-
-        <!------ MAP ----------->
-        <!-- <view class="page-body">
-      <view style="padding-top:40px; padding-bottom: 40px;">
-        <map
-          id="myMap"
-          style="width: 100%; height: 280px"
-          latitude="{{latitude}}"
-          longitude="{{longitude}}"
-          markers="{{marker}}"
-          show-location
-        ></map>
-      </view> -->
-        <!------ TO UNCOMMENT IF IT BUGS - END ----------->
-
-        <!---- <view class="btn-area">
-        <button bindtap="getCenterLocation" class="page-body-button" type="primary">Center The Skate Spot</button>
-        <button bindtap="moveToLocation" class="page-body-button" type="primary">Your Current Location</button> ---->
-        <!-- <view class="icons">
-
-      <!------ TO UNCOMMENT IF IT BUGS - START ----------->
-        <!-- <image class='icon' bindtap="getCenterLocation" src="/assets/Spot_1.png"></image>
-        <image class="icon" bindtap="moveToLocation" src="/assets/Location.png"></image>
-      </view>
-    </view> -->-->
-        <!------ TO UNCOMMENT IF IT BUGS - END ----------->
-
-        <!------end of map tab---------->
-        <!------ TO UNCOMMENT IF IT BUGS - START ----------->
-        <!-- <view class="weui-tab__content" hidden="{{activeIndex != 1}}"> -->
-        <!-- <swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
-    <block wx:for="{{spot.images}}" wx:for-item="image">
-    <swiper-item>
-      <image src="{{image.url}}" class="image-size" />
-    </swiper-item>
-  </block>
-  <!------ TO UNCOMMENT IF IT BUGS - END ----------->
-
-        <!------end of photo tab---------->
-
-        <view class="image-container">
-          <view class="grid">
-            <block wx:for="{{customer_images}}" wx:for-item="image">
-              <image mode="aspectFill" bindtap="openImage" class="images-row" src="{{image}}"></image>
-            </block>
+        <!------beginning of first tab---------->
+        <view class="weui-tab__panel">
+          <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+          <view class="image-container">
+              <view class="grid">
+                <block wx:for="{{customer_images}}" wx:for-item="image">
+                  <image mode="aspectFill" bindtap="openImage" class="images-row" src="{{image}}"></image>
+                </block>
+              </view>
+            </view>
+           
           </view>
+          <!------end of first tab---------->
+          <!------beginning of second tab---------->
+          <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+             <view class="page-body">
+              <view style="padding-top:40px; padding-bottom: 40px;">
+              </view>
+            </view>
+          </view>
+          <!------end of second tab---------->
         </view>
-        <!------end of photo tab---------->
       </view>
     </view>
   </view>
-
-  <!-- </view> -->
 
 
 
@@ -155,7 +121,6 @@
     <!--Create button -->
     <image class='create-button' bindtap="goCreate" src="/assets/addwhite.png"></image>
   </view>
-</view>
 
-<!-----container end---->
-<!-- </view> -->
+  <!-----container end---->
+</view>
