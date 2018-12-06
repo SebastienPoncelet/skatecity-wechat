@@ -64,19 +64,19 @@
         <!------beginning of first tab---------->
         <view class="weui-tab__panel">
           <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
-          <view class="image-container">
+            <view class="image-container">
               <view class="grid">
                 <block wx:for="{{customer_images}}" wx:for-item="image">
                   <image mode="aspectFill" bindtap="openImage" class="images-row" src="{{image}}"></image>
                 </block>
               </view>
             </view>
-           
+
           </view>
           <!------end of first tab---------->
           <!------beginning of second tab---------->
           <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
-             <view class="page-body">
+            <view class="page-body">
               <view style="padding-top:40px; padding-bottom: 40px;">
               </view>
             </view>
@@ -85,7 +85,7 @@
         </view>
       </view>
     </view>
-  </view>
+ 
 
 
 
@@ -110,9 +110,10 @@
         </block>
       </view>
     </scroll-view>
+    </view>
     <view class='scroll-right' bindtap='scrollRight'>
     </view>
-  </view>
+
 
   <!---------fixed bottom tab bar  ----------------->
   <view class="fixed-bar">
@@ -121,6 +122,6 @@
     <!--Create button -->
     <image class='create-button' bindtap="goCreate" src="/assets/addwhite.png"></image>
   </view>
-
+   </view>
   <!-----container end---->
 </view>
