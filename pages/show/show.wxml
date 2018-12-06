@@ -1,73 +1,75 @@
 <view class="container">
 
-<!----------image slider----------------->
-<swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
+  <!----------image slider----------------->
+  <swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
     <block wx:for="{{user_images}}" wx:for-item="image">
-    <swiper-item>
-      <image src="{{image}}" class="image-size" />
-    </swiper-item>
-  </block>
-</swiper>
+      <swiper-item>
+        <image src="{{image}}" class="image-size" />
+      </swiper-item>
+    </block>
+  </swiper>
 
 
- <!------ Upload your own photo ----------->
+  <!------ Upload your own photo ----------->
 
   <!-- <view class="camera-size">
   <image class="camera" src="/assets/camera-white.png"></image>
   </view> -->
 
 
-<!------ ICONS ----------->
+  <!------ ICONS ----------->
 
-    <view class="icons">
-        <image bindtap="sendRating"  data-id="user_id" class='icon' src="/assets/likes.png"></image>
-        <text class='rating'>{{spot.cached_votes_total}}</text>
-        <image class='icon' bindtap="mapScroll" src="/assets/maroonlocation.png"></image>
-      <image class="camera" bindtap="takePhoto" src="/assets/cameramaroon.png"></image>
-        <view class="shareborder"bindtap="onShareAppMessage">
- <button class="share-btn" plain="false" open-type="share" type="default"><image class='icon' src="/assets/maroonshare.png"></image></button>
-        </view>
+  <view class="icons">
+    <image bindtap="sendRating" data-id="user_id" class='icon' src="/assets/likes.png"></image>
+    <text class='rating'>{{spot.cached_votes_total}}</text>
+    <image class='icon' bindtap="mapScroll" src="/assets/maroonlocation.png"></image>
+    <image class="camera" bindtap="takePhoto" src="/assets/cameramaroon.png"></image>
+    <view class="shareborder" bindtap="onShareAppMessage">
+      <button class="share-btn" plain="false" open-type="share" type="default">
+        <image class='icon' src="/assets/maroonshare.png"></image>
+      </button>
     </view>
+  </view>
 
   <!------NAME AND DESCRIPTION ----------->
-      <view class="name-description">
-        <view class="name">
-          <text>{{spot.name}}</text>
-        </view>
+  <view class="name-description">
+    <view class="name">
+      <text>{{spot.name}}</text>
+    </view>
 
-        <view class="types">
-          <view wx:for="{{spot.tag_list}}" wx:key="spots" wx:for-item="spot" wx:index="index">
-                <text class='type'>{{spot}}</text>
-          </view>
-        </view>
-
-        <view class="description">
-          <text>{{spot.description}}</text>
-        </view>
+    <view class="types">
+      <view wx:for="{{spot.tag_list}}" wx:key="spots" wx:for-item="spot" wx:index="index">
+        <text class='type'>{{spot}}</text>
       </view>
+    </view>
+
+    <view class="description">
+      <text>{{spot.description}}</text>
+    </view>
+  </view>
 
 
 
-<view class="page">
+  <view class="page">
     <view class="page__bd">
-        <view class="weui-tab">
-            <view class="weui-navbar">
-                <block wx:for="{{tabs}}" wx:key="*this">
-                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
-                        <view class="weui-navbar__title">{{item}}</view>
-                    </view>
-                </block>
-                <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
-
-
+      <view class="weui-tab">
+        <view class="weui-navbar">
+          <block wx:for="{{tabs}}" wx:key="*this">
+            <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+              <view class="weui-navbar__title">{{item}}</view>
             </view>
-            <!------ TO UNCOMMENT IF IT BUGS - START ----------->
-            <!-- <view class="weui-tab__panel">
+          </block>
+          <view class="weui-navbar__slider" style="left: {{sliderLeft}}px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
+
+
+        </view>
+        <!------ TO UNCOMMENT IF IT BUGS - START ----------->
+        <!-- <view class="weui-tab__panel">
                 <view class="weui-tab__content" hidden="{{activeIndex != 0}}"> -->
 
 
-<!------ MAP ----------->
-                    <!-- <view class="page-body">
+        <!------ MAP ----------->
+        <!-- <view class="page-body">
       <view style="padding-top:40px; padding-bottom: 40px;">
         <map
           id="myMap"
@@ -78,24 +80,24 @@
           show-location
         ></map>
       </view> -->
-      <!------ TO UNCOMMENT IF IT BUGS - END ----------->
+        <!------ TO UNCOMMENT IF IT BUGS - END ----------->
 
-      <!---- <view class="btn-area">
+        <!---- <view class="btn-area">
         <button bindtap="getCenterLocation" class="page-body-button" type="primary">Center The Skate Spot</button>
         <button bindtap="moveToLocation" class="page-body-button" type="primary">Your Current Location</button> ---->
-      <!-- <view class="icons">
+        <!-- <view class="icons">
 
       <!------ TO UNCOMMENT IF IT BUGS - START ----------->
         <!-- <image class='icon' bindtap="getCenterLocation" src="/assets/Spot_1.png"></image>
         <image class="icon" bindtap="moveToLocation" src="/assets/Location.png"></image>
       </view>
-    </view> --> -->
-    <!------ TO UNCOMMENT IF IT BUGS - END ----------->
+    </view> -->-->
+        <!------ TO UNCOMMENT IF IT BUGS - END ----------->
 
-    <!------end of map tab---------->
-    <!------ TO UNCOMMENT IF IT BUGS - START ----------->
-    <!-- <view class="weui-tab__content" hidden="{{activeIndex != 1}}"> -->
-      <!-- <swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
+        <!------end of map tab---------->
+        <!------ TO UNCOMMENT IF IT BUGS - START ----------->
+        <!-- <view class="weui-tab__content" hidden="{{activeIndex != 1}}"> -->
+        <!-- <swiper class="image" indicator-dots="true" autoplay="false" indicator-active-color="#872419">
     <block wx:for="{{spot.images}}" wx:for-item="image">
     <swiper-item>
       <image src="{{image.url}}" class="image-size" />
@@ -103,58 +105,57 @@
   </block>
   <!------ TO UNCOMMENT IF IT BUGS - END ----------->
 
- <!------end of photo tab---------->
+        <!------end of photo tab---------->
 
-<view class="image-container">
-  <view class="grid">
-    <block wx:for="{{customer_images}}" wx:for-item="image">
-      <image mode="aspectFill" bindtap="openImage" class="images-row" src="{{image}}"></image>
-    </block>
+        <view class="image-container">
+          <view class="grid">
+            <block wx:for="{{customer_images}}" wx:for-item="image">
+              <image mode="aspectFill" bindtap="openImage" class="images-row" src="{{image}}"></image>
+            </block>
+          </view>
+        </view>
+        <!------end of photo tab---------->
+      </view>
     </view>
   </view>
- <!------end of photo tab---------->
-                </view>
-            </view>
-        </view>
-    </view>
-<!-- </view> -->
+
+  <!-- </view> -->
 
 
 
-<!----------Near by spots swiper---------------->
+  <!----------Near by spots swiper---------------->
   <view class="scrollingswiper">
     <view class='toprated'>Near by Spots</view>
   </view>
   <view class='scroll-bar'>
-    <view class='scroll-left' bindtap='scrollLeft'> 
-  </view>
+    <view class='scroll-left' bindtap='scrollLeft'>
+    </view>
     <scroll-view scroll-x class='scroll-list-box' scroll-into-view="in-{{scrollInto}}" scroll-with-animation>
       <view class='scroll-list'>
         <block wx:for="{{activespots}}" wx:key="index" wx:for-item="skatespot">
           <view class="card scroll-item">
             <view class="scroll-image" data-id="{{skatespot.id}}" bindtap='showSkatespot' style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('{{skatespot.images[0].url}}');">
               <view class="rating-icon">
-                  <text class='rating'>{{skatespot.cached_votes_total}}</text>
-                  <image class='icon' src="/assets/likes-white.png"></image>
+                <text class='rating'>{{skatespot.cached_votes_total}}</text>
+                <image class='icon' src="/assets/likes-white.png"></image>
               </view>
             </view>
           </view>
         </block>
       </view>
-  </scroll-view>
-      <view class='scroll-right' bindtap='scrollRight'>
-      </view>
-</view>
-
-<!---------fixed bottom tab bar  ----------------->
-<view class="fixed-bar">
-  <!--Home button----->
-  <image class='home-button' bindtap="goHome" src="/assets/homewhite.png"></image>
-  <!--Create button -->
-  <image class='create-button' bindtap="goCreate" src="/assets/addwhite.png"></image>
+    </scroll-view>
+    <view class='scroll-right' bindtap='scrollRight'>
+    </view>
   </view>
+
+  <!---------fixed bottom tab bar  ----------------->
+  <view class="fixed-bar">
+    <!--Home button----->
+    <image class='home-button' bindtap="goHome" src="/assets/homewhite.png"></image>
+    <!--Create button -->
+    <image class='create-button' bindtap="goCreate" src="/assets/addwhite.png"></image>
+  </view>
+</view>
 
 <!-----container end---->
 <!-- </view> -->
-
-
