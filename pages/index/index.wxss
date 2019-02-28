@@ -1,12 +1,11 @@
 /**index.wxss**/
-
 .container {
   overflow-x: hidden;
 }
 
 .weui-navbar__item.weui-bar__item_on {
-color: #872419;
-font-weight:bolder;
+  color: #0D3834;
+  font-weight:bolder;
 }
 
 .weui-navbar__item {
@@ -16,32 +15,26 @@ font-weight:bolder;
 .weui-tab {
   position: relative;
   height: 100%;
-  top: 19px;
   color: #484848;
 }
 
 .weui-navbar__slider {
-  width: 50%;
-  background-color: #872419;
-  /* for where the slider starts and ends */ 
-  margin-left: 0vh;
+  width:24vw;
+  background-color:#0D3834;
+  margin-left:7vh;
 }
-
 
 .weui-navbar__title {
-  /* color:#484848; */
   font-size:15px;
-  /* font-weight:bold; */
 }
 
-
 .weui-navbar__item.weui-bar__item_on {
-color: #872419;
+  color: #0D3834;
 }
 
 .weui-tab__content {
   background-color: white;
-  margin-top:2.5vh;
+  margin-top:6.5vh;
 }
 
 .weui-tab__panel {
@@ -49,17 +42,17 @@ color: #872419;
 }
 
 .weui-navbar__title-type {
- border:2px solid #872419;
-color:#08605F;
-background-color:white;
-border-radius:20px;
-opacity:0.9;
-text-align:center;
-width:61%;
-padding:6px;
-box-shadow:0px 3px 12px rgba(0,0,0,0.1);
-font-size:4.5vw;
-margin:5vh;
+  border:2px solid #27AA9D;
+  color:#08605F;
+  background-color:white;
+  border-radius:20px;
+  opacity:0.9;
+  text-align:center;
+  width:61%;
+  padding:6px;
+  box-shadow:0px 3px 12px rgba(0,0,0,0.1);
+  font-size:4.5vw;
+  margin:5vh;
 }
 
 .weui-navbar-type {
@@ -76,30 +69,35 @@ margin:5vh;
   border: 1rpx solid white;
 }
 
-.card-footer .icon {
-  width:8vw;
-  height:4vh;
-  animation-duration: 3s;
-  animation: animation 1000ms linear both;
+.icon {
+  width:6vw;
+  height:3vh;
+  animation-duration:3s;
+  animation:animation 1000ms linear both;
+  margin-left:1vh;
+  margin-bottom:-24vh;
 }
-
 
 .filters {
   display:flex;
-  padding-top:1vh;
-  margin-left:2vh;
+  margin-left:1vh;
 }
 
 .type {
-background-color:white;
-border-radius:8px;
-padding:1vh;
-margin:1.5vh;
-font-size:14px;
-/* border:1px solid #5cc1b3; */
-box-shadow:1px 2px 5px rgba(0,0,0,0.15);
-color: #872419;
+  border-radius:21px;
+  padding:6px;
+  margin:6px;
+  font-size:14px;
+  color:#27AA9D;
+  padding-right:11px;
+  padding-left:11px;
+  background-color:white;
+  font-weight:bold;
+}
 
+.activefilter {
+  background-color:#A7DDD7;
+  color:#1F887E;
 }
 
 .all {
@@ -109,7 +107,7 @@ color: #872419;
   margin:1.5vh;
   font-size:15px;
   /* border:1px solid #5cc1b3; */
-  color: #872419;
+  color: #27AA9D;
 }
 
 .cards {
@@ -119,28 +117,25 @@ color: #872419;
 .card {
   display: flex;
   flex-direction: column;
-  margin: 5.5vh 0;
-  height: 39vh;
+  margin: 5vh 0;
+  height: 38vh;
   box-shadow: 1px 2px 7px rgba(0,0,0,0.10);
-  /* border-radius: 6px; */
   position: relative;
   background-color:white;
 }
 
 .rating-icon {
   display:flex;
-  flex-direction:row;
   align-items:center;
+  margin-top:1vh;
 }
 
 .card-body {
-  height: 58vh;
-  /* text-shadow: 0 1px 3px rgba(0,0,0,0.6); */
+  height: 38vh;
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
-  /* border-radius: 6px 6px 0 0; */
 }
 
 .card-footer {
@@ -150,35 +145,42 @@ color: #872419;
   margin-top:28vh;
 }
 
-.card-footer .rating {
-  margin:2vh;
-  font-size:4vw;
+.rating {
+  color:#484848;
+  font-size:15px;
+  margin-left:1vh;
   font-weight:bold;
-  color:white;
+}
 
+.likes {
+  font-size:15px;
+  padding-left:0.5vh;
 }
 
 .card-description .name {
-  font-size:15.5px;
-font-weight:bold;
-margin:2vh;
+  font-size:17.5px;
+  font-weight:bold;
+  margin:1vh;
+  color:#0D3834;
 }
 
 .card-footer .styles {
-background-color:white;
-color:#872419;
-font-size:14px;
-border-radius:1vh;
-height:3.5vh;
-padding:0.5vh;
-margin:0.5vh;
-
-
+  background-color:#A7DDD7;
+  color:#1F887E;
+  font-size:4vw;
+  border-radius:1vh;
+  padding:1vw;
+  margin:1vw;
+  border-radius:4vw;
+  font-weight:bold;
+  padding-right:3vw;
+  padding-left:3vw;
+  opacity:0.9;
 }
 
 .page-body {
   width:100vw;
-margin-top:-7vh;
+  margin-top:-7vh;
 }
 
 .page-section-gap{
@@ -189,24 +191,24 @@ margin-top:-7vh;
 }
 
 .page-body-button {
-  margin-bottom: 30rpx;
-  width:85vw;
+  margin-bottom:3vh;
+  width:69vw;
   border-radius:22px;
-  font-size:30rpx;
-  background-color: #872419 !important; 
-  margin-top:1vh;
-
+  font-size:28rpx;
+  background-color:#27AA9D !important;
+  margin-top:1.5vh;
+  font-weight:bold;
 }
 
 .btn-area {
   background-color: white;
-  padding:2vh;
+  padding-top:2vh;
 }
 
 .image-size {
   height:38vh;
   width:100vw;
-   background-size: cover !important;
+  background-size: cover !important;
   background-position: center;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.2);
   position: relative;
@@ -243,35 +245,49 @@ margin-top:-7vh;
 }
 
 .toprated {
-margin:4vh;
-font-weight:bold;
-font-size:15px;
+  margin:4vh;
+  font-weight:bold;
+  font-size:15px;
 }
 
 .home-button {
-  width:10vw;
-  height:5vh;
+  width:7.5vw;
+  height:4vh;
 }
 
 .create-button {
-  width:10vw;
-  height:5vh;
+  width:7.5vw;
+  height:4vh;
+}
+
+.icontext {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.tabwords {
+  font-size:2.5vw;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color: #989898;
 }
 
 .fixed-bar {
-  background-color:#435058;
+  background-color:white;
   position: fixed;
   bottom: 0;
   justify-content: space-around;
   display: flex;
   width: 100vw;
-  color:#ffffff;
   padding:1vh;
   height:5.5vh;
+  border-top:2px solid #F0F0F0;
 }
 
 .styles-flex {
   display: flex;
+  margin-bottom:-25vh;
 }
 
 @keyframes animation { 
@@ -285,9 +301,4 @@ font-size:15px;
   56.46% { -webkit-transform: matrix3d(1.001, 0, 0, 0, 0, 1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1.001, 0, 0, 0, 0, 1.001, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   81.48% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); }
   100% { -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); } 
-}
-
-.activefilter {
-    color: white;
-    background-color:#872419;
 }

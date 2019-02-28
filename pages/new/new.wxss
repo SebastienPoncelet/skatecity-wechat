@@ -1,8 +1,8 @@
-
 /* pages/new/new.wxss */
 .container {
-width: 85%;
-overflow-x: hidden;
+  overflow-x: hidden;
+  width:95vw;
+  margin-top:-4vh;
 }
 
 .banner {
@@ -20,22 +20,23 @@ overflow-x: hidden;
 }
 
 .h1 {
-  font-weight: bold;
-  text-align: center;
-  margin: 17px;
-  color: rgb(255,255,255);
-  padding: 2px;
-  border-bottom: 4px solid rgb(255,255,255);
-  padding:10px;
-  animation-duration: 1s;
-  animation-name: zoomInDown;
-
+  font-weight:bold;
+  text-align:left;
+  margin:5vh;
+  color:#484848;
+  padding:2px;
+  border-bottom:4px solid rgb(255,255,255);
+  padding:1vh;
+  animation-duration:1s;
+  animation-name:zoomInDown;
+  width:127vw;
+  font-size:3vh;
 }
 
-
- .form-fields {
-  margin:15px 8px;
+.form-fields {
+  margin-left: 3vh;
   animation: animateleft 0.9s;
+  width:95vw;
 }
 
 .input .value {
@@ -47,25 +48,21 @@ overflow-x: hidden;
   color:#ffffff;
 }
 
-
 .desc {
-  /* border: 2px solid rgb(240,240,240); */
-  
   padding: 5px;
   font-size: 15px;
-  color: rgb(255,255,255);
+  color: #435058;
   border-bottom: 1px solid #F0F0F0;
   width: 80%;
   margin: 40px 20px;
   animation-duration: 3s;
   animation-name: fadeIn;
-
 }
 
 .desc-address {
   padding: 5px;
   font-size: 15px;
-  color: rgb(255,255,255);
+  color:#435058;
   border-bottom: 1px solid #F0F0F0;
   width: 80%;
   margin: 40px 20px;
@@ -74,31 +71,36 @@ overflow-x: hidden;
 }
 
 .btn-upload {
-margin-bottom:8px;
-color:white;
-font-size: 15px;
-font-weight: bold;
-background-color: #ff8f56;
-padding: 5px;
-margin: 16px;
-opacity: 1;
-border: 0px solid rgb(255,255,255);
-animation-duration: 5s;
-animation-name: fadeIn;
+  margin-bottom:8px;
+  color:#27AA9D;
+  font-size:15px;
+  font-weight:bold;
+  background-color:white;
+  padding:5px;
+  margin:16px;
+  opacity:1;
+  border:1px solid #27AA9D;
+  animation-duration:5s;
+  animation-name:fadeIn;
+  margin-top:4vh;
+  width:83vw;
+  border-radius:18px;
 }
 
 .btn-submit {
-margin-bottom:8px;
-color:white;
-font-size: 16px;
-font-weight: bold;
-background-color: #2bb673;
-padding: 5px;
-margin: 15px;
-opacity: 1;
-border: 0px solid rgb(255,255,255);
-animation-duration: 5s;
+  margin-bottom:8px;
+  color:white;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #27AA9D;
+  padding: 5px;
+  margin: 15px;
+  opacity: 1;
+  border: 0px solid rgb(255,255,255);
+  animation-duration: 5s;
   animation-name: fadeIn;
+  width:83vw;
+  border-radius:18px;
 }
 
 .btn-submit:hover {
@@ -109,61 +111,56 @@ animation-duration: 5s;
   opacity: 1;
 }
 
-.form-fields {
-  margin:15px 8px;
-}
-
 .input .value {
   font-weight:700;
   font-size:24px;
 }
 
 .input-placeholder{
-  color:#ffffff;
+  color:	#989898;
 }
 
-
 .desc {
-  /* border: 2px solid rgb(240,240,240); */
   margin-bottom:15px;
-  padding: 5px;
-  font-size: 15px;
-  color: rgb(255,255,255);
+  padding: 1vh;
+  font-size: 16px;
+  color: #484848;
   border-bottom: 1px solid #F0F0F0;
   width: 80%;
   margin: 20px;
   animation-duration: 4s;
   animation-name: fadeIn;
-
+  padding-bottom:1vh;
 }
 
 .skatestyle-title {
   animation-duration: 4s;
   animation-name: fadeIn;
-  font-size:15px;
+  font-size:16px;
   animation-duration: 3s;
   animation-name: fadeIn;
-
+  color: #484848;
+  margin-left:4vh;
+  margin-top:37px;
 }
 
 .skatestyle-checkbox {
-display:flex;
-flex-direction:column;
-flex-wrap:wrap;
-font-size:15px;
-margin-top:2vh;
-width:90vw;
-height:120px;
-padding-left:20px;
-animation-duration: 3s;
-animation-name: fadeIn;
-
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  font-size:15px;
+  margin-top:2vh;
+  width:90vw;
+  height:120px;
+  padding-left:37px;
+  animation-duration:3s;
+  animation-name:fadeIn;
+  color:#484848;
 }
 
-
 .checkbox {
- margin-right:auto;
- padding-bottom:5px;
+  margin-right:auto;
+  padding-bottom:5px;
 }
 
 @keyframes slideInRight {

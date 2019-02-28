@@ -17,41 +17,44 @@
   color: #ffffff;
 }
 
-.btn {
-  margin-top:75%;
-  margin-bottom:15px;
+.banner {
+  color:white;
+  text-align:center;
+  height:100vh;
+  background-size:cover !important;
+  background-position:center 0px;
+  background-repeat:no-repeat;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:center;
 }
 
-.banner {
-  color: white;
-  text-align: center;
-  height: 100vh;
-  /* if you have a 70px navbar => height: calc(100vh - 70px); */
-  background-size: cover !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction:column;
-  background-position: center 0px;
-  background-repeat: no-repeat;
-}
 .logo {
   width: 90%;
   height: 20%;
   animation-duration: 3s;
   backface-visibility: visible !important;
   animation-name: flipInX;
+  margin-top:24vh;
 }
 
 button {
-  width: 80%;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  border: 2px solid #ffffff;
-	color: #ffffff;
-  background: none;
-  
+  width:100%;
+  font-weight:700;
+  letter-spacing:1px;
+  color:#ffffff;
+  background-color:#27AA9D;
+  border-radius:0vh;
+  padding:3vw;
+  font-size:4.5vw;
+}
+
+.tagline {
+  width:80%;
+  font-size:4vw;
+  font-weight:bold;
+  margin-top:-84vh;
 }
 
 .h1 {
@@ -95,4 +98,3 @@ button {
     transform: perspective(400px);
   }
 }
-

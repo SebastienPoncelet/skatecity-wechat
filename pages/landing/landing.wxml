@@ -1,18 +1,18 @@
 <!--pages/landing/landing.wxml-->
-  <view class="banner" style="background-image: url('http://115.28.2.176/skate/land.jpg');">
-    
-    <image class='logo' src="/assets/logo.png"></image>
-    
-    
-  <view class="wxinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-
-    <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn">Login & Skate</button>
-  </view>
+<view class="banner" style="background-image: url('http://115.28.2.176/skate/land.jpg');">
+  <image class='logo' src="/assets/logo.png"></image>
+<!------login info-------------->
+    <view class="wxinfo">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+        <block wx:else>
+          <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+          <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        </block>
+    </view>
+<!----------tagline-------------->
+    <view class="tagline">discover Shanghai's best skate spots</view>
+<!-----------lets go skate button------------->
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn">Let's go skate!</button>
+    </view>
 
 

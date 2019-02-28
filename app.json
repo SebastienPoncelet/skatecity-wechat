@@ -8,8 +8,8 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#435058",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "Skate City",
-    "navigationBarTextStyle": "white"
+    "navigationBarTextStyle": "black"
   }
 }
