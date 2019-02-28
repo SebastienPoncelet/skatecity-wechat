@@ -340,11 +340,10 @@ color:#575757;
 }
 
 .morephotos {
-/* font-family:'Roboto'; */
-color:#0D3834;
-font-size:4vw;
-font-weight:bold;
-padding-bottom:2vh;
+  color:#0D3834;
+  font-size:4vw;
+  font-weight:bold;
+  padding-bottom:2vh;
 }
 
 .imagemore {
